@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.egg-info/
+
+# Data
+*.h5ad
+*.h5
+*.loom
+*.mtx
+*.tar.gz
+*.zip
+
+# Checkpoints & Models
+checkpoints/
+*.pth
+*.pt
+*.bin
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
