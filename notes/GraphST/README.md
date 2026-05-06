@@ -20,7 +20,7 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [GraphST: Graph-based Self-supervised Learning for Spatial Transcriptomics](https://www.nature.com/articles/s41467-023-40173-4), Nature Communications 2023 |
+| **论文** | [GraphST: Graph-based Self-supervised Learning for Spatial Transcriptomics](https://www.nature.com/articles/s41467-023-36796-3), Nature Communications 2023 |
 | **架构** | GNN Encoder + Discriminator (Bilinear) — Deep Graph Infomax (DGI) |
 | **预训练任务** | 图-补丁对比 (Deep Graph Infomax) — 最大化整图与局部补丁的互信息 |
 | **输入** | 空间转录组的邻接图 + 基因表达 |
@@ -448,7 +448,7 @@ DGI 是一种图级别的自监督学习方法：
 
 ### 核心论文
 
-1. **Y Long et al.** *GraphST: Graph-based Self-supervised Learning for Spatial Transcriptomics.* Nature Communications, 2023. [阅读](https://www.nature.com/articles/s41467-023-40173-4)
+1. **Y Long et al.** *GraphST: Graph-based Self-supervised Learning for Spatial Transcriptomics.* Nature Communications, 2023. [阅读](https://www.nature.com/articles/s41467-023-36796-3)
 
 ### 相关技术
 

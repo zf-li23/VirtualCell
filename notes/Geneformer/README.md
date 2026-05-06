@@ -22,8 +22,8 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [Transfer learning enables predictions in network biology](https://rdcu.be/ddrx0), Nature 2023 |
-| **V2 论文** | [Scaling and quantization of large-scale foundation model enables resource-efficient predictions in network biology](https://rdcu.be/famFk), Nature Computational Science 2026 |
+| **论文** | [Transfer learning enables predictions in network biology](https://www.nature.com/articles/s41586-023-06139-9), Nature 2023 |
+| **V2 论文** | [Scaling and quantization of large-scale foundation model enables resource-efficient predictions in network biology](https://www.nature.com/articles/s43588-026-00972-4), Nature Computational Science 2026 |
 | **架构** | BERT (BertForMaskedLM) — Transformer Encoder |
 | **预训练任务** | Masked Language Modeling (MLM) — 掩码基因预测 |
 | **输入** | 单细胞转录组的 Rank Value Encoding（排序编码） |
@@ -73,7 +73,7 @@ Output: [hidden states for each position]
 > 模型在自注意力权重中**编码了基因网络的层级结构**（network hierarchy）。
 
 - 通过分析注意力权重，可以识别哪些基因是调控网络中的**上游调控因子**（high in-degree）。
-- 这是一个**零样本（zero-shot）**的能力 —— 模型从未被显式训练过预测网络层级。
+- 这是一个**零样本**（zero-shot）的能力 —— 模型从未被显式训练过预测网络层级。
 
 ---
 
@@ -435,10 +435,10 @@ embeddings = emb_ext.extract_embs(
 
 ### 核心论文
 
-1. **C V Theodoris et al.** *Transfer learning enables predictions in network biology.* Nature, 2023. [阅读](https://rdcu.be/ddrx0)
+1. **C V Theodoris et al.** *Transfer learning enables predictions in network biology.* Nature, 2023. [阅读](https://www.nature.com/articles/s41586-023-06139-9)
    - Geneformer 原始论文。介绍了模型架构、预训练策略、零样本扰动和微调应用。
 
-2. **H Chen et al.** *Scaling and quantization of large-scale foundation model enables resource-efficient predictions in network biology.* Nature Computational Science, 2026. [阅读](https://rdcu.be/famFk)
+2. **H Chen et al.** *Scaling and quantization of large-scale foundation model enables resource-efficient predictions in network biology.* Nature Computational Science, 2026. [阅读](https://www.nature.com/articles/s43588-026-00972-4)
    - V2 版本。扩展模型规模、引入量化、持续学习策略。
 
 3. **C V Theodoris et al.** *Continual learning foundation model for cell state perturbation.* bioRxiv, 2024. [阅读](https://www.biorxiv.org/content/10.1101/2024.08.16.608180v1)

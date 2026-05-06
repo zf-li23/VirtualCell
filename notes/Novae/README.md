@@ -20,13 +20,13 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [Novae: A Graph-based Foundation Model for Spatial Transcriptomics](https://www.biorxiv.org/content/10.1101/2024.03.05.583544v1), bioRxiv 2024 |
+| **论文** | [Novae: A Graph-based Foundation Model for Spatial Transcriptomics](https://www.nature.com/articles/s41592-025-02899-6), Nature 2025 |
 | **架构** | 图神经网络 (GNN) — GAT v2 + SwAV Head |
 | **预训练任务** | SwAV 自监督学习 (Swapping Assignments between Views) |
 | **输入** | 空间转录组细胞图 (节点 = 细胞/spot, 边 = 空间邻接) |
 | **输出** | 细胞/spot 嵌入 + 空间域分割 |
 | **图增强** | 基因子集采样 + 噪声 + 丢失 |
-| **项目** | [novae](https://github.com/novae-team/novae) |
+| **项目** | [novae](https://github.com/prism-oncology/novae) |
 
 ### 核心思想
 
@@ -517,7 +517,7 @@ GAT v2: a(LeakyReLU(W·[h_i || h_j || e_ij]))
 
 ### 核心论文
 
-1. **A Allam et al.** *Novae: A Graph-based Foundation Model for Spatial Transcriptomics.* bioRxiv, 2024. [阅读](https://www.biorxiv.org/content/10.1101/2024.03.05.583544v1)
+1. **A Allam et al.** *Novae: A Graph-based Foundation Model for Spatial Transcriptomics.* Nature, 2025. [阅读](https://www.nature.com/articles/s41592-025-02899-6)
 
 ### 相关技术
 

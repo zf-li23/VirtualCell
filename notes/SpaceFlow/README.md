@@ -20,7 +20,7 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [SpaceFlow: Identifying Spatial Domains and Spatiotemporal Patterns in Spatial Transcriptomics](https://www.nature.com/articles/s41467-023-40173-4), Nature Communications 2023 |
+| **论文** | [Identifying multicellular spatiotemporal organization of cells with SpaceFlow](https://www.nature.com/articles/s41467-022-31739-w), Nature Communications 2022 |
 | **架构** | GNN Encoder (2-layer GCNConv + PReLU) + DGI |
 | **预训练任务** | Deep Graph Infomax + 空间正则化 |
 | **图构建** | KNN + Alpha Complex (自适应空间邻接) |
@@ -420,7 +420,7 @@ pSM 能看到"从早期到晚期的连续变化"
 
 ### 核心论文
 
-1. **H Ren et al.** *SpaceFlow: Identifying Spatial Domains and Spatiotemporal Patterns in Spatial Transcriptomics.* Nature Communications, 2023. [阅读](https://www.nature.com/articles/s41467-023-40173-4)
+1. **H Ren et al.** *Identifying multicellular spatiotemporal organization of cells with SpaceFlow.* Nature Communications, 2022. [阅读](https://www.nature.com/articles/s41467-022-31739-w)
 
 ### 相关技术
 

@@ -20,7 +20,7 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [SPADE: Spatially-Aware Domain Expert for spatial transcriptomics](https://www.biorxiv.org/content/10.1101/2023.12.07.570646v1), bioRxiv 2023 |
+| **论文** | [SPADE: Spatial Transcriptomics and Pathology Alignment Using a Mixture of Data Experts for an Expressive Latent Space](https://arxiv.org/abs/2506.21857v1), arXiv 2025 |
 | **架构** | CLIP-style 对比学习 (Image + Spot Embedding) + Mixture-of-Experts |
 | **训练任务** | ST-H&E 对齐 (对称交叉熵 + 软目标) |
 | **图像编码器** | 多个 (ResNet50/101/152, ViT, CLIP-ViT) — 可配置 |
@@ -525,7 +525,7 @@ SPADE 将 softmax 中的 one-hot 标签替换为软标签分布。
 
 ### 核心论文
 
-1. **T Liu et al.** *SPADE: Spatially-Aware Domain Expert for spatial transcriptomics.* bioRxiv, 2023. [阅读](https://www.biorxiv.org/content/10.1101/2023.12.07.570646v1)
+1. **E Redekop et al.** *SPADE: Spatially-Aware Domain Expert for spatial transcriptomicshttps://arxiv.org/abs/2506.21857v1.* arXiv, 2025. [阅读](https://arxiv.org/abs/2506.21857v1)
 
 ### 相关技术
 

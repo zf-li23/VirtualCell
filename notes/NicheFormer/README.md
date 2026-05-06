@@ -20,7 +20,7 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [NicheFormer: A Foundation Model for Single-Cell and Spatial Omics](https://www.biorxiv.org/content/10.1101/2024.04.15.589472v1), bioRxiv 2024 |
+| **论文** | [NicheFormer: A Foundation Model for Single-Cell and Spatial Omics](https://www.nature.com/articles/s41592-025-02814-z), Nature 2025 |
 | **架构** | BERT — Transformer Encoder |
 | **预训练任务** | Masked Language Modeling (MLM) — 掩码基因预测 |
 | **输入** | 基因 token 序列，融合空间上下文（niche 信息） |
@@ -468,7 +468,7 @@ nicheformer/
 
 ### 核心论文
 
-1. **LR Fleming et al.** *NicheFormer: A Foundation Model for Single-Cell and Spatial Omics.* bioRxiv, 2024. [阅读](https://www.biorxiv.org/content/10.1101/2024.04.15.589472v1)
+1. **LR Fleming et al.** *NicheFormer: A Foundation Model for Single-Cell and Spatial Omics.* Nature, 2025. [阅读](https://www.nature.com/articles/s41592-025-02814-z)
 
 ### 相关技术
 

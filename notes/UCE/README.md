@@ -20,7 +20,7 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [Universal Cell Embeddings: A Foundation Model for Cell Biology](https://www.biorxiv.org/content/10.1101/2023.11.29.569304v3), bioRxiv 2024 |
+| **论文** | [Universal Cell Embeddings: A Foundation Model for Cell Biology](https://www.biorxiv.org/content/10.1101/2023.11.28.568918v1), bioRxiv 2024 |
 | **架构** | Transformer Encoder + Binary Decoder |
 | **预训练任务** | 对比学习 (Contrastive Learning) + 掩码预测 |
 | **输入** | 基因表达序列 (seq_len_first 格式) |
@@ -411,7 +411,7 @@ UCE/
 
 ### 核心论文
 
-1. **M Rosen et al.** *Universal Cell Embeddings: A Foundation Model for Cell Biology.* bioRxiv, 2024. [阅读](https://www.biorxiv.org/content/10.1101/2023.11.29.569304v3)
+1. **M Rosen et al.** *Universal Cell Embeddings: A Foundation Model for Cell Biology.* bioRxiv, 2024. [阅读](https://www.biorxiv.org/content/10.1101/2023.11.28.568918v1)
 
 ### 相关技术
 
