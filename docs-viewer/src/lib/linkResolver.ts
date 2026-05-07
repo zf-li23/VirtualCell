@@ -1,21 +1,25 @@
 /**
  * 将 Markdown 中的相对笔记链接路径映射到 note ID。
  *
- * 例如: ./Geneformer/README.md → geneformer
+ * 路径规范: notes/<分类>/<模型名>/README.md
  */
 const notePathToId: Record<string, string> = {
   'README.md': 'overview',
-  'Geneformer/README.md': 'geneformer',
-  'scGPT/README.md': 'scgpt',
-  'scFoundation/README.md': 'scfoundation',
-  'UCE/README.md': 'uce',
-  'NicheFormer/README.md': 'nicheformer',
-  'Novae/README.md': 'novae',
-  'GraphST/README.md': 'graphst',
-  'SpaceFlow/README.md': 'spaceflow',
-  'SPADE/README.md': 'spade',
-  'SpaGCN/README.md': 'spagcn',
-  'OpenBioMed/README.md': 'openbiomed',
+
+  // fm/ 单细胞基础模型
+  'fm/geneformer/README.md': 'geneformer',
+  'fm/scgpt/README.md': 'scgpt',
+  'fm/scfoundation/README.md': 'scfoundation',
+  'fm/cell-atlas-fm/README.md': 'cell-atlas-fm',
+  'fm/nicheformer/README.md': 'nicheformer',
+  'fm/novae/README.md': 'novae',
+  'fm/scbert/README.md': 'scbert',
+  'fm/scpoli/README.md': 'scpoli',
+  'fm/scprint/README.md': 'scprint',
+  'fm/genecompass/README.md': 'genecompass',
+  'fm/saturn/README.md': 'saturn',
+  'fm/epiagent/README.md': 'epiagent',
+  'fm/visual-omics-fm/README.md': 'visual-omics-fm',
 }
 
 /**
