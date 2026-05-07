@@ -1,7 +1,7 @@
 export type NoteLoader = () => Promise<string>
 
 function fetchNote(path: string): NoteLoader {
-  return () => fetch(`/notes/${path}`).then((r) => r.text())
+  return () => fetch(`${import.meta.env.BASE_URL}notes/${path}`).then((r) => r.text())
 }
 
 export const noteLoaders: Record<string, NoteLoader> = {

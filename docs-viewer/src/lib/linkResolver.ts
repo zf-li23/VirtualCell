@@ -20,6 +20,24 @@ const notePathToId: Record<string, string> = {
   'fm/saturn/README.md': 'saturn',
   'fm/epiagent/README.md': 'epiagent',
   'fm/visual-omics-fm/README.md': 'visual-omics-fm',
+  'fm/xtrimogene/README.md': 'xtrimogene',
+  'fm/sclong/README.md': 'sclong',
+  'fm/cellfm/README.md': 'cellfm',
+
+  // fm-llm/ FM + LLM
+  'fm-llm/cell2sentence/README.md': 'cell2sentence',
+  'fm-llm/cellama/README.md': 'cellama',
+  'fm-llm/cassia/README.md': 'cassia',
+  'fm-llm/scchat/README.md': 'scchat',
+
+  // perturbation/ 遗传扰动
+  'perturbation/tahoe-100m/README.md': 'tahoe-100m',
+  'perturbation/state/README.md': 'state',
+  'perturbation/pertadapt/README.md': 'pertadapt',
+
+  // virtual-cell/ 虚拟细胞
+  'virtual-cell/virtual-cell-challenge/README.md': 'virtual-cell-challenge',
+  'virtual-cell/the-virtual-cell/README.md': 'the-virtual-cell',
 }
 
 /**

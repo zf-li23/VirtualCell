@@ -92,7 +92,6 @@ code {
 }
 
 pre {
-  background: var(--code-bg);
   border-radius: 8px;
   padding: 1em;
   overflow-x: auto;
@@ -103,6 +102,10 @@ pre code {
   padding: 0;
   color: inherit;
   font-size: 0.85em;
+}
+pre code.hljs {
+  background: transparent;
+  padding: 0;
 }
 
 img {

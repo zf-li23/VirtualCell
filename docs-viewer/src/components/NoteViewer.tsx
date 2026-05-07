@@ -1,6 +1,7 @@
 import type { LoadedNote } from '../hooks/useNotes'
 import { Markdown } from './Markdown'
 import { LearningRoadmap } from './Roadmap'
+import { TableOfContents } from './TableOfContents'
 
 interface NoteViewerProps {
   note: LoadedNote | null
@@ -16,16 +17,21 @@ export function NoteViewer({ note, loading, error, onNavigate }: NoteViewerProps
         <h2>{note?.title ?? '未选择'}</h2>
         {note && <span className="badge">{note.category}</span>}
       </header>
-      <article className="markdown-body">
-        {loading && <div className="status">加载中...</div>}
-        {error && <div className="status error">{error}</div>}
-        {!loading && !error && note && (
-          <>
-            {note.id === 'overview' && onNavigate && <LearningRoadmap onNavigate={onNavigate} />}
-            <Markdown content={note.content} onNavigate={onNavigate} />
-          </>
+      <div className="content-with-toc">
+        <article className="markdown-body">
+          {loading && <div className="status">加载中...</div>}
+          {error && <div className="status error">{error}</div>}
+          {!loading && !error && note && (
+            <>
+              {note.id === 'overview' && onNavigate && <LearningRoadmap onNavigate={onNavigate} />}
+              <Markdown content={note.content} onNavigate={onNavigate} />
+            </>
+          )}
+        </article>
+        {!loading && !error && note && note.id !== 'overview' && (
+          <TableOfContents key={note.id} />
         )}
-      </article>
+      </div>
     </main>
   )
 }

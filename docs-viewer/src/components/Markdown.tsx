@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import rehypeHighlight from 'rehype-highlight'
+import 'highlight.js/styles/github-dark.css'
 import { resolveNoteId, isExternalLink, isAnchorLink } from '../lib/linkResolver'
 
 interface MarkdownProps {
@@ -56,8 +56,11 @@ function scrollToAnchor(anchor: string) {
 
   el.scrollIntoView({ behavior: 'smooth', block: 'start' })
 
-  if (window.location.hash !== `#${anchor}`) {
-    window.history.replaceState(null, '', `#${anchor}`)
+  const currentHash = window.location.hash.slice(1)
+  if (currentHash !== anchor) {
+    const url = new URL(window.location.href)
+    url.hash = anchor
+    window.history.replaceState(null, '', url.toString())
   }
 }
 
@@ -65,24 +68,8 @@ export function Markdown({ content, onNavigate }: MarkdownProps) {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
+      rehypePlugins={[rehypeHighlight]}
       components={{
-        code({ className, children, ...props }) {
-          const match = /language-(\w+)/.exec(className || '')
-          const lang = match?.[1] ?? ''
-          return lang ? (
-            <SyntaxHighlighter
-              style={vscDarkPlus}
-              language={lang}
-              PreTag="div"
-            >
-              {String(children).replace(/\n$/, '')}
-            </SyntaxHighlighter>
-          ) : (
-            <code className={className} {...props}>
-              {children}
-            </code>
-          )
-        },
 
         // 为标题添加 id，支持锚点跳转
         h1({ children, ...props }) {

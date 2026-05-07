@@ -8,14 +8,31 @@
 
 ```
 VirtualCell/
-├── README.md         ← 你在这里
-├── scGPT/            # scGPT 论文笔记 + 复现
-├── Geneformer/       # Geneformer 论文笔记 + 复现
-├── Spatial/          # 空间组学模型笔记 + 复现
+├── README.md           ← 你在这里
+├── papers.md           # 论文清单
+├── data/               # 公开数据集 (PBMC 3k 等)
+├── notes/              # 📗 论文笔记 (7 大分类, ~180 篇)
+│   ├── fm/             #   单细胞基础模型 (核心)
+│   ├── fm-llm/         #   FM + LLM
+│   ├── perturbation/   #   遗传扰动预测
+│   ├── virtual-cell/   #   虚拟细胞
+│   ├── benchmarks/     #   评估与 Benchmark
+│   ├── pathology/      #   病理基础模型
+│   └── surveys/        #   综述与展望
+├── scripts/            # 🐍 可复现实验 (Python scripts / notebooks)
+│   ├── tutorials/
+│   ├── benchmarks/
+│   └── utils/
+├── repos/              # 第三方仓库 (git clone)
+│   ├── scGPT/
+│   ├── Geneformer/
+│   └── ...
+├── docs-viewer/        # 🖥️ 笔记浏览器 (React + Vite)
+│   └── src/
 └── .gitignore
 ```
 
-**看论文 → 做笔记 → 拉代码 → 跑通 → 总结**，都在各自的目录里完成。
+**看论文 → 做笔记 → 拉代码 → 跑通 → 总结**，代码在 `repos/`，笔记在 `notes/` 里完成。
 
 ---
 
@@ -37,12 +54,12 @@ VirtualCell/
 
 ```
 第1步（1-2周）：读论文
-  ├─ Geneformer → 读原文，Geneformer/ 里写笔记
-  └─ scGPT → 读原文，scGPT/ 里写笔记
+  ├─ Geneformer → 读原文，notes/fm/geneformer/ 里写笔记
+  └─ scGPT → 读原文，notes/fm/scgpt/ 里写笔记
 
 第2步（2-3周）：跑代码
-  ├─ scGPT → git clone → 跑通 Tutorial
-  └─ Geneformer → huggingface 加载 → 跑推理
+  ├─ scGPT → repos/scGPT/ 下跑通 Tutorial
+  └─ Geneformer → repos/Geneformer/ 下跑推理
 
 第3步（1周+）：结合空间组学
   └─ scGPT embedding + squidpy 做空间聚类
@@ -80,10 +97,9 @@ model = AutoModel.from_pretrained("ctheodoris/Geneformer")
 ```
 
 ```bash
-# scGPT
-git clone https://github.com/bowang-lab/scGPT.git
-cd scGPT
-pip install -e .
+# scGPT (已 clone 到 repos/)
+cd repos/scGPT
+conda run -n zf-li23 pip install -e .
 jupyter notebook tutorial/Tutorial.ipynb
 ```
 
