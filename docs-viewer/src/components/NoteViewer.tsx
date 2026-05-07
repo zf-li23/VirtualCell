@@ -1,5 +1,6 @@
 import type { LoadedNote } from '../hooks/useNotes'
 import { Markdown } from './Markdown'
+import { LearningRoadmap } from './Roadmap'
 
 interface NoteViewerProps {
   note: LoadedNote | null
@@ -18,7 +19,12 @@ export function NoteViewer({ note, loading, error, onNavigate }: NoteViewerProps
       <article className="markdown-body">
         {loading && <div className="status">加载中...</div>}
         {error && <div className="status error">{error}</div>}
-        {!loading && !error && note && <Markdown content={note.content} onNavigate={onNavigate} />}
+        {!loading && !error && note && (
+          <>
+            {note.id === 'overview' && onNavigate && <LearningRoadmap onNavigate={onNavigate} />}
+            <Markdown content={note.content} onNavigate={onNavigate} />
+          </>
+        )}
       </article>
     </main>
   )

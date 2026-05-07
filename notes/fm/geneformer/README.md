@@ -6,13 +6,14 @@
 
 1. [模型概述](#1-模型概述)
 2. [模型架构](#2-模型架构)
-3. [核心创新（含 Tokenization）](#3-核心创新含-tokenization)
+3. [核心创新](#3-核心创新)
 4. [数据预处理](#4-数据预处理)
-5. [预训练](#5-预训练)
-6. [下游任务](#6-下游任务)
-7. [代码结构速览](#7-代码结构速览)
-8. [关键概念 Q&A](#8-关键概念-qa)
-9. [延伸阅读](#9-延伸阅读)
+5. [Tokenization 与输入编码](#5-tokenization-与输入编码)
+6. [预训练](#6-预训练)
+7. [下游任务](#7-下游任务)
+8. [代码结构速览](#8-代码结构速览)
+9. [关键概念 Q&A](#9-关键概念-qa)
+10. [延伸阅读](#10-延伸阅读)
 
 ---
 
@@ -73,34 +74,18 @@ Output: [hidden states for each position]
 - 通过分析注意力权重，可以识别哪些基因是调控网络中的**上游调控因子**（high in-degree）。
 - 这是一个**零样本**（zero-shot）的能力 —— 模型从未被显式训练过预测网络层级。
 
----
-
-## 3. 已下载的四个模型对比
+### 2.4 已下载的模型版本对比
 
 | 模型 | 参数量 | 训练数据 | 输入长度 | 词表大小 | hidden_size | layers | heads | 特点 |
 |------|--------|----------|----------|----------|-------------|--------|-------|------|
-| **Geneformer-V1-10M** | 10M | ~30M 细胞 (Genecorpus-30M) | 2048 | 25,426 | 256 | 6 | 4 | 原始模型 (2021) |
-| **Geneformer-V2-104M** | 104M | ~104M 细胞 (Genecorpus-104M) | 4096 | 20,275 | 768 | 12 | 12 | 升级版 (2024) |
-| **Geneformer-V2-316M** | 316M | ~104M 细胞 | 4096 | 20,275 | 1152 | 18 | 18 | 最大版本 |
-| **Geneformer-V2-104M_CLcancer** | 104M | 104M正常 + ~14M 癌细胞 | 4096 | 20,275 | 768 | 12 | 12 | 癌症持续学习版 |
-
-### 关键差异
-
-```
-V1 vs V2 核心变化：
-
-1. 数据规模: ~30M → ~104M 细胞
-2. 输入长度: 2048 → 4096 (可以容纳更多基因)
-3. 词表: 25,426(含非编码RNA) → 20,275(仅蛋白编码基因)
-4. Special token: 无CLS/EOS → 有CLS/EOS
-5. 模型大小: 可选 104M 或 316M 参数
-```
-
-> **💡 实际调用**：V2 模型通过 `AutoModelForMaskedLM.from_pretrained('./Geneformer-V2-104M')` 即可加载。V1 同样兼容。
+| **Geneformer-V1-10M** | 10M | ~30M 细胞 | 2048 | 25,426 | 256 | 6 | 4 | 原始模型 |
+| **Geneformer-V2-104M** | 104M | ~104M 细胞 | 4096 | 20,275 | 768 | 12 | 12 | 升级版 |
+| **Geneformer-V2-316M** | 316M | ~104M 细胞 | 4096 | 20,275 | 1152 | 18 | 18 | 最大版 |
+| **Geneformer-V2-104M_CLcancer** | 104M | 104M+14M癌细胞 | 4096 | 20,275 | 768 | 12 | 12 | 癌症版 |
 
 ---
 
-## 3. 核心创新（含 Tokenization）
+## 3. 核心创新
 
 ### 3.1 Rank Value Encoding
 
@@ -157,7 +142,7 @@ def rank_genes(gene_vector, gene_tokens):
 
 ---
 
-## 4. 数据预处理（数据流 Pipeline）
+## 4. 数据预处理
 
 ```
 原始 scRNA-seq 数据 (.loom / .h5ad / .zarr)
@@ -189,7 +174,38 @@ def rank_genes(gene_vector, gene_tokens):
 
 ---
 
-## 5. 预训练
+## 5. Tokenization 与输入编码
+
+### 5.1 Rank Value Encoding（基因排序编码）
+
+Geneformer 最核心的编码方式：**Rank Value Encoding**。相关内容详见第 3 节"核心创新"中的详细分析。核心流程：
+
+```
+原始 UMI count → CPM 归一化 → 跨细胞中位值缩放 → 降序排列 → 截断 → [CLS] + 排序基因序列 + [EOS]
+```
+
+关键参数：
+- V1: 输入长度 2048，词表 25,426
+- V2: 输入长度 4096，词表 20,275
+
+### 5.2 与常见 Tokenization 方式对比
+
+| 方式 | 描述 | 使用模型 |
+|------|------|---------|
+| **Rank Value Encoding** | 按表达量排序，取前 N 个基因 | **Geneformer** |
+| Pair Tokenization | 基因+表达值配对 token | scGPT |
+| AutoDiscretizationEmbedding2 | 可微分软分箱 | scFoundation |
+| Continuous | 连续值 MLP 编码 | scBERT |
+
+### 5.3 特殊 Token
+
+- `[CLS]`：序列开始标记（V2 引入）
+- `[EOS]`：序列结束标记（V2 引入）
+- `[MASK]`：掩码位置标记
+
+---
+
+## 6. 预训练
 
 ### 6.1 预训练目标
 
@@ -237,7 +253,7 @@ sampler = LengthGroupedSampler(
 
 ---
 
-## 6. 下游任务
+## 7. 下游任务
 
 ### 7.1 Fine-tuning 任务
 
@@ -289,7 +305,7 @@ metrics = cc.validate(
 
 ---
 
-## 7. 代码结构速览
+## 8. 代码结构速览
 
 ```
 Geneformer/
@@ -325,70 +341,32 @@ Geneformer/
 └── fine_tuned_models/             # 预微调模型
 ```
 
----
+### 8.1 快速上手
 
-## 9. 快速上手示例
-
-### 9.1 加载模型
-
+**加载模型：**
 ```python
 from transformers import AutoModelForMaskedLM
-
-# 加载 V2-104M
 model = AutoModelForMaskedLM.from_pretrained('./Geneformer-V2-104M')
-
-# 加载 V2-316M (默认模型)
-model = AutoModelForMaskedLM.from_pretrained('./Geneformer-V2-316M')
-
-# 加载 V1
-model = AutoModelForMaskedLM.from_pretrained('./Geneformer-V1-10M')
-
-# 加载癌症版
-model = AutoModelForMaskedLM.from_pretrained('./Geneformer-V2-104M_CLcancer')
 ```
 
-### 9.2 Tokenize 数据
-
+**Tokenize 数据：**
 ```python
 from geneformer import TranscriptomeTokenizer
-
-# 初始化
 tk = TranscriptomeTokenizer(
-    custom_attr_name_dict={
-        "cell_type": "cell_type",
-        "disease": "disease"
-    },
-    nproc=4,
-    model_version="V2"  # 自动设置 input_size=4096, special_token=True
+    custom_attr_name_dict={"cell_type": "cell_type", "disease": "disease"},
+    nproc=4, model_version="V2"
 )
-
-# Tokenize
-tk.tokenize_data(
-    data_directory="path/to/scRNAseq_data/",
-    output_directory="path/to/tokenized/",
-    output_prefix="my_experiment",
-    file_format="h5ad"
-)
+tk.tokenize_data(data_directory="path/to/scRNAseq_data/",
+                 output_directory="path/to/tokenized/",
+                 output_prefix="my_experiment", file_format="h5ad")
 ```
 
-### 9.3 提取嵌入
-
+**提取嵌入：**
 ```python
 from geneformer import EmbExtractor
-
-emb_ext = EmbExtractor(
-    model_type="Pretrained",
-    emb_mode="cell",       # 提取细胞嵌入
-    cell_emb_style="mean_pool",  # 平均池化
-    max_ncells=1000,
-    forward_batch_size=200,
-    nproc=4
-)
-
-embeddings = emb_ext.extract_embs(
-    model=model,
-    filtered_input_data=tokenized_dataset,
-)
+emb = EmbExtractor(model_type="Pretrained", emb_mode="cell",
+                   cell_emb_style="mean_pool")
+embeddings = emb.extract_embs(model=model, filtered_input_data=tokenized_dataset)
 ```
 
 ---

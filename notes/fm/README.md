@@ -87,7 +87,7 @@ fm/
 
 | 状态 | 计数 |
 |------|------|
-| 📗 已有笔记 | 7 (Geneformer, scGPT, scFoundation, UCE/Cell Atlas, Nicheformer, Novae) |
+| 📗 已有笔记 | 6 (Geneformer, scGPT, scFoundation, UCE/Cell Atlas, Nicheformer, Novae) |
 | 📗 新增笔记 | 7 (scBERT, scPoli, scPRINT, GeneCompass, SATURN, EpiAgent, visual-omics-fm) |
-| 📄 待补充 | 56 |
+| 📄 待补充 | 57 |
 | **合计** | **70** |
