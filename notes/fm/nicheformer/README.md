@@ -498,10 +498,6 @@ nicheformer/
 
 ## 10. 延伸阅读
 
-### 核心论文
-
-1. **LR Fleming et al.** *NicheFormer: A Foundation Model for Single-Cell and Spatial Omics.* Nature, 2025. [阅读](https://www.nature.com/articles/s41592-025-02814-z)
-
 ### 相关技术
 
 - **BERT MLM**：[BERT: Pre-training of Deep Bidirectional Transformers](https://arxiv.org/abs/1810.04805)

@@ -489,11 +489,6 @@ scGPT/
 
 ## 10. 延伸阅读
 
-### 核心论文
-
-1. **H He et al.** *scGPT: Toward Building a Foundation Model for Single-Cell Multi-Omics Using Generative AI.* Nature Methods, 2024. [阅读](https://www.nature.com/articles/s41592-024-02201-0)
-   - scGPT 原始论文。详细介绍了模型架构、预训练策略、下游任务评估。
-
 ### 相关技术
 
 - **GPT / Causal Attention**：[Attention Is All You Need](https://arxiv.org/abs/1706.03762) + 因果掩码

@@ -411,17 +411,6 @@ embeddings = emb.extract_embs(model=model, filtered_input_data=tokenized_dataset
 
 ## 10. 延伸阅读
 
-### 核心论文
-
-1. **C V Theodoris et al.** *Transfer learning enables predictions in network biology.* Nature, 2023. [阅读](https://www.nature.com/articles/s41586-023-06139-9)
-   - Geneformer 原始论文。介绍了模型架构、预训练策略、零样本扰动和微调应用。
-
-2. **H Chen et al.** *Scaling and quantization of large-scale foundation model enables resource-efficient predictions in network biology.* Nature Computational Science, 2026. [阅读](https://www.nature.com/articles/s43588-026-00972-4)
-   - V2 版本。扩展模型规模、引入量化、持续学习策略。
-
-3. **C V Theodoris et al.** *Continual learning foundation model for cell state perturbation.* bioRxiv, 2024. [阅读](https://www.biorxiv.org/content/10.1101/2024.08.16.608180v1)
-   - 持续学习和多任务学习策略的详细介绍。
-
 ### 相关资源
 
 - [Geneformer 官方文档](https://geneformer.readthedocs.io)

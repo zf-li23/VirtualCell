@@ -1,61 +1,228 @@
-# Benchmarks — 单细胞基础模型评估
+# [模型名称] 学习笔记
 
-> Foundation-Model-Evaluation-For-Single-cell，共 35 篇评估与 Benchmark 论文。
+> 一句话总结：这个模型的核心思想和技术路线。
 
 ---
 
-## 目录结构
+## 📋 目录
 
-```
-benchmarks/
-├── README.md
-├── systematic-perturbation-compare/   ← #1 Systematic Comparison of Perturbation Response
-├── unified-benchmarking-framework/    ← #2 Unified benchmarking framework
-├── open-problems-sc-analysis/         ← #3 Defining open problems (Nat Biotech 2025)
-├── perturbation-benchmarking/         ← #4 Benchmarking perturbation response (Nat Methods)
-├── batch-effects-barrier/             ← #5 Batch Effects Barrier
-├── sccluben/                          ← #6 scCluBench
-├── perturbench/                       ← #7 PerturBench
-├── virtual-cell-challenge/            ← #8 Virtual Cell Challenge
-├── heimdall/                          ← #9 HEIMDALL tokenization
-├── cancer-outcomes-evaluation/        ← #10 scFMs for Cancer Outcomes
-├── anndictionary/                     ← #11 AnnDictionary
-├── sparse-autoencoders-scfm/          ← #12 Sparse Autoencoders in scFMs
-├── transferability-sc-to-st/          ← #13 SSL from sc to ST
-├── perturbation-baselines/            ← #14 Perturbation models vs baselines
-├── multimodal-integration-benchmark/  ← #15 Multitask benchmarking multimodal
-├── bmfm-rna/                          ← #16 BMFM-RNA
-├── biology-driven-insights/           ← #17 Biology-driven insights
-├── gene-embeddings-benchmark/         ← #19 Benchmarking gene embeddings
-├── mode-collapse-perturbation/        ← #20 Mode Collapse in Perturbation
-├── zero-shot-limitations/             ← #21 Zero-shot evaluation limitations
-├── scdrugmap/                         ← #22 scDrugMap
-├── cell-type-classification-eval/     ← #23 scFMs on Cell-Type Classification
-├── ssl-effective-use/                 ← #24 SSL in single-cell genomics
-├── biollm/                            ← #25 BioLLM framework
-├── pretraining-size-diversity/        ← #26 Pre-training dataset size & diversity
-├── deeper-evaluation-scfms/           ← #27 Deeper evaluation
-├── gpt4-cell-annotation/              ← #28 GPT-4 cell type annotation
-├── metric-mirages/                    ← #29 Metric Mirages
-├── transcriptional-grammar/           ← #30 Transcriptional grammar (reusability)
-├── deep-dive-scfms/                   ← #31 Deep Dive into scFMs
-├── sceval/                            ← #32 scEval
-├── imbalanced-cell-annotation/        ← #33 Imbalanced data for cell annotation
-├── llm-gene-set-function/             ← #34 LLMs for gene set function
-└── bend/                              ← #35 BEND: Benchmarking DNA LMs
-```
+1. [模型概述](#1-模型概述)
+2. [模型架构](#2-模型架构)
+3. [核心创新](#3-核心创新)
+4. [数据预处理](#4-数据预处理)
+5. [Tokenization 与输入编码](#5-tokenization-与输入编码)
+6. [预训练](#6-预训练)
+7. [下游任务](#7-下游任务)
+8. [代码结构速览](#8-代码结构速览)
+9. [关键概念 Q&A](#9-关键概念-qa)
+10. [延伸阅读](#10-延伸阅读)
 
-## 设计思路
+---
 
-Benchmark 论文不写详细"模型架构笔记"，而是以 **评测报告摘要** 形式记录：
+## 1. 模型概述
 
-1. **评测了哪些模型？**
-2. **用了哪些数据集和任务？**
-3. **关键结论是什么？**
-4. **对你自己的项目有什么启示？**
-
-## 状态
-
-| 状态 | 计数 |
+| 属性 | 描述 |
 |------|------|
-| ⬜ 待创建 | 35 |
+| **论文** | [标题](链接) |
+| **发布日期** | YYYY-MM |
+| **出版** | 期刊/会议 |
+| **架构** | 如 BERT / GPT / VAE / GNN / 对比学习 |
+| **预训练任务** | 如 MLM / 生成式 / 对比学习 / 自回归 |
+| **输入** | 如基因 token + 表达值 |
+| **输出** | 如细胞嵌入 / 基因表达预测 / 类型分类 |
+| **词表** | 基因数量 |
+| **参数规模** | 如 6.5M / 50M / 300M |
+| **预训练数据** | 数据来源与规模 |
+| **代码** | [GitHub](链接) |
+| **许可** | MIT / Apache 2.0 / 自定义 |
+
+### 核心思想
+
+> **用一句话说明这个模型的角度**：它解决了什么问题？用了什么独特的方法？
+
+---
+
+## 2. 模型架构
+
+### 2.1 整体架构图
+
+```text
+用 ASCII 艺术图展示整体流程，例如：
+
+Input: [CLS] g_1(v_1) g_2(v_2) ... g_N(v_N)
+         │
+    ┌────┴────┐
+    │Encoder  │  ← 组件名 + 说明
+    └────┬────┘
+         │
+    ┌────┴────┐
+    │ Head    │  ← 输出头
+    └────┬────┘
+         │
+    Output
+```
+
+### 2.2 核心组件
+
+#### [组件1 名称]
+
+```python
+# 伪代码或关键代码片段
+# 说明每个组件的作用
+```
+
+#### [组件2 名称]
+
+```python
+# 伪代码
+```
+
+---
+
+## 3. 核心创新
+
+总结 2-3 个这个模型最重要的创新点：
+
+### 3.1 [创新点1]
+
+说明 + 代码/公式（可选）
+
+### 3.2 [创新点2]
+
+说明
+
+### 3.3 [与同类模型的对比]
+
+| 维度 | 本模型 | 模型A | 模型B |
+|------|--------|-------|-------|
+| 架构 | | | |
+| 预训练数据 | | | |
+| 核心能力 | | | |
+
+---
+
+## 4. 数据预处理
+
+### 4.1 输入格式
+
+### 4.2 Pipeline
+
+```python
+# 从原始数据到模型输入的完整流程
+```
+
+### 4.3 关键参数
+
+| 参数 | 值 | 说明 |
+|------|-----|------|
+| n_top_genes | 2000 | 高变基因数量 |
+| max_seq_len | 2048 | 最大输入长度 |
+| ... | ... | ... |
+
+---
+
+## 5. Tokenization 与输入编码
+
+### 5.1 基因编码
+
+基因是如何表示为 token 的？
+
+### 5.2 表达值编码
+
+表达值是如何编码的？连续值 / 离散化 / 排序？
+
+### 5.3 特殊 Token
+
+[CLS], [SEP], [MASK], [PAD] 等用途。
+
+### 5.4 位置编码
+
+绝对位置 / 相对位置 / 可学习 / 无位置编码？
+
+---
+
+## 6. 预训练
+
+### 6.1 预训练数据
+
+| 数据来源 | 细胞数量 | 组织覆盖 |
+|---------|---------|---------|
+| ... | ... | ... |
+
+### 6.2 预训练目标
+
+```python
+# 损失函数
+loss = ...
+```
+
+### 6.3 训练超参数
+
+| 参数 | 值 |
+|------|-----|
+| 学习率 | 1e-4 |
+| Batch Size | 64 |
+| 训练步数 | 100K |
+| 优化器 | AdamW |
+
+---
+
+## 7. 下游任务
+
+| 任务 | 方法 | 性能 |
+|------|------|------|
+| 细胞类型分类 | Fine-tune / Zero-shot | ... |
+| 基因网络推断 | 注意力权重 / 微调 | ... |
+| 扰动预测 | ... | ... |
+| 批次校正 | ... | ... |
+
+---
+
+## 8. 代码结构速览
+
+```
+project/
+├── model.py          ← 模型定义
+├── dataset.py        ← 数据加载
+├── train.py          ← 训练脚本
+├── config.py         ← 配置
+└── evaluate.py       ← 评估
+```
+
+### 快速开始
+
+```bash
+# 如何下载和运行
+git clone <repo>
+cd <repo>
+pip install -e .
+python run.py --help
+```
+
+---
+
+## 9. 关键概念 Q&A
+
+### Q1: 这个模型与 X 模型的核心区别是什么？
+
+**A**: ...
+
+### Q2: 这个模型有什么已知的局限性？
+
+**A**: ...
+
+### Q3: 这个模型适合什么场景？
+
+**A**: ...
+
+---
+
+## 10. 延伸阅读
+
+- **[相关论文1]**：说明
+- **[相关论文2]**：说明
+- **[官方文档]**：链接
+
+---
+
+> *笔记最后更新：YYYY-MM-DD*

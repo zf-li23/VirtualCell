@@ -1,93 +1,228 @@
-# FM — 单细胞基础模型
+# [模型名称] 学习笔记
 
-> 核心单细胞基础模型（Foundation Models for Single-Cell Genomics），共 70 篇。
+> 一句话总结：这个模型的核心思想和技术路线。
 
 ---
 
-## 目录结构
+## 📋 目录
 
-每个模型在 `fm/` 下有一个独立子目录：
+1. [模型概述](#1-模型概述)
+2. [模型架构](#2-模型架构)
+3. [核心创新](#3-核心创新)
+4. [数据预处理](#4-数据预处理)
+5. [Tokenization 与输入编码](#5-tokenization-与输入编码)
+6. [预训练](#6-预训练)
+7. [下游任务](#7-下游任务)
+8. [代码结构速览](#8-代码结构速览)
+9. [关键概念 Q&A](#9-关键概念-qa)
+10. [延伸阅读](#10-延伸阅读)
 
-```
-fm/
-├── README.md                  ← 本文件
-├── stack/                     ← Stack: In-Context Learning (2026)
-├── genejepa/                  ← GeneJepa (2025)
-├── unified-perturbation/      ← Unified modeling of cellular responses (2025)
-├── omnicell/                  ← OmniCell (2025)
-├── bidir-mamba/               ← Bidirectional Mamba (2025)
-├── spatial-proteomics-fm/     ← A Foundation Model for Spatial Proteomics (2025)
-├── scpeft/                    ← scPEFT (2025)
-├── scprint-2/                 ← scPRINT-2 (2025)
-├── novae/                     ← Novae (2025) — 📗 [→ 笔记](./novae/)
-├── stpath/                    ← STPath (2025)
-├── pulsar/                    ← PULSAR (2025)
-├── switch/                    ← SWITCH (2025)
-├── spatranslator/             ← SpaTranslator (2025)
-├── scconcept/                 ← scConcept (2025)
-├── latent-diffusion-sc/       ← Scalable sc Generation with Latent Diffusion (2025)
-├── transcriptformer/          ← TranscriptFormer (2025)
-├── atacformer/                ← Atacformer (2025)
-├── epifoundation/             ← EpiFoundation (2025)
-├── chromfound/                ← ChromFound (2025)
-├── nicheformer/               ← Nicheformer (2025) — 📗 [→ 笔记](./nicheformer/)
-├── sclinguist/                ← scLinguist (2025)
-├── transcription-foundation/  ← A foundation model of transcription (2025)
-├── scprint/                   ← scPRINT (2025)
-├── visual-omics-fm/           ← A visual–omics foundation model (2025)
-├── epiagent/                  ← EpiAgent (2025)
-├── captain/                   ← CAPTAIN (2025)
-├── scgpt-spatial/             ← scGPT-spatial (2025)
-├── stofm/                     ← SToFM (2025)
-├── scarf/                     ← SCARF (2025)
-├── multimodal-perturbation/   ← Multimodal FM zero-shot perturbations (2025)
-├── cellfm/                    ← CellFM (2025)
-├── tabula/                    ← Tabula (2025)
-├── transcriptome-proteome/    ← sc transcriptome to proteome (2025)
-├── privacy-federated/         ← Privacy-preserving FM (2025)
-├── scnet/                     ← scNET (2025)
-├── multi-cellular-repr/       ← Multi-cellular representations (2025)
-├── scfoundation/              ← scFoundation (2024) — 📗 [→ 笔记](./scfoundation/)
-├── scprotein/                 ← scPROTEIN (2024)
-├── sclong/                    ← scLong (2024)
-├── cell-graphcompass/         ← Cell-GraphCompass (2024)
-├── cell-atlas-fm/             ← A cell atlas foundation model (2024) — 📗 [→ 笔记](./cell-atlas-fm/)
-├── scaling-dense/             ← Scaling Dense Representations (2024)
-├── gene-repr-st/              ← Gene representation on ST (2024)
-├── cancerfoundation/          ← CancerFoundation (2024)
-├── cell-ontology-fm/          ← Cell-ontology guided FM (2024)
-├── scmulan/                   ← scMulan (2024)
-├── scgpt/                     ← scGPT (2024) — 📗 [→ 笔记](./scgpt/)
-├── langcell/                  ← LangCell (2024) — � [→ stub](./langcell/)
-├── cell-niche-graph/          ← Large-scale characterization of cell niches (2024)
-├── scmformer/                 ← scmFormer (2024)
-├── metadata-as-language/      ← Single-cell metadata as language (2024)
-├── genecompass/               ← GeneCompass (2024)
-├── saturn/                    ← SATURN (2024)
-├── musegnn/                   ← MuSe-GNN (2023)
-├── scclip/                    ← scCLIP (2023)
-├── sc-mae/                    ← Single-cell Masked Autoencoder (2023)
-├── scelmo/                    ← scELMo (2023)
-├── divide-conquer-ssl/        ← Large-Scale Cell Representation Learning (2023)
-├── cellplm/                   ← CellPLM (2024)
-├── dna-to-expression/         ← sc expression prediction from DNA (2023)
-├── rnaseq-coverage-dna/       ← RNA-seq coverage from DNA (2023)
-├── cellpolaris/               ← CellPolaris (2023)
-├── schyena/                   ← scHyena (2023)
-├── scpoli/                    ← scPoli (2023)
-├── geneformer/                ← Geneformer (2023) — 📗 [→ 笔记](./geneformer/)
-├── generative-pretraining/    ← Generative pretraining (2023)
-├── xtrimogene/                ← xTrimoGene (2023)
-├── sc-expression-lm/          ← A single-cell gene expression language model (2022)
-├── scbert/                    ← scBERT (2022)
-└── scpretrain/                ← scPretrain (2022)
-```
+---
 
-## 状态
+## 1. 模型概述
 
-| 状态 | 计数 |
+| 属性 | 描述 |
 |------|------|
-| 📗 已有笔记 | 6 (Geneformer, scGPT, scFoundation, UCE/Cell Atlas, Nicheformer, Novae) |
-| 📗 新增笔记 | 7 (scBERT, scPoli, scPRINT, GeneCompass, SATURN, EpiAgent, visual-omics-fm) |
-| 📄 待补充 | 57 |
-| **合计** | **70** |
+| **论文** | [标题](链接) |
+| **发布日期** | YYYY-MM |
+| **出版** | 期刊/会议 |
+| **架构** | 如 BERT / GPT / VAE / GNN / 对比学习 |
+| **预训练任务** | 如 MLM / 生成式 / 对比学习 / 自回归 |
+| **输入** | 如基因 token + 表达值 |
+| **输出** | 如细胞嵌入 / 基因表达预测 / 类型分类 |
+| **词表** | 基因数量 |
+| **参数规模** | 如 6.5M / 50M / 300M |
+| **预训练数据** | 数据来源与规模 |
+| **代码** | [GitHub](链接) |
+| **许可** | MIT / Apache 2.0 / 自定义 |
+
+### 核心思想
+
+> **用一句话说明这个模型的角度**：它解决了什么问题？用了什么独特的方法？
+
+---
+
+## 2. 模型架构
+
+### 2.1 整体架构图
+
+```text
+用 ASCII 艺术图展示整体流程，例如：
+
+Input: [CLS] g_1(v_1) g_2(v_2) ... g_N(v_N)
+         │
+    ┌────┴────┐
+    │Encoder  │  ← 组件名 + 说明
+    └────┬────┘
+         │
+    ┌────┴────┐
+    │ Head    │  ← 输出头
+    └────┬────┘
+         │
+    Output
+```
+
+### 2.2 核心组件
+
+#### [组件1 名称]
+
+```python
+# 伪代码或关键代码片段
+# 说明每个组件的作用
+```
+
+#### [组件2 名称]
+
+```python
+# 伪代码
+```
+
+---
+
+## 3. 核心创新
+
+总结 2-3 个这个模型最重要的创新点：
+
+### 3.1 [创新点1]
+
+说明 + 代码/公式（可选）
+
+### 3.2 [创新点2]
+
+说明
+
+### 3.3 [与同类模型的对比]
+
+| 维度 | 本模型 | 模型A | 模型B |
+|------|--------|-------|-------|
+| 架构 | | | |
+| 预训练数据 | | | |
+| 核心能力 | | | |
+
+---
+
+## 4. 数据预处理
+
+### 4.1 输入格式
+
+### 4.2 Pipeline
+
+```python
+# 从原始数据到模型输入的完整流程
+```
+
+### 4.3 关键参数
+
+| 参数 | 值 | 说明 |
+|------|-----|------|
+| n_top_genes | 2000 | 高变基因数量 |
+| max_seq_len | 2048 | 最大输入长度 |
+| ... | ... | ... |
+
+---
+
+## 5. Tokenization 与输入编码
+
+### 5.1 基因编码
+
+基因是如何表示为 token 的？
+
+### 5.2 表达值编码
+
+表达值是如何编码的？连续值 / 离散化 / 排序？
+
+### 5.3 特殊 Token
+
+[CLS], [SEP], [MASK], [PAD] 等用途。
+
+### 5.4 位置编码
+
+绝对位置 / 相对位置 / 可学习 / 无位置编码？
+
+---
+
+## 6. 预训练
+
+### 6.1 预训练数据
+
+| 数据来源 | 细胞数量 | 组织覆盖 |
+|---------|---------|---------|
+| ... | ... | ... |
+
+### 6.2 预训练目标
+
+```python
+# 损失函数
+loss = ...
+```
+
+### 6.3 训练超参数
+
+| 参数 | 值 |
+|------|-----|
+| 学习率 | 1e-4 |
+| Batch Size | 64 |
+| 训练步数 | 100K |
+| 优化器 | AdamW |
+
+---
+
+## 7. 下游任务
+
+| 任务 | 方法 | 性能 |
+|------|------|------|
+| 细胞类型分类 | Fine-tune / Zero-shot | ... |
+| 基因网络推断 | 注意力权重 / 微调 | ... |
+| 扰动预测 | ... | ... |
+| 批次校正 | ... | ... |
+
+---
+
+## 8. 代码结构速览
+
+```
+project/
+├── model.py          ← 模型定义
+├── dataset.py        ← 数据加载
+├── train.py          ← 训练脚本
+├── config.py         ← 配置
+└── evaluate.py       ← 评估
+```
+
+### 快速开始
+
+```bash
+# 如何下载和运行
+git clone <repo>
+cd <repo>
+pip install -e .
+python run.py --help
+```
+
+---
+
+## 9. 关键概念 Q&A
+
+### Q1: 这个模型与 X 模型的核心区别是什么？
+
+**A**: ...
+
+### Q2: 这个模型有什么已知的局限性？
+
+**A**: ...
+
+### Q3: 这个模型适合什么场景？
+
+**A**: ...
+
+---
+
+## 10. 延伸阅读
+
+- **[相关论文1]**：说明
+- **[相关论文2]**：说明
+- **[官方文档]**：链接
+
+---
+
+> *笔记最后更新：YYYY-MM-DD*

@@ -21,7 +21,7 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [xTrimoGene: An Efficient and Scalable Representation Learner for Single-Cell RNA-Seq Data](https://arxiv.org/abs/2311.15156), arXiv 2023 |
+| **论文** | [scFoundation: Large Scale Foundation Model on Single-cell Transcriptomics](https://www.nature.com/articles/s41592-024-02305-7), Nature Methods 2024<br>[xTrimoGene: An Efficient and Scalable Representation Learner for Single-Cell RNA-Seq Data](https://arxiv.org/abs/2311.15156), arXiv 2023 (Earlier Version) |
 | **架构** | 非对称自编码器 (Asymmetric Autoencoder) — 大编码器 + 小解码器 |
 | **注意力机制** | Performer (线性复杂度，通过正交随机投影矩阵近似 Softmax 注意力) |
 | **预训练任务** | 基因表达掩码重建 (Masked Expression Reconstruction) |
@@ -474,11 +474,6 @@ scFoundation/
 ---
 
 ## 10. 延伸阅读
-
-### 核心论文
-
-1. **J Gong et al.** *xTrimoGene: An Efficient and Scalable Representation Learner for Single-Cell RNA-Seq Data.* arXiv, 2023. [阅读](https://arxiv.org/abs/2311.15156)
-   - scFoundation 原始论文。介绍非对称自编码器设计和 Performer 应用。
 
 ### 相关技术
 

@@ -550,10 +550,6 @@ GAT v2: a(LeakyReLU(W·[h_i || h_j || e_ij]))
 
 ## 10. 延伸阅读
 
-### 核心论文
-
-1. **A Allam et al.** *Novae: A Graph-based Foundation Model for Spatial Transcriptomics.* Nature, 2025. [阅读](https://www.nature.com/articles/s41592-025-02899-6)
-
 ### 相关技术
 
 - **SwAV**：[Unsupervised Learning of Visual Features by Contrasting Cluster Assignments](https://arxiv.org/abs/2006.09882), NeurIPS 2020
