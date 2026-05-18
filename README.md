@@ -155,4 +155,4 @@ BASE=/VirtualCell/ npm run build && npx vite preview  # 预览生产构建
 
 ---
 
-*有问题随时在工作区记录。最后更新：2026-05-01*
+*有问题随时在工作区记录。最后更新：2026-05-18*
