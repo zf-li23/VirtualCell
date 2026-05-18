@@ -129,4 +129,30 @@ cd ~/VirtualCell
 
 ---
 
+---
+
+## 🌐 部署到 GitHub Pages
+
+笔记浏览器已适配 GitHub Pages 自动部署，查看详细指南：
+
+- **[docs-viewer/DEPLOY.md](docs-viewer/DEPLOY.md)** — 完整部署指南
+
+快速 4 步上线：
+
+1. 打开 GitHub 仓库 → **Settings** → **Pages** → **Source** 选 `GitHub Actions`
+2. `git push origin main`
+3. 等 1-2 分钟 GitHub Actions 跑完
+4. 访问 `https://<你的用户名>.github.io/VirtualCell/`
+
+本地预览：
+
+```bash
+cd docs-viewer
+npm install
+npm run dev          # 开发 → localhost:5173
+BASE=/VirtualCell/ npm run build && npx vite preview  # 预览生产构建
+```
+
+---
+
 *有问题随时在工作区记录。最后更新：2026-05-01*
