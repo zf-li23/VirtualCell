@@ -35,7 +35,7 @@ export const noteMetas: NoteMeta[] = [
   { id: 'saturn', title: 'SATURN (2024 Nat Methods)', category: '单细胞基础模型 (FM)', path: 'fm/saturn/README.md' },
   { id: 'epiagent', title: 'EpiAgent (2025 Nat Methods)', category: '单细胞基础模型 (FM)', path: 'fm/epiagent/README.md' },
   { id: 'visual-omics-fm', title: 'Visual-Omics FM (2025 Nat Methods)', category: '单细胞基础模型 (FM)', path: 'fm/visual-omics-fm/README.md' },
-  { id: 'langcell', title: 'LangCell (2024 ICML)', category: '单细胞基础模型 (FM)', path: 'fm/langcell/README.md' },
+  { id: 'langcell', title: 'LangCell (2024 ICML)', category: 'FM + LLM', path: 'fm-llm/langcell/README.md' },
   { id: 'xtrimogene', title: 'xTrimoGene (2023 NeurIPS)', category: '单细胞基础模型 (FM)', path: 'fm/xtrimogene/README.md' },
   { id: 'sclong', title: 'scLong (2024 bioRxiv)', category: '单细胞基础模型 (FM)', path: 'fm/sclong/README.md' },
   { id: 'cellfm', title: 'CellFM (2025 Nat Comms)', category: '单细胞基础模型 (FM)', path: 'fm/cellfm/README.md' },
