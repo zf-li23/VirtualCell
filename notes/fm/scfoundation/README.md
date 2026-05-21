@@ -29,6 +29,7 @@
 | **输出** | 重建被掩码位置的基因表达值 |
 | **词表** | 19,264 个基因 (基于 10X Genomics 常用基因) |
 | **参数规模** | ~100M ~ 1B |
+| **代码** | [GitHub](https://github.com/biomap-research/scFoundation) |
 
 ### 核心思想
 

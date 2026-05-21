@@ -38,6 +38,10 @@ jobs:
         working-directory: docs-viewer
         run: npm ci
 
+      - name: Sync notes (fallback for non-symlink env)
+        working-directory: docs-viewer
+        run: node scripts/sync-notes.mjs
+
       - name: Build
         working-directory: docs-viewer
         run: npm run build

@@ -28,6 +28,7 @@
 | **输出** | 预测被掩码位置的基因 |
 | **特殊 token** | 辅助 token 编码 modality/assay/species 信息 |
 | **细胞嵌入** | CLS token 或 Mean Pooling |
+| **代码** | [GitHub](https://github.com/theislab/nicheformer) |
 
 ### 核心思想
 

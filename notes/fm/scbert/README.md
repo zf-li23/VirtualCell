@@ -28,7 +28,7 @@
 | **输出** | 被掩码位置的基因表达值 / 细胞类型概率 |
 | **词表** | 约 17,000+ 基因 (基于 Ensembl ID) |
 | **参数规模** | ~50M |
-| **代码** | [https://github.com/TencentAILabHealthcare/scBERT](https://github.com/TencentAILabHealthcare/scBERT) |
+| **代码** | [GitHub](https://github.com/TencentAILabHealthcare/scBERT) |
 
 ### 核心思想
 

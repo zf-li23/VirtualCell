@@ -28,6 +28,7 @@
 | **输出** | 细胞/spot 嵌入 + 空间域分割 |
 | **图增强** | 基因子集采样 + 噪声 + 丢失 |
 | **项目** | [novae](https://github.com/prism-oncology/novae) |
+| **代码** | [GitHub](https://github.com/prism-oncology/novae) |
 
 ### 核心思想
 

@@ -28,6 +28,7 @@
 | **输出** | 细胞嵌入 (CLS token) + 二进制解码 |
 | **词表** | 跨物种基因词汇表 |
 | **模型维度** | d_model=1280, layers=6, heads=8 |
+| **代码** | [GitHub](https://github.com/snap-stanford/UCE) |
 
 ### 核心思想
 

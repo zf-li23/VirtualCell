@@ -28,6 +28,7 @@
 | **输入** | 单细胞转录组的 Rank Value Encoding（排序编码） |
 | **输出** | 预测被掩码位置应是什么基因 |
 | **词表** | ~20K~25K 个基因（蛋白编码基因 + miRNA） |
+| **代码** | [GitHub](https://hf-mirror.com/ctheodoris/Geneformer) |
 | **许可** | Apache 2.0 |
 
 ### 核心思想

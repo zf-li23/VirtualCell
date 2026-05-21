@@ -27,6 +27,7 @@
 | **输入** | 基因 token + 表达值 token 的配对序列 |
 | **输出** | 预测下一个基因-表达值对 |
 | **词表** | ~30K+ 基因 (基于 HGNC 基因符号) |
+| **代码** | [GitHub](https://github.com/bowang-lab/scGPT) |
 | **许可** | MIT |
 
 ### 核心思想

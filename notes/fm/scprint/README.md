@@ -29,6 +29,7 @@
 | **词表** | 约 20,000 个人类基因 |
 | **参数规模** | ~300M |
 | **预训练数据** | 5000 万细胞 (来自 CELLxGENE) |
+| **代码** | [GitHub](https://github.com/jkobject/scPRINT) |
 
 ### 核心思想
 

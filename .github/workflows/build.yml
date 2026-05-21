@@ -22,5 +22,7 @@ jobs:
           cache-dependency-path: docs-viewer/package-lock.json
 
       - run: npm ci
+      - name: Sync notes (fallback for non-symlink env)
+        run: node scripts/sync-notes.mjs
       - run: npm run lint
       - run: npm run build
