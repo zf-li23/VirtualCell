@@ -1,6 +1,6 @@
 # scLong 学习笔记
 
-> 一句话总结：这个模型的核心思想和技术路线。
+> scLong 是一个具有 **10 亿参数**的单细胞基础模型，专注于捕捉**长距离基因上下文**。其核心创新在于引入 **Gene Ontology（GO）图引导的注意力机制**，让模型在 Transformer 层之间显式利用基因功能关系先验，而非完全依赖数据驱动。该模型在约 **4800 万细胞**上预训练，在基因扰动预测、染色质分析和 GRN 推断等多个下游任务上展现了十亿参数规模带来的性能提升。
 
 ---
 
@@ -13,6 +13,230 @@
 5. [Tokenization 与输入编码](#5-tokenization-与输入编码)
 6. [预训练](#6-预训练)
 7. [下游任务](#7-下游任务)
+8. [代码结构速览](#8-代码结构速览)
+9. [关键概念 Q&A](#9-关键概念-qa)
+10. [延伸阅读](#10-延伸阅读)
+
+---
+
+## 1. 模型概述
+
+| 属性 | 描述 |
+|------|------|
+| **论文** | [scLong: A Billion-Parameter Foundation Model for Capturing Long-Range Gene Context in Single-Cell Transcriptomics](https://www.biorxiv.org/content/10.1101/2024.11.09.622759v2), bioRxiv 2024 |
+| **发布日期** | 2024-11 |
+| **出版** | bioRxiv（预印本） |
+| **架构** | Transformer + **GO 图引导的对比注意力**（GO-Contrastive Attention） |
+| **预训练任务** | 掩码基因表达预测 + GO 对比学习 |
+| **输入** | 基因 token（Ensembl ID）+ 对数归一化表达值 |
+| **输出** | 细胞嵌入 / 基因表达预测 / 基因网络推断 |
+| **词表** | ~27,000 个基因（Ensembl ID） |
+| **参数规模** | **~1B（10 亿）** |
+| **预训练数据** | **~4800 万细胞**（多种组织/条件） |
+| **代码** | - |
+| **许可** | - |
+
+### 核心思想
+
+> **让模型在预训练时就知道"哪些基因功能相关"**——通过 GO 图构建基因对比学习约束，使 Transformer 的注意力机制优先关注功能相关的基因对，从而更有效地学习长距离基因相互作用。
+
+---
+
+## 2. 模型架构
+
+### 2.1 整体架构图
+
+```text
+Input: [CLS] g_1(v_1) g_2(v_2) ... g_N(v_N)
+         │
+    ┌────┴────┐
+    │ Gene2Vec │  ← 预训练的基因嵌入初始化
+    └────┬────┘
+         │
+    ┌────┴────────────────────┐
+    │ GO-Contrastive Attention│  ← 核心创新
+    │ Transformer × L 层      │  ← GO 图约束注意力
+    └────┬────────────────────┘
+         │
+    ┌────┴────┐
+    │   Head   │  ← 预测头
+    └────┬────┘
+         │
+    Output: 表达值预测 + 细胞嵌入
+```
+
+### 2.2 核心组件
+
+#### GO-Contrastive Attention（核心创新）
+
+标准 Transformer 的自注意力是纯数据驱动的。scLong 引入 **GO 对比学习约束**：如果两个基因在 GO 图中有功能关联（共享 GO term），它们的注意力权重被显式增强；如果没有关联，则被抑制。
+
+```python
+# GO 图引导的注意力掩码
+go_similarity = compute_go_similarity(gene_i, gene_j)  # 基于共享 GO term
+attention_weights = softmax(Q @ K.T / sqrt(d) + go_bias)
+# go_bias: 正 → 增强功能相关基因的注意力
+# go_bias: 负 → 抑制无关基因的注意力
+```
+
+#### Gene2Vec 初始化
+
+使用预训练的 Gene2Vec 嵌入（基于基因共表达网络）初始化基因嵌入层，为模型提供基因关系的先验知识。
+
+---
+
+## 3. 核心创新
+
+### 3.1 GO 图引导的对比注意力
+
+将 Gene Ontology 知识注入 Transformer 的注意力机制。相比完全依赖数据驱动的方法（如 Geneformer、scGPT），scLong 显式利用了数十年的功能基因组学知识。
+
+### 3.2 十亿参数规模
+
+作为首批达到 1B 参数的单细胞基础模型之一，scLong 在多个任务上验证了更大的模型规模带来的性能提升。
+
+### 3.3 长距离基因上下文
+
+专注于建模全长转录组中远程基因的相互作用，这与许多只选择 top 2000-3000 高变基因的模型形成对比。
+
+### 3.4 与同类模型的对比
+
+| 维度 | scLong | scFoundation | Geneformer | scGPT |
+|------|--------|-------------|-----------|-------|
+| **参数** | **1B** | 3B | 6.5M | ~50M |
+| **注意力** | GO 引导 | 标准 | 标准 | 标准 |
+| **先验知识** | ✅ GO 图 | ❌ | ❌ | ❌ |
+| **基因数** | ~27K | ~20K | ~20K | ~20K |
+| **预训练细胞** | 48M | 50M | 30M | 33M+ |
+
+---
+
+## 4. 数据预处理
+
+### 4.1 输入格式
+
+- 来源：多种公开 scRNA-seq 数据集
+- 格式：h5ad，表达值对数归一化
+- 基因索引：Ensembl Gene ID
+
+### 4.2 Pipeline
+
+```python
+import scanpy as sc
+adata = sc.read_h5ad("data.h5ad")
+sc.pp.normalize_total(adata)
+sc.pp.log1p(adata)
+# 选择 ~27K 基因（Gene2Vec 覆盖的基因）
+genes = load_gene2vec_list("selected_genes_27k.txt")
+adata = adata[:, adata.var_names.isin(genes)]
+```
+
+### 4.3 关键参数
+
+| 参数 | 值 | 说明 |
+|------|-----|------|
+| n_genes | 27,000 | 基因词表大小 |
+| d_model | 4096 | 模型隐藏维度 |
+| n_layers | 48 | Transformer 层数 |
+| batch_size | 1 (grad_acc=200) | 有效 batch size |
+
+---
+
+## 5. Tokenization 与输入编码
+
+### 5.1 基因编码
+
+使用 Gene2Vec 预训练嵌入初始化查找表，每个基因对应一个 4096 维向量。
+
+### 5.2 表达值编码
+
+使用线性层将标量表达值映射到嵌入空间，然后与基因嵌入相加。
+
+### 5.3 GO 对比学习
+
+对于每对基因，计算其在 GO 图中的功能相似度（基于共享 GO term 的 Jaccard 相似度），作为注意力偏置。
+
+---
+
+## 6. 预训练
+
+### 6.1 预训练数据
+
+| 数据来源 | 细胞数量 | 说明 |
+|---------|---------|------|
+| 多种公开数据集 | ~4800 万 | CELLxGENE + 其他来源 |
+
+### 6.2 预训练目标
+
+掩码表达值预测（MSE）+ GO 对比学习损失
+
+### 6.3 训练超参数
+
+| 参数 | 值 |
+|------|-----|
+| 学习率 | 5e-5 |
+| Batch Size | 1 (梯度累积 200) |
+| 训练轮数 | 30 |
+| 优化器 | AdamW |
+
+---
+
+## 7. 下游任务
+
+| 任务 | 方法 | 性能 |
+|------|------|------|
+| **基因扰动预测** | 嵌入 + GEARS 框架 | SOTA |
+| **基因网络推断** | 注意力权重 / 微调 | 高质量 GRN |
+| **染色质分析** | 嵌入 + 下游模型 | 跨模态泛化 |
+| **细胞类型注释** | 嵌入 + 分类器 | 与 SOTA 相当 |
+
+---
+
+## 8. 代码结构速览
+
+```
+scLong/
+├── pretrain_gocont_4096_all_1b_mix.py  # 预训练脚本
+├── embed.py                             # 细胞嵌入提取
+├── chunk_to_cells.py                    # 数据分块处理
+├── GEARS/                               # 基因扰动预测
+├── GRN_inference/                       # 基因网络推断
+├── chromatin_analysis/                  # 染色质分析
+└── sclong.yml                           # 环境配置
+```
+
+### 快速开始
+
+```bash
+git clone <repo>
+conda env create -f sclong.yml
+conda activate sclong
+
+# 提取嵌入
+python embed.py --target_data_path your_data.h5ad --target_embed_path output/
+```
+
+---
+
+## 9. 关键概念 Q&A
+
+**Q: GO 对比注意力如何工作？**
+A: 对每对基因，基于它们共享的 GO 生物学过程/分子功能 term 数量计算相似度得分，然后将此得分作为注意力权重的偏置项，使功能相关的基因更容易相互注意。
+
+**Q: scLong 与 scFoundation 都是超大模型，有何不同？**
+A: scFoundation（3B）更大，使用非对称架构节省计算；scLong（1B）的独特之处在于 GO 知识注入，且专注于长距离基因上下文。
+
+**Q: 长距离基因上下文为什么重要？**
+A: 基因不是独立工作的——一个基因的调控区域可能远离其编码区域，多个基因可能通过同一通路协同工作。捕捉长距离关系对理解基因调控网络至关重要。
+
+---
+
+## 10. 延伸阅读
+
+- [Gene Ontology](http://geneontology.org/) — 功能基因注释的标准体系
+- [Gene2Vec](https://pubmed.ncbi.nlm.nih.gov/30576465/) — 基因分布式表示学习
+- [GEARS](https://www.nature.com/articles/s41587-023-01905-6) — 基因扰动预测框架
+- [scFoundation](https://www.nature.com/articles/s41592-024-02305-7) — 同期 3B 参数模型
 8. [代码结构速览](#8-代码结构速览)
 9. [关键概念 Q&A](#9-关键概念-qa)
 10. [延伸阅读](#10-延伸阅读)
