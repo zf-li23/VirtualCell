@@ -5,7 +5,7 @@ filled: 2026-05-27
 
 # scELMo 学习笔记
 
-> scELMo（Single-Cell Embeddings from Language Models）将 NLP 中经典的 ELMo 思路引入单细胞领域——利用预训练语言模型的各层表示，按任务自适应地融合多层嵌入，而非仅使用最后一层。这种方法简单有效，在细胞类型注释、聚类等任务上显著优于仅使用顶层嵌入的方法。
+> scELMo（Embeddings from Language Models for Single-Cell）受到 NLP 中 ELMo 的启发，利用大语言模型（GPT-4o、DeepSeek 等）生成的基因功能描述嵌入来增强单细胞数据分析。核心思想是将 LLM 对基因功能的语义理解注入到 scRNA-seq 分析流程中，支持零样本细胞注释、批次校正、聚类分析和扰动分析。提供了一个包含预计算嵌入的公开数据库。
 
 ---
 
@@ -28,133 +28,123 @@ filled: 2026-05-27
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [scELMo](https://www.biorxiv.org/content/10.1101/2023.12.07.569910v1) |
-| **发布日期** | 2023 |
-| **出版** | bioRxiv |
-| **架构** | 多层 Transformer + 自适应层融合 |
-| **预训练任务** | 掩码基因预测（MLM） |
-| **输入** | 基因 token（排序）+ 表达值编码 |
-| **输出** | 多层细胞嵌入 + 融合嵌入 |
-| **词表** | 约 20,000 个基因 |
-| **参数规模** | 约 30M |
-| **预训练数据** | 约 1000 万细胞 |
-| **代码** | [GitHub]() |
+| **论文** | [scELMo](https://www.sciencedirect.com/science/article/pii/S266638992500279X) |
+| **发布日期** | 2025 |
+| **出版** | Patterns (Cell Press) |
+| **架构** | LLM 嵌入 + 传统 ML / 轻量微调 |
+| **预训练任务** | 零样本细胞注释 / 聚类 / 扰动分析 |
+| **输入** | scRNA-seq 数据 + LLM 基因嵌入 |
+| **输出** | 细胞类型标签 / 聚类结果 / 嵌入 |
+| **词表** | 由 LLM 知识覆盖的基因集 |
+| **参数规模** | 无（使用外部 LLM） |
+| **预训练数据** | 公开 scRNA-seq 数据集 |
+| **代码** | [GitHub](https://github.com/HelloWorldLTY/scELMo) |
 | **许可** |  |
 
 ### 核心思想
 
-> scELMo（Single-Cell Embeddings from Language Models）将 NLP 中经典的 ELMo 思路引入单细胞领域——利用预训练语言模型的各层表示，按任务自适应地融合多层嵌入，而非仅使用最后一层。这种方法简单有效，在细胞类型注释、聚类等任务上显著优于仅使用顶层嵌入的方法。
+> scELMo（Embeddings from Language Models for Single-Cell）受到 NLP 中 ELMo 的启发，利用大语言模型（GPT-4o、DeepSeek 等）生成的基因功能描述嵌入来增强单细胞数据分析。核心思想是将 LLM 对基因功能的语义理解注入到 scRNA-seq 分析流程中，支持零样本细胞注释、批次校正、聚类分析和扰动分析。提供了一个包含预计算嵌入的公开数据库。
 
 ---
 
 ## 2. 模型架构
 
+### 2.1 整体架构
 
-### 2.1 核心思想：多层融合
+scELMo 不是传统的端到端深度学习模型，而是一个将 LLM 知识融入单细胞分析的框架：
 
-标准 BERT/Transformer 模型在推理时通常只使用最后一层输出作为细胞嵌入。scELMo 的核心洞见是：**不同层编码了不同级别的生物学信息**（底层→基因共表达模式，中层→通路信息，高层→细胞类型特征），因此按任务自适应融合多层表示可以获得更好的效果。
+1. **LLM 查询层**: 向 GPT-4o/DeepSeek 等 LLM 查询基因功能描述
+2. **嵌入生成层**: 将基因描述转化为固定维度嵌入向量
+3. **分析层**: 使用嵌入增强传统的 scRNA-seq 分析（聚类、注释等）
 
-### 2.2 架构设计
+### 2.2 嵌入类型
 
-- 使用标准 BERT 架构作为骨干网络
-- 预训练时同时保存所有 Transformer 层的输出
-- 下游任务时学习各层的加权融合权重
-
-```python
-# 各层嵌入的加权融合
-elmo_embedding = Σ(weight_i * layer_i_output)
-# weight_i 根据下游任务学习
-```
-
-
+- **基因嵌入**: 基于 NCBI/UniProt 基因描述的 LLM 嵌入
+- **药物嵌入**: 基于药物分子描述的 GPT-3.5 嵌入
+- **序列嵌入**: 基于 Enformer 模型的 DNA 序列嵌入
 
 ## 3. 核心创新
 
+### 3.1 LLM 知识注入
 
-### 3.1 ELMo 范式的单细胞适配
+首次系统性地将 LLM 对基因功能的语义理解用于增强单细胞分析，不需额外训练即可获得有生物学意义的基因表示。
 
-将 NLP 中 ELMo（Embeddings from Language Models）的多层融合策略成功移植到单细胞领域。
+### 3.2 零样本能力
 
-### 3.2 任务自适应的层权重
+基于 LLM 嵌入，可以实现零样本的细胞类型注释和聚类分析，无需标注数据。
 
-不同任务可以学习不同的层权重组合——细胞类型注释可能更依赖高层特征，而基因关系推断可能更需要中层特征。
+### 3.3 嵌入数据库
 
-### 3.3 与同类模型对比
-
-| 维度 | scELMo | Geneformer | scBERT |
-|------|--------|-----------|--------|
-| 架构 | BERT + 多层融合 | BERT | BERT |
-| 嵌入策略 | **多层加权融合** | 仅顶层 | 仅顶层 |
-| 参数量 | ~30M | 6.5M | ~110M |
-
-
+维护公开的基因/药物嵌入数据库，方便社区直接使用。
 
 ## 4. 数据预处理
 
+### 4.1 标准数据预处理
 
-与 Geneformer 兼容的预处理流程：表达量排序 → tokenization。
+使用 Scanpy 标准流程进行数据预处理。
 
+### 4.2 LLM 查询
 
+向 OpenAI/DeepSeek API 查询基因功能描述，需要 API key。对无法访问 OpenAI 的用户提供 DeepSeek 替代方案。
 
 ## 5. Tokenization 与输入编码
 
+### 5.1 基因-嵌入映射
 
-使用 Geneformer 的基因 tokenization 方案，基因按表达量从高到低排序作为 token 序列。
+每个基因通过其名称在预计算嵌入表中查询对应的 LLM 嵌入向量。嵌入维度取决于使用的 LLM（如 text-embedding-ada-002 输出 1536 维）。
 
+### 5.2 seq2emb 模块
 
+可选的序列到嵌入模块，基于 Enformer 从基因序列直接生成嵌入，适用于无 LLM API 的场景。
 
 ## 6. 预训练
 
+### 6.1 预训练策略
 
-- **数据**: 约 1000 万细胞
-- **目标**: 标准掩码语言建模（MLM）
-- **特点**: 保存所有 Transformer 层的输出用于下游融合
+scELMo 本身不需要预训练——它利用已经预训练好的 LLM（GPT-4o 等）的基因知识。额外的嵌入可基于 DeepSeek 或 Enformer 生成。
 
+### 6.2 嵌入下载
 
+预计算的嵌入可通过 scELMo 网站下载，包括 gpt4-o 嵌入和 GPT-3.5 药物嵌入。
 
 ## 7. 下游任务
 
-
-| 任务 | 方法 | 性能 |
-|------|------|------|
-| 细胞类型注释 | 多层融合嵌入 + 分类器 | 优于单层嵌入 |
-| 细胞聚类 | 融合嵌入 + KMeans | ARI 提升 5-10% |
-| 基因关系推断 | 融合嵌入 | 良好 |
-
-
+| 任务 | 方法 |
+|------|------|
+| 零样本细胞注释 | LLM 嵌入 + kNN/SVM |
+| 细胞聚类 | 嵌入增强的聚类 |
+| 批次校正 | 嵌入对齐 |
+| 扰动分析 | 集成 CINEMA-OT / CPA / GEARS |
+| In Silico 处理 | LLM 指导的基因扰动模拟 |
 
 ## 8. 代码结构速览
 
-
 ```
 scELMo/
-├── seq2emb/              # 序列→嵌入 转换
-├── Clustering/           # 聚类分析
-├── 'Cell-type Annotation/'  # 注释
-├── 'Batch Effect Correction/' # 批次校正
-├── 'In silico treatment/'    # 扰动分析
-├── 'Perturbation Analysis/'  # 扰动预测
-└── 'Get outputs from LLMs/'  # LLM 输出提取
+├── Cell-type Annotation/   # 细胞注释
+│   ├── cta_gpt.py          # LLM 查询核心逻辑
+│   ├── cta_zeroshot.ipynb  # 零样本注释
+│   └── cta_ft.ipynb        # 微调注释
+├── seq2emb/                # 序列嵌入
+├── Perturbation Analysis/  # 扰动分析
+│   ├── cinemaot_example.ipynb
+│   ├── cpa_example.ipynb
+│   └── gears_example.ipynb
+├── Get outputs from LLMs/  # LLM 查询
+├── Batch Effect Correction/
+└── Clustering/
 ```
-
-
 
 ## 9. 关键概念 Q&A
 
+**Q: scELMo 和 GenePT 有什么区别？**
+A: scELMo 拓展了 GenePT 的思路，支持更多 LLM（GPT-4o, DeepSeek），增加了 seq2emb 模块和更广泛的下游任务。
 
-**Q: scELMo 和 ELMo 的异同？**
-A: 相同点都是多层加权融合；不同点在于 ELMo 使用 LSTM，scELMo 使用 Transformer BERT。
-
-**Q: 多层融合为什么有效？**
-A: Transformer 的不同层关注不同粒度的特征——底层关注基因共现模式，中层关注通路，顶层关注细胞状态。融合它们可以获得更全面的表示。
-
-
+**Q: 需要 OpenAI API 吗？**
+A: 基本使用需要，但也提供 DeepSeek 替代方案。预计算嵌入可下载直接使用，无需 API。
 
 ## 10. 延伸阅读
 
-
-- [ELMo (Peters et al., 2018)](https://arxiv.org/abs/1802.05365) — 原始 ELMo 论文
-- [Geneformer](https://www.nature.com/articles/s41586-023-06139-9) — scELMo 的骨干模型
-- [BERT](https://arxiv.org/abs/1810.04805) — Transformer Encoder 基础
-
-
+- [论文](https://www.sciencedirect.com/science/article/pii/S266638992500279X)
+- [代码](https://github.com/HelloWorldLTY/scELMo)
+- [嵌入数据库](https://sites.google.com/yale.edu/scelmolib)

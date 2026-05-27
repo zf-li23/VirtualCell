@@ -5,7 +5,7 @@ filled: 2026-05-27
 
 # scMulan 学习笔记
 
-> scMulan（取意'木兰'，多任务学习）是一个多任务生成式预训练语言模型，同时支持零样本细胞类型注释、零样本批次整合和条件细胞生成（in-silico perturbation）。它通过统一的生成式框架将多个单细胞分析任务整合到一个模型中。
+> scMulan 是一个多任务生成式预训练语言模型，用于单细胞转录组学分析。它借鉴了 minGPT 架构和 flash-attention 优化，支持零样本细胞类型注释、零样本批次整合和条件细胞生成（模拟 in-silico 扰动）。目前支持心脏、肺、肝脏、骨髓、血液、大脑和胸腺等 7 个人体器官的零样本细胞注释。
 
 ---
 
@@ -28,125 +28,127 @@ filled: 2026-05-27
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [scMulan](https://www.biorxiv.org/content/10.1101/2024.01.25.577152v1) |
+| **论文** | [scMulan](https://link.springer.com/chapter/10.1007/978-1-0716-3989-4_16) |
 | **发布日期** | 2024 |
-| **出版** | RECOMB |
-| **架构** | Decoder-only Transformer（GPT 风格） |
-| **预训练任务** | 多任务生成式预训练（表达预测 + 细胞类型预测 + 批次预测） |
-| **输入** | 基因 token（按表达排序） |
-| **输出** | 基因表达预测 / 细胞嵌入 / 注释 / 生成细胞 |
-| **词表** | 约 20,000 个基因 |
-| **参数规模** | 约 100M |
-| **预训练数据** | 大量人类细胞（多种组织） |
+| **出版** | RECOMB 2024 |
+| **架构** | GPT（Causal Transformer）+ Flash Attention |
+| **预训练任务** | 生成式预训练 / 条件生成 |
+| **输入** | 基因表达序列 + 条件信息 |
+| **输出** | 细胞嵌入 / 生成表达谱 |
+| **词表** | ~30K 基因 |
+| **参数规模** | ~50M |
+| **预训练数据** | 多个器官的 scRNA-seq 数据 |
 | **代码** | [GitHub](https://github.com/SuperBianC/scMulan) |
 | **许可** |  |
 
 ### 核心思想
 
-> scMulan（取意'木兰'，多任务学习）是一个多任务生成式预训练语言模型，同时支持零样本细胞类型注释、零样本批次整合和条件细胞生成（in-silico perturbation）。它通过统一的生成式框架将多个单细胞分析任务整合到一个模型中。
+> scMulan 是一个多任务生成式预训练语言模型，用于单细胞转录组学分析。它借鉴了 minGPT 架构和 flash-attention 优化，支持零样本细胞类型注释、零样本批次整合和条件细胞生成（模拟 in-silico 扰动）。目前支持心脏、肺、肝脏、骨髓、血液、大脑和胸腺等 7 个人体器官的零样本细胞注释。
 
 ---
 
 ## 2. 模型架构
 
+### 2.1 Causal Transformer 架构
 
-scMulan 使用 Decoder-only Transformer（GPT 风格），通过统一的生成式框架支持多种任务：
+scMulan 基于 minGPT（Karpathy 的最小化 GPT 实现）构建，使用因果注意力机制对基因表达序列进行建模。
 
-- **细胞类型注释**: 生成细胞类型 token
-- **批次整合**: 生成批次无关的嵌入
-- **条件细胞生成**: 给定扰动条件生成表达谱
+- **输入序列**: 类似 scGPT 的基因 pair token 序列
+- **注意力**: 使用 Flash Attention 加速训练和推理
+- **生成方向**: 从左到右的因果生成
 
-### 2.1 统一生成式框架
+### 2.2 条件生成机制
 
-```text
-输入: [CLS] g_1 g_2 ... g_N [TASK] [COND]
-      → 生成式预测目标
-```
-
-所有任务被统一为"给定上下文→预测目标"的生成式格式。
-
-
+支持条件控制生成，通过特殊的条件 token 来控制生成细胞类型或组织来源。
 
 ## 3. 核心创新
 
+### 3.1 多任务预训练
 
-### 3.1 多任务统一框架
+统一了细胞注释、批次整合和 in-silico 扰动模拟等多个任务在一个生成式框架下。
 
-首个将细胞注释、批次整合、扰动预测统一到单一生成式框架中的工作。
+### 3.2 零样本器官注释
 
-### 3.2 零样本能力
+支持 7 个人体器官的零样本细胞类型注释，无需参考图谱或微调。
 
-无需微调即可在未见过的数据集上执行细胞类型注释和批次整合。
+### 3.3 华为 NPU 支持
 
-### 3.3 条件细胞生成
-
-支持 in-silico 扰动模拟——给定对照细胞+扰动条件，生成扰动后的表达谱。
-
-
+除了 CUDA 版本，还提供 NPU（Ascend）版本，支持国产硬件部署。
 
 ## 4. 数据预处理
 
+### 4.1 数据准备
 
-标准流程：对数归一化 → 基因选择 → tokenization（与 Geneformer 兼容）。
+输入为标准的 AnnData 对象，包含基因表达矩阵和细胞元数据。
 
+### 4.2 标准化
 
+- 对数归一化
+- 基因表达分箱
+- 基因 ID 对齐到模型词表
 
 ## 5. Tokenization 与输入编码
 
+### 5.1 基因 Pair Token
 
-使用基因排序 tokenization（参照 Geneformer），增加特殊 token 用于任务指定和条件控制。
+与 scGPT 类似，每个基因编码为 (gene_token, value_token) pair。
+- 基因 token: 词表中的基因 ID
+- 值 token: 表达值的离散化分箱
 
+### 5.2 条件 Token
 
+额外的条件 token 用于指示批次、组织等元信息。
 
 ## 6. 预训练
 
+### 6.1 预训练任务
 
-- **目标**: 多任务生成式预训练（同时优化多个预测目标）
-- 在大量人类细胞数据上预训练
+生成式预训练：给定部分基因的表达，预测剩余基因的表达值。
 
+### 6.2 数据
 
+多器官 scRNA-seq 数据，涵盖人类 7 个主要器官。
+
+### 6.3 基础设施
+
+借鉴 minGPT 和 flash-attention 实现高效的训练。
 
 ## 7. 下游任务
 
+| 任务 | 方法 |
+|------|------|
+| 零样本细胞注释 | 直接推理，无需微调 |
+| 批次整合 | 利用细胞嵌入进行整合 |
+| In-silico 扰动 | 条件细胞生成 |
 
-| 任务 | 方法 | 性能 |
-|------|------|------|
-| 零样本细胞类型注释 | 生成式预测 | SOTA |
-| 零样本批次整合 | 嵌入对齐 | 竞争力 |
-| 条件细胞生成 | 扰动条件控制 | 新颖能力 |
-
-
+参考教程: Tutorial-cell_type_annotation.ipynb, Tutorial-integration.ipynb
 
 ## 8. 代码结构速览
 
-
 ```
 scMulan/
-├── model.py              # 生成式 Transformer 模型
-├── train.py              # 多任务训练
-├── Tutorial-cell_type_annotation.ipynb  # 注释教程
-├── Tutorial-integration.ipynb           # 整合教程
-└── ckpt/                 # 预训练权重
+├── scMulan/
+│   ├── scMulan.py        # 主入口（CUDA）
+│   ├── scMulan_npu.py    # 华为 NPU 版本
+│   └── model/
+│       └── model.py      # 生成式预训练模型
+├── inference_cuda.py     # CUDA 推理脚本
+├── inference_npu.py      # NPU 推理脚本
+├── ckpt/                 # 模型权重
+└── Data/                 # 数据目录
 ```
-
-
 
 ## 9. 关键概念 Q&A
 
+**Q: scMulan 和 scGPT 有什么区别？**
+A: 两者都用 GPT 架构，但 scMulan 更强调多任务能力和零样本注释，scGPT 更强调基础模型的可泛化性。
 
-**Q: scMulan 的"生成式"是什么意思？**
-A: 它将所有任务重新定义为"给定输入序列，预测输出序列"——细胞注释就是预测细胞类型这个词，扰动预测就是预测扰动后的基因表达序列。
-
-**Q: 与 scGPT 有何不同？**
-A: 两者都使用生成式框架，但 scMulan 明确设计了多任务架构，更强调零样本和条件生成能力。
-
-
+**Q: 零样本注释支持哪些器官？**
+A: 心脏、肺、肝脏、骨髓、血液、大脑、胸腺 7 个器官。
 
 ## 10. 延伸阅读
 
-
-- [scGPT](https://www.nature.com/articles/s41592-024-02201-0) — 生成式单细胞模型
-- [Geneformer](https://www.nature.com/articles/s41586-023-06139-9) — 基础排序方案
-- [GPT](https://arxiv.org/abs/2005.14165) — 生成式预训练基础
-
-
+- [论文](https://link.springer.com/chapter/10.1007/978-1-0716-3989-4_16)
+- [代码](https://github.com/SuperBianC/scMulan)
+- [minGPT](https://github.com/karpathy/minGPT)
+- [flash-attention](https://github.com/HazyResearch/flash-attention)

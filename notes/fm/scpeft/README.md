@@ -5,7 +5,7 @@ filled: 2026-05-27
 
 # scPEFT 学习笔记
 
-> scPEFT 是一个**参数高效微调框架**，将 NLP 中的 PEFT 技术（LoRA、Adapter、Prefix Tuning 等）系统性地引入单细胞大语言模型。它通过冻结基础模型、仅训练轻量适配器，以极低的计算成本将通用 scLLM 适配到特定任务或数据领域，在扰动预测等任务上达到全模型微调的性能。
+> scPEFT 是一个将参数高效微调（PEFT）技术应用于单细胞大语言模型（scLLMs）的框架。不同于全参数微调，scPEFT 在冻结原始 scLLM 参数的同时，仅学习少量低维可插拔适配器（adapters）来估计"模型增量"，实现对 scGPT、scBERT、scFoundation、Geneformer 等多种 scLLM 后端的高效领域适配。发表在 Nature Machine Intelligence。
 
 ---
 
@@ -28,138 +28,127 @@ filled: 2026-05-27
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [scPEFT](https://www.nature.com/articles/s42256-025-01170-z) |
+| **论文** | [scPEFT](https://www.nature.com/articles/s42256-025-01050-6) |
 | **发布日期** | 2025 |
 | **出版** | Nature Machine Intelligence |
-| **架构** | PEFT 适配器框架（LoRA / Adapter / Prefix Tuning）+ 冻结的 scLLM 骨干 |
-| **预训练任务** | 多种 PEFT 策略适配下游任务 |
-| **输入** | 基因表达谱（格式取决于骨干模型） |
-| **输出** | 任务相关预测 |
+| **架构** | PEFT 适配器 + 冻结骨干模型 |
+| **预训练任务** | 参数高效微调 / 领域适配 |
+| **输入** | scRNA-seq + 任务特定数据 |
+| **输出** | 适配后的模型权重 |
 | **词表** | 取决于骨干模型 |
-| **参数规模** | 适配器：约 1-5M（骨干模型冻结） |
-| **预训练数据** | 多种下游任务数据 |
-| **代码** | [GitHub]() |
+| **参数规模** | 骨干冻结 + 少量适配器 |
+| **预训练数据** | 下游任务数据 |
+| **代码** | [GitHub](https://github.com/coffee19850519/scPEFT) |
 | **许可** | MIT |
 
 ### 核心思想
 
-> scPEFT 是一个**参数高效微调框架**，将 NLP 中的 PEFT 技术（LoRA、Adapter、Prefix Tuning 等）系统性地引入单细胞大语言模型。它通过冻结基础模型、仅训练轻量适配器，以极低的计算成本将通用 scLLM 适配到特定任务或数据领域，在扰动预测等任务上达到全模型微调的性能。
+> scPEFT 是一个将参数高效微调（PEFT）技术应用于单细胞大语言模型（scLLMs）的框架。不同于全参数微调，scPEFT 在冻结原始 scLLM 参数的同时，仅学习少量低维可插拔适配器（adapters）来估计"模型增量"，实现对 scGPT、scBERT、scFoundation、Geneformer 等多种 scLLM 后端的高效领域适配。发表在 Nature Machine Intelligence。
 
 ---
 
 ## 2. 模型架构
 
-
 ### 2.1 核心思想
 
-```text
-骨干模型（冻结，如 scGPT/Geneformer）
-         │
-    ┌────┴────┐
-    │ PEFT 适配器 │ ← 仅此处可训练（~1-5M 参数）
-    └────┬────┘
-         │
-    任务输出
-```
+scPEFT 的核心是**冻结预训练 scLLM，仅更新少量适配器参数**，类似于 NLP 中的 LoRA/Adapter 方法。
 
-scPEFT 将多种参数高效微调策略引入单细胞领域：
+1. 加载预训练 scLLM（scGPT/Geneformer/scBERT/scFoundation）
+2. 冻结所有原始参数
+3. 注入低维可学习适配器
+4. 仅适配器参数在微调中更新
 
-- **LoRA**: 在注意力层注入低秩矩阵
-- **Adapter**: 在 Transformer 层间插入小 bottleneck 网络
-- **Prefix Tuning**: 在注意力 K/V 前添加可学习前缀
+### 2.2 适配器设计
 
-### 2.2 框架设计
+- 低维降维-升维结构，类似瓶颈层
+- 可插拔设计，不同任务使用不同适配器
+- 估计 "model delta"——任务适配所需的参数变化量
 
-统一的接口设计，支持在不同的 scLLM（scGPT、Geneformer 等）上即插即用不同的 PEFT 策略。
+### 2.3 支持的骨干
 
-
+scGPT、Geneformer、scBERT、scFoundation（持续扩展中）
 
 ## 3. 核心创新
 
+### 3.1 首个 scLLM PEFT 框架
 
-### 3.1 PEFT 在单细胞领域的首次系统性研究
+首次将 PEFT 技术系统性地引入单细胞大语言模型领域。
 
-将 LoRA、Adapter、Prefix Tuning 等多种 PEFT 策略在多个 scLLM 和多个下游任务上进行了全面的基准测试。
+### 3.2 多后端支持
 
-### 3.2 与同类方法对比
+统一接口支持 scGPT、Geneformer、scBERT、scFoundation 四种骨干。
 
-| 维度 | scPEFT | 全模型微调 | 线性探测 |
-|------|--------|-----------|---------|
-| 可训练参数 | ~1-5M | ~50-100M | ~1K |
-| 性能 | 接近全微调 | 上限最高 | 有限 |
-| 计算成本 | 低 | 高 | 极低 |
-| 灾难遗忘 | 几乎无 | 有风险 | 无 |
+### 3.3 资源高效
 
-### 3.3 实用价值
+相比全参数微调，显存占用降低 10 倍以上，训练时间缩短数倍。
 
-使得在消费级 GPU 上微调大型 scLLM 成为可能，大幅降低了单细胞基础模型的应用门槛。
+### 3.4 知识保留
 
-
+冻结预训练参数，保留模型学到的广谱生物学知识，避免灾难性遗忘。
 
 ## 4. 数据预处理
 
+### 4.1 数据准备
 
-取决于使用的骨干模型，通常兼容 Geneformer/scGPT 的预处理格式。
+取决于下游任务（细胞注释、批次校正等）的具体要求，不同骨干模型有不同的预处理需求。
 
+### 4.2 适配器配置
 
+配置适配器维度、位置和类型等超参数。
 
 ## 5. Tokenization 与输入编码
 
+### 5.1 取决于骨干模型
 
-取决于骨干模型，scPEFT 不修改骨干模型的 tokenization 方法。
-
-
+scPEFT 复用骨干模型的 tokenization 策略。
+- scGPT: 基因 pair token
+- Geneformer: rank-value token
+- scBERT: 基于 BERT 的编码
 
 ## 6. 预训练
 
+### 6.1 预训练策略
 
-- 冻结骨干模型参数
-- 仅训练适配器参数（1-5M）
-- 学习率通常比全微调高 5-10x
-- 支持低资源场景（少量标注数据）
+scPEFT 本身不进行预训练。
 
+预训练阶段：使用全量数据对骨干模型进行预训练（如 scGPT 的 33M 细胞预训练）。
 
+适配阶段：在冻结骨干上，仅训练适配器参数。
 
 ## 7. 下游任务
 
-
-| 任务 | PEFT 性能 | 全微调性能 |
-|------|----------|-----------|
-| 细胞类型注释 | 接近 SOTA | SOTA |
-| 扰动预测 | 竞争力 | SOTA |
-| 跨数据集迁移 | 良好 | 良好 |
-
-
+| 后端 | 下游任务 |
+|------|---------|
+| scGPT | 细胞类型识别、批次校正、扰动预测、细胞群体发现、Marker 基因检测 |
+| scFoundation | 细胞类型识别、扰动预测 |
+| Geneformer | 细胞类型识别 |
+| scBERT | 细胞类型识别 |
 
 ## 8. 代码结构速览
 
-
 ```
 scPEFT/
-├── peft/                 # PEFT 策略实现
-├── reproduction/         # 论文复现代码
-├── img/                  # 架构图
-└── README.md
+├── geneformer_peft/        # Geneformer 适配器
+├── scgpt/                  # scGPT 适配器
+│   └── trainer.py          # 训练框架
+├── scfoundation/           # scFoundation 适配器
+├── tutorial_peft/          # 各后端的微调教程
+└── requirements.yaml       # 环境配置
 ```
-
-
 
 ## 9. 关键概念 Q&A
 
+**Q: PEFT 相比全参数微调的优势？**
+A: 显存占用更低、训练速度更快、避免灾难性遗忘、方便切换任务。
 
-**Q: 什么时候应该用 scPEFT 而不是全微调？**
-A: 当标注数据有限（<1000 细胞）、计算资源受限、或需要快速迭代多个任务时，scPEFT 是最佳选择。
+**Q: 适配器的参数量？**
+A: 通常仅为原始模型的 1-5%。
 
-**Q: LoRA 和 Adapter 哪个更好？**
-A: 取决于任务——LoRA 在注意力密集型任务上表现更好，Adapter 在需要深层特征变换的任务上更优。
-
-
+**Q: 支持多任务同时适配吗？**
+A: 可以通过多个适配器切换实现多任务支持。
 
 ## 10. 延伸阅读
 
-
-- [LoRA (Hu et al., 2021)](https://arxiv.org/abs/2106.09685) — 低秩适配
-- [Adapter (Houlsby et al., 2019)](https://arxiv.org/abs/1902.00751) — 适配器模块
-- [Prefix Tuning (Li & Liang, 2021)](https://arxiv.org/abs/2101.00190) — 前缀微调
-
-
+- [论文](https://www.nature.com/articles/s42256-025-01050-6)
+- [代码](https://github.com/coffee19850519/scPEFT)
+- [LoRA: Low-Rank Adaptation](https://arxiv.org/abs/2106.09685)
