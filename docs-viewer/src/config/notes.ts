@@ -19,10 +19,11 @@ export const categories = [
 ] as const
 
 export const noteMetas: NoteMeta[] = [
-  { id: 'overview', title: '总览', category: '概览', path: 'overview.md' },
+  { id: 'overview', title: '总览', category: '概览', path: 'README.md' },
 
   // --- 单细胞基础模型 (FM) ---
   { id: 'cell-atlas-fm', title: 'UCE / Cell Atlas FM', category: '单细胞基础模型 (FM)', path: 'fm/cell-atlas-fm/README.md' },
+  { id: 'cell-plm', title: 'CellPLM', category: '单细胞基础模型 (FM)', path: 'fm/cell-plm/README.md' },
   { id: 'cellfm', title: 'CellFM', category: '单细胞基础模型 (FM)', path: 'fm/cellfm/README.md' },
   { id: 'epiagent', title: 'EpiAgent', category: '单细胞基础模型 (FM)', path: 'fm/epiagent/README.md' },
   { id: 'genecompass', title: 'GeneCompass', category: '单细胞基础模型 (FM)', path: 'fm/genecompass/README.md' },
@@ -31,11 +32,17 @@ export const noteMetas: NoteMeta[] = [
   { id: 'novae', title: 'Novae', category: '单细胞基础模型 (FM)', path: 'fm/novae/README.md' },
   { id: 'saturn', title: 'SATURN', category: '单细胞基础模型 (FM)', path: 'fm/saturn/README.md' },
   { id: 'scbert', title: 'scBERT', category: '单细胞基础模型 (FM)', path: 'fm/scbert/README.md' },
+  { id: 'scelmo', title: 'scELMo', category: '单细胞基础模型 (FM)', path: 'fm/scelmo/README.md' },
   { id: 'scfoundation', title: 'scFoundation', category: '单细胞基础模型 (FM)', path: 'fm/scfoundation/README.md' },
   { id: 'scgpt', title: 'scGPT', category: '单细胞基础模型 (FM)', path: 'fm/scgpt/README.md' },
+  { id: 'scgpt-spatial', title: 'scGPT-spatial', category: '单细胞基础模型 (FM)', path: 'fm/scgpt-spatial/README.md' },
   { id: 'sclong', title: 'scLong', category: '单细胞基础模型 (FM)', path: 'fm/sclong/README.md' },
+  { id: 'scmulan', title: 'scMulan', category: '单细胞基础模型 (FM)', path: 'fm/scmulan/README.md' },
+  { id: 'scnet', title: 'scNET', category: '单细胞基础模型 (FM)', path: 'fm/scnet/README.md' },
+  { id: 'scpeft', title: 'scPEFT', category: '单细胞基础模型 (FM)', path: 'fm/scpeft/README.md' },
   { id: 'scpoli', title: 'scPoli', category: '单细胞基础模型 (FM)', path: 'fm/scpoli/README.md' },
   { id: 'scprint', title: 'scPRINT', category: '单细胞基础模型 (FM)', path: 'fm/scprint/README.md' },
+  { id: 'tabulam', title: 'Tabula', category: '单细胞基础模型 (FM)', path: 'fm/tabulam/README.md' },
   { id: 'visual-omics-fm', title: 'Visual-Omics FM', category: '单细胞基础模型 (FM)', path: 'fm/visual-omics-fm/README.md' },
   { id: 'xtrimogene', title: 'xTrimoGene', category: '单细胞基础模型 (FM)', path: 'fm/xtrimogene/README.md' },
 

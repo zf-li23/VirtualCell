@@ -161,13 +161,20 @@ def parse_args() -> dict:
         show_example()
         sys.exit(0)
 
+    data = {}
+
     # JSON file input
     json_path = Path(args[0])
     if json_path.suffix == ".json" and json_path.exists():
-        return parse_json(json_path)
+        data = parse_json(json_path)
+        # 如果 JSON 中有 body 字段，解析路径（相对 CWD）
+        if "body" in data:
+            body_path = Path(data["body"])
+            if not body_path.is_absolute():
+                body_path = Path.cwd() / body_path
+            data["body"] = str(body_path.resolve())
 
-    # CLI arg input
-    data = {}
+    # CLI arg input (覆盖/补充 JSON)
     i = 0
     while i < len(args):
         if args[i].startswith("--"):
