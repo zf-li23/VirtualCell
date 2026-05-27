@@ -3,7 +3,7 @@
 > 📌 本文记录 `notes/` 下每篇论文对应的官方代码仓库地址。
 > 用途：批量 `git clone` 下载代码、快速定位源码。
 >
-> 最后更新：2026-05-20
+> 最后更新：2026-06-17
 >
 > 图例：
 > - ✅ 仓库已验证可用
@@ -100,6 +100,7 @@
 | `unified-perturbation` | ❌ | ❌ |
 | `visual-omics-fm` | ❌ 未找到 | ❌ |
 | `xtrimogene` | ❌ 未找到 | ❌ |
+| `heimdall` | [https://github.com/ma-compbio-lab/Heimdall](https://github.com/ma-compbio-lab/Heimdall) | ✅ |
 
 ---
 
@@ -137,19 +138,19 @@
 | 目录名 | 代码仓库 | 状态 |
 |--------|---------|------|
 | `benchmark-cell-model-perturbation` | ❌ | ❌ |
-| `cinema-ot` | ❌ 未找到 | ❌ |
+| `cinema-ot` | [https://github.com/scverse/pertpy](https://github.com/scverse/pertpy) | ✅ |
 | `diffusion-debias-perturbation` | ❌ | ❌ |
 | `in-silico-discovery` | ❌ 未找到 | ❌ |
-| `pca-still-rules` | ❌ | ❌ |
+| `pca-still-rules` | ❌（仅出版物） | ❌ |
 | `pertadapt` | [https://github.com/BaiDing1234/PertAdapt](https://github.com/BaiDing1234/PertAdapt) | ✅ |
 | `perteval-scfm` | ❌ 未找到 | ❌ |
-| `perturbation-linear-baselines` | ❌ | ❌ |
+| `perturbation-linear-baselines` | [https://github.com/const-ae/linear_perturbation_prediction-Paper](https://github.com/const-ae/linear_perturbation_prediction-Paper) | ✅ |
 | `scfme` | ❌ | ❌ |
-| `scgenept` | ❌ 未找到 | ❌ |
-| `sclambda` | ❌ 未找到 | ❌ |
+| `scgenept` | [https://github.com/czi-ai/scGenePT](https://github.com/czi-ai/scGenePT) | ✅ |
+| `sclambda` | [https://github.com/gefeiwang/scLAMBDA](https://github.com/gefeiwang/scLAMBDA) | ✅ |
 | `spatialprop` | ❌ | ❌ |
 | `state` | [https://github.com/ArcInstitute/state](https://github.com/ArcInstitute/state) | ✅ |
-| `systema` | ❌ 未找到 | ❌ |
+| `systema` | [https://github.com/mlbio-epfl/systema](https://github.com/mlbio-epfl/systema) | ✅ |
 | `tahoe-100m` | [https://github.com/tahoebio/tahoe-x1](https://github.com/tahoebio/tahoe-x1) | ✅ |
 | `tahoe-x1` | [https://github.com/tahoebio/tahoe-x1](https://github.com/tahoebio/tahoe-x1)（同仓库） | ✅ |
 
@@ -163,36 +164,35 @@
 | `batch-effects-barrier` | ❌ | ❌ |
 | `bend` | ❌ BEND 仓库与单细胞无关 | ❌ |
 | `biollm` | ❌ 未找到 | ❌ |
-| `biology-driven-insights` | ❌ | ❌ |
+| `biology-driven-insights` | ❌（仅出版物，使用公开数据） | ❌ |
 | `bmfm-rna` | ❌ 未找到 | ❌ |
 | `cancer-outcomes-evaluation` | ❌ | ❌ |
 | `cell-type-classification-eval` | ❌ | ❌ |
 | `deep-dive-scfms` | ❌ | ❌ |
-| `deeper-evaluation-scfms` | ❌ | ❌ |
+| `deeper-evaluation-scfms` | ❌（仅出版物） | ❌ |
 | `gene-embeddings-benchmark` | ❌ | ❌ |
 | `gpt4-cell-annotation` | ❌ (使用 GPT-4 API) | ❌ |
-| `heimdall` | ❌ 未找到 | ❌ |
 | `imbalanced-cell-annotation` | ❌ | ❌ |
 | `llm-gene-set-function` | ❌ | ❌ |
-| `metric-mirages` | ❌ | ❌ |
+| `metric-mirages` | [https://github.com/Genentech/Islander](https://github.com/Genentech/Islander) | ✅ |
 | `mode-collapse-perturbation` | ❌ | ❌ |
-| `multimodal-integration-benchmark` | ❌ | ❌ |
+| `multimodal-integration-benchmark` | ❌（仅出版物） | ❌ |
 | `open-problems-sc-analysis` | ❌ 未找到 | ❌ |
 | `perturbation-baselines` | ❌ | ❌ |
 | `perturbation-benchmarking` | ❌ | ❌ |
-| `perturbench` | ❌ 未找到 | ❌ |
+| `perturbench` | [https://github.com/altoslabs/perturbench](https://github.com/altoslabs/perturbench) | ✅ |
 | `pretraining-size-diversity` | ❌ | ❌ |
 | `sccluben` | ❌ 未找到 | ❌ |
-| `scdrugmap` | ❌ 未找到 | ❌ |
+| `scdrugmap` | [https://github.com/QSong-github/scDrugMap](https://github.com/QSong-github/scDrugMap) | ✅ |
 | `sceval` | ❌ 未找到 | ❌ |
 | `sparse-autoencoders-scfm` | ❌ | ❌ |
-| `ssl-effective-use` | ❌ | ❌ |
+| `ssl-effective-use` | ❌（仅出版物） | ❌ |
 | `systematic-perturbation-compare` | ❌ | ❌ |
 | `transcriptional-grammar` | ❌ | ❌ |
 | `transferability-sc-to-st` | ❌ | ❌ |
 | `unified-benchmarking-framework` | ❌ | ❌ |
 | `virtual-cell-challenge` | ❌ 未找到 | ❌ |
-| `zero-shot-limitations` | ❌ | ❌ |
+| `zero-shot-limitations` | ❌（仅出版物） | ❌ |
 
 ---
 

@@ -28,6 +28,7 @@ export const noteMetas: NoteMeta[] = [
   { id: 'epiagent', title: 'EpiAgent', category: '单细胞基础模型 (FM)', path: 'fm/epiagent/README.md' },
   { id: 'genecompass', title: 'GeneCompass', category: '单细胞基础模型 (FM)', path: 'fm/genecompass/README.md' },
   { id: 'geneformer', title: 'Geneformer', category: '单细胞基础模型 (FM)', path: 'fm/geneformer/README.md' },
+  { id: 'heimdall', title: 'Heimdall', category: '单细胞基础模型 (FM)', path: 'fm/heimdall/README.md' },
   { id: 'nicheformer', title: 'Nicheformer', category: '单细胞基础模型 (FM)', path: 'fm/nicheformer/README.md' },
   { id: 'novae', title: 'Novae', category: '单细胞基础模型 (FM)', path: 'fm/novae/README.md' },
   { id: 'saturn', title: 'SATURN', category: '单细胞基础模型 (FM)', path: 'fm/saturn/README.md' },
@@ -54,12 +55,26 @@ export const noteMetas: NoteMeta[] = [
   { id: 'scchat', title: 'scChat', category: 'FM + LLM', path: 'fm-llm/scchat/README.md' },
 
   // --- 遗传扰动 ---
+  { id: 'cinema-ot', title: 'CINEMA-OT', category: '遗传扰动', path: 'perturbation/cinema-ot/README.md' },
+  { id: 'pca-still-rules', title: 'PCA Still Rules', category: '遗传扰动', path: 'perturbation/pca-still-rules/README.md' },
   { id: 'pertadapt', title: 'PertAdapt', category: '遗传扰动', path: 'perturbation/pertadapt/README.md' },
+  { id: 'perturbation-linear-baselines', title: 'Perturbation Linear Baselines', category: '遗传扰动', path: 'perturbation/perturbation-linear-baselines/README.md' },
+  { id: 'scdrugmap', title: 'scDrugMap', category: '遗传扰动', path: 'perturbation/scdrugmap/README.md' },
+  { id: 'scgenept', title: 'scGenePT', category: '遗传扰动', path: 'perturbation/scgenept/README.md' },
+  { id: 'sclambda', title: 'scLAMBDA', category: '遗传扰动', path: 'perturbation/sclambda/README.md' },
   { id: 'state', title: 'STATE', category: '遗传扰动', path: 'perturbation/state/README.md' },
+  { id: 'systema', title: 'Systema', category: '遗传扰动', path: 'perturbation/systema/README.md' },
   { id: 'tahoe-100m', title: 'Tahoe-100M / Tahoe-x1', category: '遗传扰动', path: 'perturbation/tahoe-100m/README.md' },
 
   // --- 评估与 Benchmark ---
+  { id: 'biology-driven-insights', title: 'Biology-driven Insights', category: '评估与 Benchmark', path: 'benchmarks/biology-driven-insights/README.md' },
+  { id: 'deeper-evaluation-scfms', title: 'Deeper Evaluation of scFMs', category: '评估与 Benchmark', path: 'benchmarks/deeper-evaluation-scfms/README.md' },
+  { id: 'metric-mirages', title: 'Metric Mirages', category: '评估与 Benchmark', path: 'benchmarks/metric-mirages/README.md' },
+  { id: 'multimodal-integration-benchmark', title: 'Multimodal Integration Benchmark', category: '评估与 Benchmark', path: 'benchmarks/multimodal-integration-benchmark/README.md' },
+  { id: 'perturbench', title: 'PerturBench', category: '评估与 Benchmark', path: 'benchmarks/perturbench/README.md' },
+  { id: 'ssl-effective-use', title: 'SSL Effective Use', category: '评估与 Benchmark', path: 'benchmarks/ssl-effective-use/README.md' },
   { id: 'virtual-cell-challenge', title: 'Virtual Cell Challenge', category: '评估与 Benchmark', path: 'benchmarks/virtual-cell-challenge/README.md' },
+  { id: 'zero-shot-limitations', title: 'Zero-shot Limitations', category: '评估与 Benchmark', path: 'benchmarks/zero-shot-limitations/README.md' },
 
   // --- 虚拟细胞 ---
   { id: 'the-virtual-cell', title: 'The Virtual Cell', category: '虚拟细胞', path: 'virtual-cell/the-virtual-cell/README.md' },
