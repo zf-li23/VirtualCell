@@ -259,38 +259,42 @@
 
 ## 批量下载脚本
 
-### 已下载（`repos/` 目录中，已验证）
+### 已下载（`repos/` 目录中，已验证 31 个仓库）
 
-| 仓库 | 对应笔记 | 实际 URL |
-|------|---------|---------|
-| `Geneformer/` | `notes/fm/geneformer/` | HuggingFace (hf-mirror.com) |
-| `scGPT/` | `notes/fm/scgpt/`、`notes/fm/scgpt-spatial/` | `bowang-lab/scGPT` |
-| `scFoundation/` | `notes/fm/scfoundation/` | `biomap-research/scFoundation` |
-| `UCE/` | `notes/fm/cell-atlas-fm/` | `snap-stanford/UCE` |
-| `nicheformer/` | `notes/fm/nicheformer/` | `theislab/nicheformer` |
-| `novae/` | `notes/fm/novae/` | `prism-oncology/novae` |
-| `saturn/` | `notes/fm/saturn/` | `snap-stanford/saturn` |
-| `scBERT/` | `notes/fm/scbert/` | `TencentAILabHealthcare/scBERT` |
-| `scPoli/` | `notes/fm/scpoli/` | `theislab/scPoli` |
-| `scPRINT/` | `notes/fm/scprint/`、`notes/fm/scprint-2/` | `jkobject/scPRINT` |
-| `LangCell/` | `notes/fm/langcell/` | `PharMolix/LangCell` |
-| `GraphST/` | 空间组学工具 | `JinmiaoChenLab/GraphST` |
-| `SpaceFlow/` | 空间组学工具 | `hongleir/SpaceFlow` |
-| `SpaGCN/` | 空间组学工具 | `jianhuupenn/SpaGCN` |
-| `SPADE/` | 空间组学工具 | `uclabair/SPADE` |
-| `OpenBioMed/` | 生物医药通用工具 | `BioFM/OpenBioMed` |
+| 仓库 | 实际 URL（已验证） | 对应笔记 |
+|------|-------------------|---------|
+| `Geneformer/` | HuggingFace (hf-mirror.com) | `notes/fm/geneformer/` |
+| `scGPT/` | `bowang-lab/scGPT` | `notes/fm/scgpt/`、`notes/fm/scgpt-spatial/` |
+| `scGPT-spatial/` | `bowang-lab/scGPT-spatial` | `notes/fm/scgpt-spatial/` |
+| `scFoundation/` | `biomap-research/scFoundation` | `notes/fm/scfoundation/` |
+| `UCE/` | `snap-stanford/UCE` | `notes/fm/cell-atlas-fm/` |
+| `nicheformer/` | `theislab/nicheformer` | `notes/fm/nicheformer/` |
+| `novae/` | `prism-oncology/novae` | `notes/fm/novae/` |
+| `saturn/` | `snap-stanford/saturn` | `notes/fm/saturn/` |
+| `scBERT/` | `TencentAILabHealthcare/scBERT` | `notes/fm/scbert/` |
+| `scPoli/` | `theislab/scPoli` | `notes/fm/scpoli/` |
+| `scPRINT/` | `jkobject/scPRINT` | `notes/fm/scprint/`、`notes/fm/scprint-2/` |
+| `LangCell/` | `PharMolix/LangCell` | `notes/fm-llm/langcell/` |
+| `scLong/` | `BaiDing1234/scLong` | `notes/fm/sclong/` |
+| `CellFM/` | `biomed-AI/CellFM` | `notes/fm/cellfm/` |
+| `CellPLM/` | `OmicsML/CellPLM` | `notes/fm/cell-plm/` |
+| `scPEFT/` | `coffee19850519/scPEFT` | `notes/fm/scpeft/` |
+| `scMulan/` | `SuperBianC/scMulan` | `notes/fm/scmulan/` |
+| `scNET/` | `madilabcode/scNET` | `notes/fm/scnet/` |
+| `scELMo/` | `HelloWorldLTY/scELMo` | `notes/fm/scelmo/` |
+| `CASSIA/` | `ElliotXie/CASSIA` | `notes/fm-llm/cassia/` |
+| `CELLama/` | `portrai-io/CELLama` | `notes/fm-llm/cellama/` |
+| `scChat/` | `li-group/scChat` | `notes/fm-llm/scchat/` |
+| `cell2sentence-ft/` | `SiYangming/cell2sentence-ft` | `notes/fm-llm/cell2sentence/` |
+| `PertAdapt/` | `BaiDing1234/PertAdapt` | `notes/perturbation/pertadapt/` |
+| `state/` | `ArcInstitute/state` | `notes/perturbation/state/` |
+| `tahoe-x1/` | `tahoebio/tahoe-x1` | `notes/perturbation/tahoe-100m/` |
+| `GraphST/` | `JinmiaoChenLab/GraphST` | 空间组学工具 |
+| `SpaceFlow/` | `hongleir/SpaceFlow` | 空间组学工具 |
+| `SpaGCN/` | `jianhuupenn/SpaGCN` | 空间组学工具 |
+| `SPADE/` | `uclabair/SPADE` | 空间组学工具 |
+| `OpenBioMed/` | `BioFM/OpenBioMed` | 生物医药通用工具 |
 
-### 批量下载未下载的仓库
+---
 
-```bash
-# 从 REPO_MAP.md 提取所有 GitHub URL 并批量 clone
-grep -oP 'https://github\.com/[^)]+' REPO_MAP.md | sort -u | while read url; do
-  repo_name=$(echo "$url" | sed 's|https://github.com/||' | tr '/' '-')
-  if [ ! -d "repos/$repo_name" ]; then
-    git clone --depth 1 "$url" "repos/$repo_name"
-  fi
-done
-```
-
-> ⚠️ 注意：以上仓库链接大部分来自文献中的官方声明或 GitHub 搜索，部分标记为 ⚠️ 的链接需要手动验证。
-> 如果你在使用中发现链接失效或找到正确链接，欢迎更新本文。
+> 📌 文档更新于 2026-05-27。已下载 **31 个仓库**，已完成 **26 篇深度笔记**。

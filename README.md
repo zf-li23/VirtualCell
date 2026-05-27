@@ -1,38 +1,95 @@
 # 🧬 VirtualCell — 虚拟细胞大模型学习
 
-> 空间组学 | 虚拟细胞基础模型 | Python | conda env: `zf-li23` | ❌ 无 GPU
+> 单细胞基础模型 | 虚拟细胞 | 空间组学 | Python | conda env: `zf-li23` | ❌ 无 GPU
 
 ---
 
-## 📂 结构
+## 📂 项目结构
 
 ```
 VirtualCell/
-├── README.md           ← 你在这里
-├── papers.md           # 论文清单
-├── data/               # 公开数据集 (PBMC 3k 等)
-├── notes/              # 📗 论文笔记 (7 大分类, ~180 篇)
-│   ├── fm/             #   单细胞基础模型 (核心)
-│   ├── fm-llm/         #   FM + LLM
-│   ├── perturbation/   #   遗传扰动预测
-│   ├── virtual-cell/   #   虚拟细胞
-│   ├── benchmarks/     #   评估与 Benchmark
-│   ├── pathology/      #   病理基础模型
-│   └── surveys/        #   综述与展望
-├── scripts/            # 🐍 可复现实验 (Python scripts / notebooks)
-│   ├── tutorials/
-│   ├── benchmarks/
-│   └── utils/
-├── repos/              # 第三方仓库 (git clone)
-│   ├── scGPT/
-│   ├── Geneformer/
-│   └── ...
-├── docs-viewer/        # 🖥️ 笔记浏览器 (React + Vite)
-│   └── src/
-└── .gitignore
+├── README.md              ← 项目说明
+├── papers.md              # 论文清单（~180 篇，7 大分类）
+├── REPO_MAP.md            # 论文 ↔ GitHub 仓库映射（含验证状态）
+├── PLAN.md                # 笔记收集计划
+│
+├── notes/                 # 📗 论文笔记（7 大分类，~180 篇）
+│   ├── _template.md       #    笔记模板（含 frontmatter 标签）
+│   ├── fm/                #    单细胞基础模型（核心）
+│   ├── fm-llm/            #    FM + LLM
+│   ├── perturbation/      #    遗传扰动预测
+│   ├── virtual-cell/      #    虚拟细胞
+│   ├── benchmarks/        #    评估与 Benchmark
+│   ├── pathology/         #    病理基础模型
+│   └── surveys/           #    综述与展望
+│
+├── scripts/               # 🐍 工具脚本
+│   ├── generate_note.py   #    从结构化数据生成笔记
+│   ├── fill_repo_links.py #    填充仓库链接 + 元数据
+│   ├── sync_notes_config.py #  自动发现笔记 + 模板残留检测
+│   ├── copy_template.sh   #    模板初始化
+│   ├── benchmarks/        #    基准测试
+│   ├── tutorials/         #    教程
+│   └── utils/             #    工具函数
+│
+├── repos/                 # 第三方仓库（已 clone 31 个）
+├── data/                  # 公开数据集 (PBMC 3k 等)
+└── docs-viewer/           # 🖥️ 笔记浏览器 (React + Vite)
+
+当前状态：**26 篇深度笔记** | 31 个已克隆仓库 | 自动部署 GitHub Pages
 ```
 
-**看论文 → 做笔记 → 拉代码 → 跑通 → 总结**，代码在 `repos/`，笔记在 `notes/` 里完成。
+---
+
+## 📊 笔记进度
+
+| 状态 | 数量 | 含义 |
+|------|:----:|------|
+| `✅ done` | **26** | 已撰写深度内容（含完整架构、创新分析、代码速览） |
+| `🔶 metadata` | **24** | 仅有论文元数据（标题/年份/期刊等） |
+| `⬜ template` | **128** | 空白模板，等待填写 |
+
+### 已完成的 26 篇笔记一览
+
+| 分类 | 笔记 | 
+|------|------|
+| **FM (16)** | Geneformer, scGPT, scFoundation, scBERT, scPoli, scPRINT, Nicheformer, Novae, UCE, SATURN, LangCell, GeneCompass, EpiAgent, Visual-Omics FM, xTrimoGene, scLong, CellFM |
+| **FM+LLM (4)** | Cell2Sentence, CELLama, CASSIA, scChat |
+| **Perturbation (3)** | Tahoe-100M/x1, STATE, PertAdapt |
+| **Virtual Cell (2)** | Virtual Cell Challenge, The Virtual Cell |
+| **Benchmark (1)** | Virtual Cell Challenge |
+
+---
+
+## 🏗️ 笔记系统
+
+### Frontmatter 标签
+
+每篇笔记文件头包含 YAML frontmatter，用于自动发现和管理：
+
+```yaml
+---
+status: done    # template | metadata | done
+filled: 2026-05-27
+---
+```
+
+### 撰写新笔记
+
+```bash
+# 1. 准备结构化数据 (JSON)
+# 2. 一条命令生成完整笔记（自动校验残留 + 更新前端配置）
+python scripts/generate_note.py data/note.json
+
+# 3. 构建验证
+cd docs-viewer && npm run build
+```
+
+### 模板残留检测
+
+```bash
+python scripts/sync_notes_config.py --validate
+```
 
 ---
 
@@ -44,18 +101,18 @@ VirtualCell/
 |------|------|--------|------|---------|------|
 | **Geneformer** | Nature 2023 | 6.5M | Transformer 6层 | 基因按表达量排序做 token | ⭐ 最易上手 |
 | **scGPT** | Nature Methods 2024 | ~50M | GPT (Causal) | 基因 pair token，支持多模态 | ⭐ 首选复现 |
-| **scFoundation** | bioRxiv 2024 | **3B** | 非对称 AE | 超大模型，引入 GO 先验 | 了解思想 |
-| **CellLM** | 2024 | ~110M | BERT | 图结构先验 | 选读 |
-| **UCE** | CZI 2024 | - | 对比学习 | 跨物种通用细胞嵌入 | 拓展阅读 |
+| **scFoundation** | Nature Methods 2024 | **3B** | 非对称 AE | 超大模型，引入 GO 先验 | 了解思想 |
+| **scBERT** | Nat Mach Intell 2022 | ~110M | BERT | 最早将 BERT 引入单细胞 | 经典必读 |
+| **UCE** | Nature 2024 | - | 对比学习 | 跨物种通用细胞嵌入 | 拓展阅读 |
 
 ---
 
 ## 🗺️ 学习路线
 
 ```
-第1步（1-2周）：读论文
-  ├─ Geneformer → 读原文，notes/fm/geneformer/ 里写笔记
-  └─ scGPT → 读原文，notes/fm/scgpt/ 里写笔记
+第1步（1-2周）：读论文 + 写笔记
+  ├─ 浏览 REPO_MAP.md 了解可用仓库
+  └─ 用 generate_note.py 撰写笔记
 
 第2步（2-3周）：跑代码
   ├─ scGPT → repos/scGPT/ 下跑通 Tutorial
@@ -65,7 +122,7 @@ VirtualCell/
   └─ scGPT embedding + squidpy 做空间聚类
 ```
 
-每篇论文搞懂这三点：
+每篇笔记搞懂这三点：
 1. **基因怎么编码成 token？**
 2. **怎么训练的？（掩码？预测？对比？）**
 3. **怎么用到下游任务？**

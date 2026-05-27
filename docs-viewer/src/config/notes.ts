@@ -19,7 +19,7 @@ export const categories = [
 ] as const
 
 export const noteMetas: NoteMeta[] = [
-  { id: 'overview', title: '总览', category: '概览', path: 'README.md' },
+  { id: 'overview', title: '总览', category: '概览', path: 'overview.md' },
 
   // --- 单细胞基础模型 (FM) ---
   { id: 'cell-atlas-fm', title: 'UCE / Cell Atlas FM', category: '单细胞基础模型 (FM)', path: 'fm/cell-atlas-fm/README.md' },
