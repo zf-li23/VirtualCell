@@ -1,3 +1,8 @@
+---
+status: done
+filled: 2026-05-27
+---
+
 # CASSIA 学习笔记
 
 > CASSIA（Cell Annotation with multi-agent Systems for Single-cell Interpretable Analysis）是一个基于**多智能体大语言模型**的自动化、可解释细胞注释系统。它利用多个 LLM agent 协作完成细胞类型标注，不仅给出标签，还能提供**推理过程和生物学证据**。由 Theis Lab（scVI 团队）开发。

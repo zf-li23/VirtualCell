@@ -1,3 +1,7 @@
+---
+status: metadata
+---
+
 # GPT-4 Cell Annotation 学习笔记
 
 > 一句话总结：这个模型的核心思想和技术路线。

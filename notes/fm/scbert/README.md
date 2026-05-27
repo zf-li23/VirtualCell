@@ -1,3 +1,8 @@
+---
+status: done
+filled: 2026-05-27
+---
+
 # scBERT 学习笔记
 
 > scBERT 是一个基于 **BERT (Transformer Encoder)** 架构的大规模预训练深度语言模型，专门用于单细胞 RNA-seq 数据的细胞类型注释。作为最早将 BERT 范式引入单细胞领域的工作之一，scBERT 开创了"基因预训练 + 细胞类型微调"的经典路线。

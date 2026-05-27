@@ -1,3 +1,8 @@
+---
+status: done
+filled: 2026-05-27
+---
+
 # GeneCompass 学习笔记
 
 > GeneCompass 是一个**知识引导的跨物种基础模型**，通过整合已知的基因调控知识（GO、KEGG、ENCODE）和跨物种单细胞数据，学习**通用的基因调控机制**。

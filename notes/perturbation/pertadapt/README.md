@@ -1,3 +1,8 @@
+---
+status: done
+filled: 2026-05-27
+---
+
 # PertAdapt 学习笔记
 
 > PertAdapt 提出了一种**插件式扰动适配器**（plug-in adapter），可以将单细胞基础模型（如 scFoundation、AIDO.Cell）高效地适配到基因扰动预测任务上，而**无需微调整个模型**。其核心创新是**基因相似性掩码注意力**（基于 GO 图）和**自适应损失函数**，在多个 Perturb-seq 数据集上达到 SOTA。

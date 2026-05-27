@@ -1,3 +1,8 @@
+---
+status: done
+filled: 2026-05-27
+---
+
 # CELLama 学习笔记
 
 > CELLama（Cell Embedding Leveraging Language Model Ability）提出了一种**利用预训练 Sentence Transformer 直接生成细胞嵌入**的方法。它不训练新的单细胞模型，而是将细胞的基因表达和元数据转化为自然语言描述句子，然后用现成的句子嵌入模型（如 all-MiniLM-L6-v2）编码为细胞嵌入。这种方法天然**零样本**、**模态无关**，同时覆盖 scRNA-seq 和空间转录组学。

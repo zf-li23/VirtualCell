@@ -1,3 +1,8 @@
+---
+status: done
+filled: 2026-05-27
+---
+
 # scPRINT 学习笔记
 
 > scPRINT (Single-cell Perturbation Response INference with Transformers) 是一个在 **5000 万细胞**上预训练的单细胞基础模型，专门设计用于**基因网络推断**。它属于当前参数量级最大的单细胞基础模型之一，聚焦于"理解基因如何协同工作"而非简单的细胞分类。

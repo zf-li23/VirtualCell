@@ -1,58 +1,59 @@
+// ⚠️ 此文件由 scripts/sync_notes_config.py 自动生成
+// 手动修改将被覆盖！请修改笔记的 frontmatter 后重新运行。
+
 export interface NoteMeta {
   id: string
   title: string
   category: string
-  /** public/notes/ 下的相对路径（不含 BASE_URL） */
   path: string
 }
 
 export const categories = [
-  '概览',
-  '评估与 Benchmark',
-  '虚拟细胞',
-  '综述与展望',
   '单细胞基础模型 (FM)',
   'FM + LLM',
   '遗传扰动',
+  '评估与 Benchmark',
+  '虚拟细胞',
   '病理基础模型',
+  '综述与展望',
 ] as const
 
 export const noteMetas: NoteMeta[] = [
-  // --- 概览 ---
   { id: 'overview', title: '总览', category: '概览', path: 'README.md' },
 
   // --- 单细胞基础模型 (FM) ---
-  { id: 'geneformer', title: 'Geneformer (2023 Nature)', category: '单细胞基础模型 (FM)', path: 'fm/geneformer/README.md' },
-  { id: 'scgpt', title: 'scGPT (2024 Nat Methods)', category: '单细胞基础模型 (FM)', path: 'fm/scgpt/README.md' },
-  { id: 'scfoundation', title: 'scFoundation (2024 Nat Methods)', category: '单细胞基础模型 (FM)', path: 'fm/scfoundation/README.md' },
-  { id: 'cell-atlas-fm', title: 'UCE / Cell Atlas FM (2024 Nature)', category: '单细胞基础模型 (FM)', path: 'fm/cell-atlas-fm/README.md' },
-  { id: 'nicheformer', title: 'Nicheformer (2025 Nat Methods)', category: '单细胞基础模型 (FM)', path: 'fm/nicheformer/README.md' },
-  { id: 'novae', title: 'Novae (2025 Nat Methods)', category: '单细胞基础模型 (FM)', path: 'fm/novae/README.md' },
-  { id: 'scbert', title: 'scBERT (2022 Nat Mach Intell)', category: '单细胞基础模型 (FM)', path: 'fm/scbert/README.md' },
-  { id: 'scpoli', title: 'scPoli (2023 Nat Methods)', category: '单细胞基础模型 (FM)', path: 'fm/scpoli/README.md' },
-  { id: 'scprint', title: 'scPRINT (2025 Nat Comms)', category: '单细胞基础模型 (FM)', path: 'fm/scprint/README.md' },
-  { id: 'genecompass', title: 'GeneCompass (2024 Cell Res)', category: '单细胞基础模型 (FM)', path: 'fm/genecompass/README.md' },
-  { id: 'saturn', title: 'SATURN (2024 Nat Methods)', category: '单细胞基础模型 (FM)', path: 'fm/saturn/README.md' },
-  { id: 'epiagent', title: 'EpiAgent (2025 Nat Methods)', category: '单细胞基础模型 (FM)', path: 'fm/epiagent/README.md' },
-  { id: 'visual-omics-fm', title: 'Visual-Omics FM (2025 Nat Methods)', category: '单细胞基础模型 (FM)', path: 'fm/visual-omics-fm/README.md' },
-  { id: 'langcell', title: 'LangCell (2024 ICML)', category: 'FM + LLM', path: 'fm-llm/langcell/README.md' },
-  { id: 'xtrimogene', title: 'xTrimoGene (2023 NeurIPS)', category: '单细胞基础模型 (FM)', path: 'fm/xtrimogene/README.md' },
-  { id: 'sclong', title: 'scLong (2024 bioRxiv)', category: '单细胞基础模型 (FM)', path: 'fm/sclong/README.md' },
-  { id: 'cellfm', title: 'CellFM (2025 Nat Comms)', category: '单细胞基础模型 (FM)', path: 'fm/cellfm/README.md' },
+  { id: 'cell-atlas-fm', title: 'UCE / Cell Atlas FM', category: '单细胞基础模型 (FM)', path: 'fm/cell-atlas-fm/README.md' },
+  { id: 'cellfm', title: 'CellFM', category: '单细胞基础模型 (FM)', path: 'fm/cellfm/README.md' },
+  { id: 'epiagent', title: 'EpiAgent', category: '单细胞基础模型 (FM)', path: 'fm/epiagent/README.md' },
+  { id: 'genecompass', title: 'GeneCompass', category: '单细胞基础模型 (FM)', path: 'fm/genecompass/README.md' },
+  { id: 'geneformer', title: 'Geneformer', category: '单细胞基础模型 (FM)', path: 'fm/geneformer/README.md' },
+  { id: 'nicheformer', title: 'Nicheformer', category: '单细胞基础模型 (FM)', path: 'fm/nicheformer/README.md' },
+  { id: 'novae', title: 'Novae', category: '单细胞基础模型 (FM)', path: 'fm/novae/README.md' },
+  { id: 'saturn', title: 'SATURN', category: '单细胞基础模型 (FM)', path: 'fm/saturn/README.md' },
+  { id: 'scbert', title: 'scBERT', category: '单细胞基础模型 (FM)', path: 'fm/scbert/README.md' },
+  { id: 'scfoundation', title: 'scFoundation', category: '单细胞基础模型 (FM)', path: 'fm/scfoundation/README.md' },
+  { id: 'scgpt', title: 'scGPT', category: '单细胞基础模型 (FM)', path: 'fm/scgpt/README.md' },
+  { id: 'sclong', title: 'scLong', category: '单细胞基础模型 (FM)', path: 'fm/sclong/README.md' },
+  { id: 'scpoli', title: 'scPoli', category: '单细胞基础模型 (FM)', path: 'fm/scpoli/README.md' },
+  { id: 'scprint', title: 'scPRINT', category: '单细胞基础模型 (FM)', path: 'fm/scprint/README.md' },
+  { id: 'visual-omics-fm', title: 'Visual-Omics FM', category: '单细胞基础模型 (FM)', path: 'fm/visual-omics-fm/README.md' },
+  { id: 'xtrimogene', title: 'xTrimoGene', category: '单细胞基础模型 (FM)', path: 'fm/xtrimogene/README.md' },
 
   // --- FM + LLM ---
-  { id: 'cell2sentence', title: 'Cell2Sentence (2024 ICML)', category: 'FM + LLM', path: 'fm-llm/cell2sentence/README.md' },
-  { id: 'cellama', title: 'CELLama (2024 bioRxiv)', category: 'FM + LLM', path: 'fm-llm/cellama/README.md' },
-  { id: 'cassia', title: 'CASSIA (2025 Nat Comms)', category: 'FM + LLM', path: 'fm-llm/cassia/README.md' },
-  { id: 'scchat', title: 'scChat (2024 bioRxiv)', category: 'FM + LLM', path: 'fm-llm/scchat/README.md' },
+  { id: 'cassia', title: 'CASSIA', category: 'FM + LLM', path: 'fm-llm/cassia/README.md' },
+  { id: 'cell2sentence', title: 'Cell2Sentence', category: 'FM + LLM', path: 'fm-llm/cell2sentence/README.md' },
+  { id: 'cellama', title: 'CELLama', category: 'FM + LLM', path: 'fm-llm/cellama/README.md' },
+  { id: 'langcell', title: 'LangCell', category: 'FM + LLM', path: 'fm-llm/langcell/README.md' },
+  { id: 'scchat', title: 'scChat', category: 'FM + LLM', path: 'fm-llm/scchat/README.md' },
 
   // --- 遗传扰动 ---
-  { id: 'tahoe-100m', title: 'Tahoe-100M (2025 bioRxiv)', category: '遗传扰动', path: 'perturbation/tahoe-100m/README.md' },
-  { id: 'state', title: 'STATE (2025 bioRxiv)', category: '遗传扰动', path: 'perturbation/state/README.md' },
-  { id: 'pertadapt', title: 'PertAdapt (2025 bioRxiv)', category: '遗传扰动', path: 'perturbation/pertadapt/README.md' },
+  { id: 'pertadapt', title: 'PertAdapt', category: '遗传扰动', path: 'perturbation/pertadapt/README.md' },
+  { id: 'state', title: 'STATE', category: '遗传扰动', path: 'perturbation/state/README.md' },
+  { id: 'tahoe-100m', title: 'Tahoe-100M / Tahoe-x1', category: '遗传扰动', path: 'perturbation/tahoe-100m/README.md' },
+
+  // --- 评估与 Benchmark ---
+  { id: 'virtual-cell-challenge', title: 'Virtual Cell Challenge', category: '评估与 Benchmark', path: 'benchmarks/virtual-cell-challenge/README.md' },
 
   // --- 虚拟细胞 ---
-  { id: 'virtual-cell-challenge', title: 'Virtual Cell Challenge (2025 Cell)', category: '虚拟细胞', path: 'benchmarks/virtual-cell-challenge/README.md' },
-  { id: 'the-virtual-cell', title: 'The Virtual Cell (2025 Nat Methods)', category: '虚拟细胞', path: 'virtual-cell/the-virtual-cell/README.md' },
+  { id: 'the-virtual-cell', title: 'The Virtual Cell', category: '虚拟细胞', path: 'virtual-cell/the-virtual-cell/README.md' },
 ]
-
