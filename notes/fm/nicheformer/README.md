@@ -21,7 +21,7 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [NicheFormer: A Foundation Model for Single-Cell and Spatial Omics](https://www.nature.com/articles/s41592-025-02814-z), Nature 2025 |
+| **论文** | [Nicheformer] |
 | **架构** | BERT — Transformer Encoder |
 | **预训练任务** | Masked Language Modeling (MLM) — 掩码基因预测 |
 | **输入** | 基因 token 序列，融合空间上下文（niche 信息） |
@@ -29,6 +29,8 @@
 | **特殊 token** | 辅助 token 编码 modality/assay/species 信息 |
 | **细胞嵌入** | CLS token 或 Mean Pooling |
 | **代码** | [GitHub](https://github.com/theislab/nicheformer) |
+| **发布日期** | 2025 |
+| **出版** | Nature Methods |
 
 ### 核心思想
 

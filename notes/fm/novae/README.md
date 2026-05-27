@@ -21,7 +21,7 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [Novae: A Graph-based Foundation Model for Spatial Transcriptomics](https://www.nature.com/articles/s41592-025-02899-6), Nature 2025 |
+| **论文** | [Novae] |
 | **架构** | 图神经网络 (GNN) — GAT v2 + SwAV Head |
 | **预训练任务** | SwAV 自监督学习 (Swapping Assignments between Views) |
 | **输入** | 空间转录组细胞图 (节点 = 细胞/spot, 边 = 空间邻接) |
@@ -29,6 +29,8 @@
 | **图增强** | 基因子集采样 + 噪声 + 丢失 |
 | **项目** | [novae](https://github.com/prism-oncology/novae) |
 | **代码** | [GitHub](https://github.com/prism-oncology/novae) |
+| **发布日期** | 2025 |
+| **出版** | Nature Methods |
 
 ### 核心思想
 

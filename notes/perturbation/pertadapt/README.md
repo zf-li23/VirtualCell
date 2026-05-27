@@ -17,9 +17,9 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [PertAdapt: Unlocking Single-Cell Foundation Models for Genetic Perturbation Prediction via Condition-Sensitive Adaptation](https://www.biorxiv.org/content/10.1101/2025.11.21.689655v1), bioRxiv 2025 |
-| **发布日期** | 2025-11 |
-| **出版** | bioRxiv（预印本） |
+| **论文** | [PertAdapt] |
+| **发布日期** | 2025 |
+| **出版** | bioRxiv |
 | **架构** | **适配器插件** + 冻结骨干 FM（scFoundation / AIDO.Cell） |
 | **核心组件** | GO 引导的注意力适配器 + 自适应损失 |
 | **代码** | [GitHub](https://github.com/theislab/PertAdapt) |
@@ -113,9 +113,9 @@ PertAdapt/
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [PertAdapt: Unlocking scFMs for Genetic Perturbation Prediction](https://www.biorxiv.org/content/10.1101/2025.11.21.689655v1), bioRxiv 2025 |
-| **发布日期** | YYYY-MM |
-| **出版** | 期刊/会议 |
+| **论文** | [PertAdapt] |
+| **发布日期** | 2025 |
+| **出版** | bioRxiv |
 | **架构** | 如 BERT / GPT / VAE / GNN / 对比学习 |
 | **预训练任务** | 如 MLM / 生成式 / 对比学习 / 自回归 |
 | **输入** | 如基因 token + 表达值 |

@@ -23,9 +23,9 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [CellFM: a large-scale foundation model pre-trained on transcriptomics of 100 million human cells](https://www.nature.com/articles/s41467-025-59926-5), Nature Communications 2025 |
-| **发布日期** | 2025-04 |
-| **出版** | Nature Communications 2025 |
+| **论文** | [CellFM] |
+| **发布日期** | 2025 |
+| **出版** | Nature Communications |
 | **架构** | Transformer Encoder（BERT 风格） |
 | **预训练任务** | 掩码基因表达预测（MLM-style） |
 | **输入** | 基因 token + 表达值（连续值编码） |
@@ -131,9 +131,9 @@ A: 预训练数据规模（1 亿细胞），而非模型架构创新。
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [CellFM: A Large-scale Foundation Model Pre-trained on Transcriptomics of 100 Million Human Cells](https://www.nature.com/articles/s41467-025-59926-5), Nature Communications 2025 |
-| **发布日期** | YYYY-MM |
-| **出版** | 期刊/会议 |
+| **论文** | [CellFM] |
+| **发布日期** | 2025 |
+| **出版** | Nature Communications |
 | **架构** | 如 BERT / GPT / VAE / GNN / 对比学习 |
 | **预训练任务** | 如 MLM / 生成式 / 对比学习 / 自回归 |
 | **输入** | 如基因 token + 表达值 |

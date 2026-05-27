@@ -21,7 +21,7 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [Universal Cell Embeddings: A Foundation Model for Cell Biology](https://www.biorxiv.org/content/10.1101/2023.11.28.568918v1), bioRxiv 2024<br>[A Cell Atlas Foundation Model for Scalable Search of Similar Human Cells](https://www.nature.com/articles/s41586-024-08411-y), Nature 2024 |
+| **论文** | [UCE / Cell Atlas FM] |
 | **架构** | Transformer Encoder + Binary Decoder |
 | **预训练任务** | 对比学习 (Contrastive Learning) + 掩码预测 |
 | **输入** | 基因表达序列 (seq_len_first 格式) |
@@ -29,6 +29,8 @@
 | **词表** | 跨物种基因词汇表 |
 | **模型维度** | d_model=1280, layers=6, heads=8 |
 | **代码** | [GitHub](https://github.com/snap-stanford/UCE) |
+| **发布日期** | 2024 |
+| **出版** | Nature |
 
 ### 核心思想
 

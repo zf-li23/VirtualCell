@@ -23,9 +23,9 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [xTrimoGene: An Efficient and Scalable Representation Learner for Single-Cell RNA-Seq Data](https://openreview.net/forum?id=gdwcoBCMVi), NeurIPS 2023 |
-| **发布日期** | 2023-09 (NeurIPS) |
-| **出版** | NeurIPS 2023 |
+| **论文** | [xTrimoGene] |
+| **发布日期** | 2023 |
+| **出版** | NeurIPS |
 | **架构** | **非对称编码器-解码器 Transformer**（类 MAE） |
 | **预训练任务** | **回归掩码预测**（MSE 损失，掩码 ~30% 位置，恢复连续表达值） |
 | **输入** | 基因 token ID + 自动离散化表达值嵌入 |

@@ -23,13 +23,15 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [A Visual–Omics Foundation Model to Bridge Histopathology with Spatial Transcriptomics](https://www.nature.com/articles/s41592-025-02707-1), Nature Methods 2025 |
+| **论文** | [Visual-Omics FM] |
 | **架构** | 双编码器 (视觉 ViT + 组学 MLP) + 跨模态注意力 |
 | **预训练任务** | 跨模态对比学习 + 掩码预测 |
 | **输入** | H&E 图像 (patch) + ST 基因表达 (spot) |
 | **输出** | 融合嵌入 / 跨模态预测 |
 | **核心能力** | 从 H&E → 预测 ST 表达 / 从 ST → 虚拟 H&E |
 | **代码** | 待公开 |
+| **发布日期** | 2025 |
+| **出版** | Nature Methods |
 
 ### 核心思想
 

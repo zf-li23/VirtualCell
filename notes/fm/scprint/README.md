@@ -21,7 +21,7 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [scPRINT: pre-training on 50 million cells allows robust gene network predictions](https://www.nature.com/articles/s41467-025-58699-1), Nature Communications 2025 |
+| **论文** | [scPRINT] |
 | **架构** | 基于 Performer 的 Transformer (线性复杂度注意力) |
 | **预训练任务** | 三任务联合：基因掩码预测 + 去噪 + 细胞嵌入对齐 |
 | **输入** | 基因表达 (pair tokenization) |
@@ -30,6 +30,8 @@
 | **参数规模** | ~300M |
 | **预训练数据** | 5000 万细胞 (来自 CELLxGENE) |
 | **代码** | [GitHub](https://github.com/jkobject/scPRINT) |
+| **发布日期** | 2025 |
+| **出版** | Nature Communications |
 
 ### 核心思想
 

@@ -21,13 +21,15 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [Population-level integration of single-cell datasets enables multi-scale analysis across samples](https://www.nature.com/articles/s41592-023-02035-2), Nature Methods 2023 |
+| **论文** | [scPoli] |
 | **架构** | 条件变分自编码器 (Conditional VAE) |
 | **学习范式** | 半监督 + 自监督 |
 | **输入** | 基因表达矩阵 + 样本标签 (可选) |
 | **输出** | 细胞嵌入 (低维潜变量) + 重构表达 |
 | **核心能力** | 批次校正 + 参考映射 + 标签迁移 |
 | **代码** | [GitHub](https://github.com/theislab/scPoli) |
+| **发布日期** | 2023 |
+| **出版** | Nature Methods |
 
 ### 核心思想
 

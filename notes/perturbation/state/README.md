@@ -17,9 +17,9 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [Predicting cellular responses to perturbation across diverse contexts with STATE](https://www.biorxiv.org/content/10.1101/2025.06.26.661135v2), bioRxiv 2025 |
-| **发布日期** | 2025-06 |
-| **出版** | bioRxiv（预印本） |
+| **论文** | [STATE] |
+| **发布日期** | 2025 |
+| **出版** | bioRxiv |
 | **架构** | 双组件：State Embedding (SE) + State Transition (ST) |
 | **预训练** | SE：通用细胞嵌入；ST：扰动响应预测 |
 | **训练数据** | 大规模 Perturb-seq（Replogle, Nadig, Tahoe-100M 等） |
@@ -102,9 +102,9 @@ state/
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [Predicting Cellular Responses to Perturbation Across Diverse Contexts with STATE](https://www.biorxiv.org/content/10.1101/2025.06.26.661135v2), bioRxiv 2025 |
-| **发布日期** | YYYY-MM |
-| **出版** | 期刊/会议 |
+| **论文** | [STATE] |
+| **发布日期** | 2025 |
+| **出版** | bioRxiv |
 | **架构** | 如 BERT / GPT / VAE / GNN / 对比学习 |
 | **预训练任务** | 如 MLM / 生成式 / 对比学习 / 自回归 |
 | **输入** | 如基因 token + 表达值 |

@@ -17,9 +17,9 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [CASSIA: a multi-agent large language model for automated and interpretable cell annotation](https://www.nature.com/articles/s41467-025-67084-x), Nature Communications 2025 |
+| **论文** | [CASSIA] |
 | **发布日期** | 2025 |
-| **出版** | Nature Communications 2025 |
+| **出版** | Nature Communications |
 | **架构** | **多智能体 LLM 系统** |
 | **核心组件** | 多个 LLM Agent（GPT-4/开源 LLM）+ Marker Gene 知识库 |
 | **输入** | 基因表达谱 + 参考数据 |
@@ -94,9 +94,9 @@ CASSIA/
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [CASSIA: A Multi-agent Large Language Model for Automated and Interpretable Cell Annotation](https://www.nature.com/articles/s41467-025-67084-x), Nature Communications 2025 |
-| **发布日期** | YYYY-MM |
-| **出版** | 期刊/会议 |
+| **论文** | [CASSIA] |
+| **发布日期** | 2025 |
+| **出版** | Nature Communications |
 | **架构** | 如 BERT / GPT / VAE / GNN / 对比学习 |
 | **预训练任务** | 如 MLM / 生成式 / 对比学习 / 自回归 |
 | **输入** | 如基因 token + 表达值 |

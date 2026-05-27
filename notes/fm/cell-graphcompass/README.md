@@ -23,9 +23,9 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [Cell-GraphCompass: Modeling Single Cells with Graph Structure Foundation Model](https://academic.oup.com/nsr/advance-article/doi/10.1093/nsr/nwaf255/8172492), National Science Review 2024 |
-| **发布日期** | YYYY-MM |
-| **出版** | 期刊/会议 |
+| **论文** | [Cell-GraphCompass] |
+| **发布日期** | 2024 |
+| **出版** | National Science Review |
 | **架构** | 如 BERT / GPT / VAE / GNN / 对比学习 |
 | **预训练任务** | 如 MLM / 生成式 / 对比学习 / 自回归 |
 | **输入** | 如基因 token + 表达值 |

@@ -23,7 +23,7 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [EpiAgent: foundation model for single-cell epigenomics](https://www.nature.com/articles/s41592-025-02822-z), Nature Methods 2025 |
+| **论文** | [EpiAgent] |
 | **架构** | Transformer (针对染色质数据定制的注意力机制) |
 | **预训练任务** | 峰可及性掩码预测 (Peak Accessibility Masking) |
 | **输入** | 染色质峰 (peak) 序列 + 可及性值 |
@@ -31,6 +31,8 @@
 | **词表** | 基因组峰区域 (~数万至数十万) |
 | **数据** | scATAC-seq (单细胞 ATAC-seq) |
 | **代码** | 待公开 |
+| **发布日期** | 2025 |
+| **出版** | Nature Methods |
 
 ### 核心思想
 

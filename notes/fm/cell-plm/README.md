@@ -23,9 +23,9 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [CellPLM: Pre-training of Cell Language Model Beyond Single Cells](https://www.biorxiv.org/content/10.1101/2023.10.03.560734v1), ICLR 2024 |
-| **发布日期** | YYYY-MM |
-| **出版** | 期刊/会议 |
+| **论文** | [CellPLM] |
+| **发布日期** | 2024 |
+| **出版** | ICLR |
 | **架构** | 如 BERT / GPT / VAE / GNN / 对比学习 |
 | **预训练任务** | 如 MLM / 生成式 / 对比学习 / 自回归 |
 | **输入** | 如基因 token + 表达值 |

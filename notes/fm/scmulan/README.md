@@ -23,9 +23,9 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [scMulan: A Multitask Generative Pre-trained Language Model for Single-cell Analysis](https://www.biorxiv.org/content/10.1101/2024.01.25.577152v1), RECOMB 2024 |
-| **发布日期** | YYYY-MM |
-| **出版** | 期刊/会议 |
+| **论文** | [scMulan] |
+| **发布日期** | 2024 |
+| **出版** | RECOMB |
 | **架构** | 如 BERT / GPT / VAE / GNN / 对比学习 |
 | **预训练任务** | 如 MLM / 生成式 / 对比学习 / 自回归 |
 | **输入** | 如基因 token + 表达值 |

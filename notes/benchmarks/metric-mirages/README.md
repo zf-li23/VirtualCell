@@ -23,9 +23,9 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [Metric Mirages in Cell Embeddings](https://www.biorxiv.org/content/10.1101/2024.04.02.587824v1), bioRxiv 2024 |
-| **发布日期** | YYYY-MM |
-| **出版** | 期刊/会议 |
+| **论文** | [Metric Mirages] |
+| **发布日期** | 2024 |
+| **出版** | bioRxiv |
 | **架构** | 如 BERT / GPT / VAE / GNN / 对比学习 |
 | **预训练任务** | 如 MLM / 生成式 / 对比学习 / 自回归 |
 | **输入** | 如基因 token + 表达值 |

@@ -23,9 +23,9 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [scNET: Learning Context-specific Gene and Cell Embeddings by Integrating Single-cell Gene Expression Data with Protein-Protein Interactions](https://www.nature.com/articles/s41592-025-02627-0), Nature Methods 2025 |
-| **发布日期** | YYYY-MM |
-| **出版** | 期刊/会议 |
+| **论文** | [scNET] |
+| **发布日期** | 2025 |
+| **出版** | Nature Methods |
 | **架构** | 如 BERT / GPT / VAE / GNN / 对比学习 |
 | **预训练任务** | 如 MLM / 生成式 / 对比学习 / 自回归 |
 | **输入** | 如基因 token + 表达值 |

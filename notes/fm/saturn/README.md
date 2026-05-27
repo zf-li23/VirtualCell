@@ -23,7 +23,7 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [Toward universal cell embeddings: integrating single-cell RNA-seq datasets across species with SATURN](https://www.nature.com/articles/s41592-024-02191-z), Nature Methods 2024 |
+| **论文** | [SATURN] |
 | **架构** | 双编码器 (基因序列编码器 + 细胞表达编码器) + 对比学习 |
 | **预训练任务** | 对比学习 (跨物种细胞类型对齐) |
 | **输入** | 基因序列 (DNA) + 基因表达 (scRNA-seq) |
@@ -31,6 +31,8 @@
 | **词表** | 跨物种基因词汇表 (基于序列相似度) |
 | **核心能力** | 跨物种 (人类↔小鼠↔斑马鱼↔...) 细胞类型匹配 |
 | **代码** | [GitHub](https://github.com/snap-stanford/saturn) |
+| **发布日期** | 2024 |
+| **出版** | Nature Methods |
 
 ### 核心思想
 

@@ -23,9 +23,9 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [scConcept: Contrastive Pretraining for Technology-agnostic Single-cell Representations](https://www.biorxiv.org/content/10.1101/2025.10.14.682419v1), bioRxiv 2025 |
-| **发布日期** | YYYY-MM |
-| **出版** | 期刊/会议 |
+| **论文** | [scConcept] |
+| **发布日期** | 2025 |
+| **出版** | bioRxiv |
 | **架构** | 如 BERT / GPT / VAE / GNN / 对比学习 |
 | **预训练任务** | 如 MLM / 生成式 / 对比学习 / 自回归 |
 | **输入** | 如基因 token + 表达值 |

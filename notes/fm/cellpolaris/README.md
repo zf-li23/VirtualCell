@@ -23,9 +23,9 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [CellPolaris: Decoding Cell Fate through Generalization Transfer Learning of Gene Regulatory Networks](https://www.biorxiv.org/content/10.1101/2023.09.25.559244v1), bioRxiv 2023 |
-| **发布日期** | YYYY-MM |
-| **出版** | 期刊/会议 |
+| **论文** | [CellPolaris] |
+| **发布日期** | 2023 |
+| **出版** | bioRxiv |
 | **架构** | 如 BERT / GPT / VAE / GNN / 对比学习 |
 | **预训练任务** | 如 MLM / 生成式 / 对比学习 / 自回归 |
 | **输入** | 如基因 token + 表达值 |

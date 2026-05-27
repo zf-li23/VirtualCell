@@ -92,9 +92,9 @@ tahoe-100m/
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [Tahoe-100M: A Giga-Scale Single-Cell Perturbation Atlas](https://www.biorxiv.org/content/10.1101/2025.02.20.639398v3), bioRxiv 2025 |
-| **发布日期** | YYYY-MM |
-| **出版** | 期刊/会议 |
+| **论文** | [Tahoe-100M] |
+| **发布日期** | 2025 |
+| **出版** | bioRxiv |
 | **架构** | 如 BERT / GPT / VAE / GNN / 对比学习 |
 | **预训练任务** | 如 MLM / 生成式 / 对比学习 / 自回归 |
 | **输入** | 如基因 token + 表达值 |

@@ -23,9 +23,9 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [scPRINT-2: Towards the Next-generation of Cell Foundation Models and Benchmarks](https://www.biorxiv.org/content/10.64898/2025.12.11.693702v2), bioRxiv 2025 |
-| **发布日期** | YYYY-MM |
-| **出版** | 期刊/会议 |
+| **论文** | [scPRINT-2] |
+| **发布日期** | 2025 |
+| **出版** | bioRxiv |
 | **架构** | 如 BERT / GPT / VAE / GNN / 对比学习 |
 | **预训练任务** | 如 MLM / 生成式 / 对比学习 / 自回归 |
 | **输入** | 如基因 token + 表达值 |

@@ -21,7 +21,7 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [Transfer learning enables predictions in network biology](https://www.nature.com/articles/s41586-023-06139-9), Nature 2023 |
+| **论文** | [Geneformer] |
 | **V2 论文** | [Scaling and quantization of large-scale foundation model enables resource-efficient predictions in network biology](https://www.nature.com/articles/s43588-026-00972-4), Nature Computational Science 2026 |
 | **架构** | BERT (BertForMaskedLM) — Transformer Encoder |
 | **预训练任务** | Masked Language Modeling (MLM) — 掩码基因预测 |
@@ -30,6 +30,8 @@
 | **词表** | ~20K~25K 个基因（蛋白编码基因 + miRNA） |
 | **代码** | [GitHub](https://hf-mirror.com/ctheodoris/Geneformer) |
 | **许可** | Apache 2.0 |
+| **发布日期** | 2023 |
+| **出版** | Nature |
 
 ### 核心思想
 

@@ -23,9 +23,9 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [CELLama: Foundation Model for Single Cell and Spatial Transcriptomics by Cell Embedding Leveraging Language Model Abilities](https://www.biorxiv.org/content/10.1101/2024.05.08.593094v1), Advanced Science 2025 |
-| **发布日期** | 2024-05 (bioRxiv) / 2025 (Adv Sci) |
-| **出版** | Advanced Science 2025 |
+| **论文** | [CELLama] |
+| **发布日期** | 2024 |
+| **出版** | Advanced Science |
 | **架构** | **Sentence Transformer**（预训练，如 all-MiniLM-L6-v2） |
 | **预训练任务** | **无需单细胞训练**（使用 NLP 预训练模型） |
 | **输入** | 细胞描述句子（基因名 + 表达 + 元数据） |
@@ -173,9 +173,9 @@ A: 句子的质量取决于模板设计和元数据的完整性。CELLama 提供
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [CELLama: Foundation Model for Single Cell and Spatial Transcriptomics by Cell Embedding Leveraging Language Model Abilities](https://www.biorxiv.org/content/10.1101/2024.05.08.593094v1), bioRxiv 2024 |
-| **发布日期** | YYYY-MM |
-| **出版** | 期刊/会议 |
+| **论文** | [CELLama] |
+| **发布日期** | 2024 |
+| **出版** | Advanced Science |
 | **架构** | 如 BERT / GPT / VAE / GNN / 对比学习 |
 | **预训练任务** | 如 MLM / 生成式 / 对比学习 / 自回归 |
 | **输入** | 如基因 token + 表达值 |

@@ -17,7 +17,7 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [Virtual Cell Challenge: Toward a Turing test for the virtual cell](https://www.cell.com/cell/fulltext/S0092-8674(25)00675-0), Cell 2025 |
+| **论文** | [Virtual Cell Challenge] |
 | **发布日期** | 2025 |
 | **出版** | Cell |
 | **性质** | **挑战框架 / 基准测试** |
@@ -87,9 +87,9 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [Virtual Cell Challenge: Toward a Turing Test for the Virtual Cell](https://www.cell.com/cell/fulltext/S0092-8674(25)00675-0), Cell 2025 |
-| **发布日期** | YYYY-MM |
-| **出版** | 期刊/会议 |
+| **论文** | [Virtual Cell Challenge] |
+| **发布日期** | 2025 |
+| **出版** | Cell |
 | **架构** | 如 BERT / GPT / VAE / GNN / 对比学习 |
 | **预训练任务** | 如 MLM / 生成式 / 对比学习 / 自回归 |
 | **输入** | 如基因 token + 表达值 |

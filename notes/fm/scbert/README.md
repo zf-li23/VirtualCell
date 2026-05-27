@@ -21,7 +21,7 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [scBERT as a Large-scale Pretrained Deep Language Model for Cell Type Annotation of Single-cell RNA-seq Data](https://www.nature.com/articles/s42256-022-00534-z), Nature Machine Intelligence 2022 |
+| **论文** | [scBERT] |
 | **架构** | BERT (Transformer Encoder — 双向注意力) |
 | **预训练任务** | Masked Language Modeling (MLM) — 掩码基因表达值预测 |
 | **输入** | 基因 token (基于 Gene2Vec 嵌入) + 表达值 |
@@ -29,6 +29,8 @@
 | **词表** | 约 17,000+ 基因 (基于 Ensembl ID) |
 | **参数规模** | ~50M |
 | **代码** | [GitHub](https://github.com/TencentAILabHealthcare/scBERT) |
+| **发布日期** | 2022 |
+| **出版** | Nature Machine Intelligence |
 
 ### 核心思想
 

@@ -23,9 +23,9 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [MuSe-GNN: Learning Unified Gene Representation From Multimodal Biological Graph Data](https://openreview.net/forum?id=4UCktT9XZx), NeurIPS 2023 |
-| **发布日期** | YYYY-MM |
-| **出版** | 期刊/会议 |
+| **论文** | [MuSe-GNN] |
+| **发布日期** | 2023 |
+| **出版** | NeurIPS |
 | **架构** | 如 BERT / GPT / VAE / GNN / 对比学习 |
 | **预训练任务** | 如 MLM / 生成式 / 对比学习 / 自回归 |
 | **输入** | 如基因 token + 表达值 |

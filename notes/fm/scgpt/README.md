@@ -21,7 +21,7 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [scGPT: Toward Building a Foundation Model for Single-Cell Multi-Omics Using Generative AI](https://www.nature.com/articles/s41592-024-02201-0), Nature Methods 2024 |
+| **论文** | [scGPT] |
 | **架构** | GPT (Causal Transformer — 单向注意力) |
 | **预训练任务** | 基因表达生成式预训练 (生成式 MLM / 自回归) |
 | **输入** | 基因 token + 表达值 token 的配对序列 |
@@ -29,6 +29,8 @@
 | **词表** | ~30K+ 基因 (基于 HGNC 基因符号) |
 | **代码** | [GitHub](https://github.com/bowang-lab/scGPT) |
 | **许可** | MIT |
+| **发布日期** | 2024 |
+| **出版** | Nature Methods |
 
 ### 核心思想
 

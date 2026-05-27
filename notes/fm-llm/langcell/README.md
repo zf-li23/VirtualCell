@@ -23,9 +23,9 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [LangCell: Language-Cell Pre-training for Cell Identity Understanding](https://arxiv.org/abs/2405.06708), ICML 2024 |
-| **发布日期** | 2024-05 (arXiv v1), 2024-07 (ICML) |
-| **出版** | ICML 2024 |
+| **论文** | [LangCell] |
+| **发布日期** | 2024 |
+| **出版** | ICML |
 | **架构** | 双编码器 (Cell BERT + Text BERT) + 对比学习 + Cell-Text Matching |
 | **预训练任务** | 对比学习 (跨模态对齐) + Cell-Text Matching (CTM) |
 | **输入** | 单细胞转录组 (基因表达排序) + 细胞身份文本描述 |

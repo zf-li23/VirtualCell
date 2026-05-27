@@ -23,7 +23,7 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [GeneCompass: Deciphering Universal Gene Regulatory Mechanisms with Knowledge-Informed Cross-Species Foundation Model](https://www.nature.com/articles/s41422-024-01034-y), Cell Research 2024 |
+| **论文** | [GeneCompass] |
 | **架构** | Transformer Encoder (BERT-style) + 知识注入模块 |
 | **预训练任务** | MLM + 基因调控关系预测 |
 | **输入** | 基因 token 序列（跨物种统一词汇表） |
@@ -33,6 +33,8 @@
 | **预训练数据** | 跨物种单细胞数据（人类 + 小鼠） |
 | **先验知识** | GO / KEGG / ENCODE 基因调控知识 |
 | **代码** | 未公开（商业/学术限制） |
+| **发布日期** | 2024 |
+| **出版** | Cell Research |
 
 ### 核心思想
 

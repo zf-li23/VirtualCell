@@ -21,7 +21,7 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [scFoundation: Large Scale Foundation Model on Single-cell Transcriptomics](https://www.nature.com/articles/s41592-024-02305-7), Nature Methods 2024<br>[xTrimoGene: An Efficient and Scalable Representation Learner for Single-Cell RNA-Seq Data](https://arxiv.org/abs/2311.15156), arXiv 2023 (Earlier Version) |
+| **论文** | [scFoundation] |
 | **架构** | 非对称自编码器 (Asymmetric Autoencoder) — 大编码器 + 小解码器 |
 | **注意力机制** | Performer (线性复杂度，通过正交随机投影矩阵近似 Softmax 注意力) |
 | **预训练任务** | 基因表达掩码重建 (Masked Expression Reconstruction) |
@@ -30,6 +30,8 @@
 | **词表** | 19,264 个基因 (基于 10X Genomics 常用基因) |
 | **参数规模** | ~100M ~ 1B |
 | **代码** | [GitHub](https://github.com/biomap-research/scFoundation) |
+| **发布日期** | 2024 |
+| **出版** | Nature Methods |
 
 ### 核心思想
 

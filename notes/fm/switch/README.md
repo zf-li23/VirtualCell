@@ -23,9 +23,9 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [Integrative Deep Learning of Spatial Multi-omics with SWITCH](https://www.nature.com/articles/s43588-025-00891-w), Nature Computational Science 2025 |
-| **发布日期** | YYYY-MM |
-| **出版** | 期刊/会议 |
+| **论文** | [SWITCH] |
+| **发布日期** | 2025 |
+| **出版** | Nature Computational Science |
 | **架构** | 如 BERT / GPT / VAE / GNN / 对比学习 |
 | **预训练任务** | 如 MLM / 生成式 / 对比学习 / 自回归 |
 | **输入** | 如基因 token + 表达值 |

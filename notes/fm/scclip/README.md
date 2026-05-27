@@ -23,9 +23,9 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [scCLIP: Multi-modal Single-cell Contrastive Learning Integration Pre-training](https://openreview.net/pdf?id=KMtM5ZHxct), NeurIPS AI4Sci 2023 |
-| **发布日期** | YYYY-MM |
-| **出版** | 期刊/会议 |
+| **论文** | [scCLIP] |
+| **发布日期** | 2023 |
+| **出版** | NeurIPS Workshop |
 | **架构** | 如 BERT / GPT / VAE / GNN / 对比学习 |
 | **预训练任务** | 如 MLM / 生成式 / 对比学习 / 自回归 |
 | **输入** | 如基因 token + 表达值 |

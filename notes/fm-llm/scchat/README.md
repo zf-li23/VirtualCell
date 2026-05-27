@@ -18,9 +18,9 @@
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [scChat: A Large Language Model-Powered Co-Pilot for Contextualized Single-Cell RNA Sequencing Analysis](https://aiche.onlinelibrary.wiley.com/doi/full/10.1002/aic.70285), AIChE Journal 2024 |
+| **论文** | [scChat] |
 | **发布日期** | 2024 |
-| **出版** | AIChE Journal 2024 |
+| **出版** | AIChE Journal |
 | **架构** | **多智能体 LLM 系统** + RAG + Neo4j 知识图谱 |
 | **核心组件** | 5 个 Agent（Planner/Executor/Evaluator/Critic/Response Generator） |
 | **知识库** | CellMarker, GO, KEGG, Reactome（Neo4j 图数据库） |
@@ -127,9 +127,9 @@ scChat/
 
 | 属性 | 描述 |
 |------|------|
-| **论文** | [scChat: A Large Language Model-Powered Co-Pilot for Contextualized scRNA-seq Analysis](https://www.biorxiv.org/content/10.1101/2024.10.01.616063v1.full.pdf+html), bioRxiv 2024 |
-| **发布日期** | YYYY-MM |
-| **出版** | 期刊/会议 |
+| **论文** | [scChat] |
+| **发布日期** | 2024 |
+| **出版** | AIChE Journal |
 | **架构** | 如 BERT / GPT / VAE / GNN / 对比学习 |
 | **预训练任务** | 如 MLM / 生成式 / 对比学习 / 自回归 |
 | **输入** | 如基因 token + 表达值 |
