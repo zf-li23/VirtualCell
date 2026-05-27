@@ -1,40 +1,50 @@
-# scripts — 可复现实验
+# scripts — 工具脚本
 
-> 本目录用于存放可运行的 Python 脚本和 Jupyter Notebook，覆盖模型推理、基准测试和数据分析。
+## 文件说明
 
-## 目录结构
+| 脚本 | 用途 |
+|------|------|
+| `generate_note.py` | **从结构化数据生成完整笔记**（JSON 或 CLI 参数）。完整文件写入，自动校验残留，自动更新前端配置。 |
+| `fill_repo_links.py` | 从 `repos/` 获取仓库 URL 填入笔记代码行 + 论文元数据 |
+| `sync_notes_config.py` | **自动发现** `notes/` 中已撰写的笔记（status=done），生成前端 `notes.ts` + `loaders.ts` |
+| `copy_template.sh` | 将 `_template.md` 复制到未填充的笔记目录 |
 
-```
-scripts/
-├── README.md              ← 你在这里
-├── tutorials/             # 模型入门教程
-│   ├── geneformer_basics.ipynb
-│   └── scgpt_pbmc3k.ipynb
-├── benchmarks/            # 基准测试脚本
-│   └── eval_embeddings.ipynb
-└── utils/                 # 工具函数
-    └── data_loader.py
-```
-
-## 环境
-
-所有脚本使用 `zf-li23` conda 环境：
+## 撰写新笔记的标准流程
 
 ```bash
-conda activate zf-li23
+# 1. 准备结构化数据 (JSON)
+cat > data/scgpt.json << 'EOF'
+{
+  "id": "scgpt",
+  "title": "scGPT",
+  "year": "2024",
+  "venue": "Nature Methods",
+  "category": "fm",
+  ...
+}
+EOF
+
+# 2. 生成笔记（完整文件写入，自动校验）
+python scripts/generate_note.py data/scgpt.json
+
+# 3. 构建验证
+cd docs-viewer && npm run build
 ```
 
-## 数据
+## 笔记状态标签（Frontmatter）
 
-公开数据集放在 `../data/` 目录下。当前已有：
+每篇笔记文件头包含 YAML frontmatter：
 
-| 文件 | 来源 | 大小 |
-|------|------|------|
-| `pbmc3k.h5ad` | scanpy.datasets.pbmc3k() | ~21 MB |
-| `pbmc3k_raw.h5ad` | scanpy.datasets.pbmc3k() | ~5.6 MB |
+```yaml
+---
+status: done    # template | metadata | done
+filled: 2026-05-27
+---
+```
 
-## 添加新脚本
+- `template` — 空白模板，等待填写
+- `metadata` — 仅有论文元数据（标题/年份/期刊等）
+- `done` — 已撰写深度内容
 
-1. 选择合适的子目录（tutorials / benchmarks / utils）
-2. 以 `.py` 或 `.ipynb` 格式添加
-3. 在文件头部注明依赖和用法
+运行 `sync_notes_config.py` 会自动扫描 `status=done` 的笔记并注册到前端。
+

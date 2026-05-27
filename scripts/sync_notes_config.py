@@ -13,6 +13,7 @@ sync_notes_config.py
   python scripts/sync_notes_config.py              # 添加 frontmatter + 生成配置
   python scripts/sync_notes_config.py --dry-run    # 仅预览，不写文件
   python scripts/sync_notes_config.py --frontmatter-only  # 只添加 frontmatter
+  python scripts/sync_notes_config.py --validate   # 检查所有笔记的模板残留
 """
 
 import re
@@ -27,6 +28,18 @@ CONFIG_PATH = CONFIG_DIR / "notes.ts"
 
 # frontmatter 正则
 FM_PATTERN = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.DOTALL)
+
+# 模板残留检测标记
+TEMPLATE_MARKERS = [
+    "用 ASCII 艺术图展示整体流程",
+    "│Encoder  │  ← 组件名",
+    "[组件1 名称]",
+    "[组件2 名称]",
+    "### 3.1 [创新点1]",
+    "模型与 X 模型的核心区别是什么",
+    "笔记最后更新：YYYY-MM-DD",
+    "[相关论文1]",
+]
 
 # 分类名称映射（目录名 → 前端显示名）
 CATEGORY_NAMES = {
@@ -106,6 +119,27 @@ def write_frontmatter(text: str, status: str) -> str:
             fm_text += f"filled: {date.today().isoformat()}\n"
         fm_text += "---\n\n"
         return fm_text + text
+
+
+def validate_all_notes(notes: list[dict]):
+    """检查所有已完成笔记的模板残留"""
+    print("检查模板残留...")
+    has_error = False
+    checked = 0
+    for n in notes:
+        if n["status"] != "done":
+            continue
+        checked += 1
+        text = n["text"]
+        found = [m for m in TEMPLATE_MARKERS if m in text]
+        if found:
+            print(f"  ❌ {n['category']}/{n['id']}: {found}")
+            has_error = True
+    if not has_error:
+        print(f"  ✅ {checked} 篇已完成笔记全部通过")
+    else:
+        print(f"  ⚠️  请修复后重新运行")
+    return has_error
 
 
 def scan_notes() -> list[dict]:
@@ -349,6 +383,10 @@ def main():
     print(f"  {added} 个笔记已更新\n")
 
     if fm_only:
+        return
+
+    if "--validate" in sys.argv:
+        validate_all_notes(notes)
         return
 
     # 重新扫描（frontmatter 已更新）

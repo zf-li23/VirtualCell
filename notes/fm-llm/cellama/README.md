@@ -168,6 +168,3 @@ A: 句子的质量取决于模板设计和元数据的完整性。CELLama 提供
 
 - [Sentence Transformers](https://www.sbert.net/) — CELLama 的基础模型
 - [Cell2Sentence](https://arxiv.org/abs/2309.11222) — 另一种"细胞到句子"方法
-8. [代码结构速览](#8-代码结构速览)
-9. [关键概念 Q&A](#9-关键概念-qa)
-10. [延伸阅读](#10-延伸阅读)
