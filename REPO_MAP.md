@@ -37,8 +37,8 @@
 | `cell-graphcompass` | ❌ 未找到 | ❌ |
 | `cell-niche-graph` | ❌ 未找到 | ❌ |
 | `cell-ontology-fm` | ❌ 未找到 | ❌ |
-| `cell-plm` | ❌ 未找到 | ❌ |
-| `cellfm` | ❌ 未找到 | ❌ |
+| `cell-plm` | [https://github.com/OmicsML/CellPLM](https://github.com/OmicsML/CellPLM) | ✅ |
+| `cellfm` | [https://github.com/biomed-AI/CellFM](https://github.com/biomed-AI/CellFM) | ✅ |
 | `cellpolaris` | ❌ 未找到 | ❌ |
 | `chromfound` | ❌ 未找到 | ❌ |
 | `divide-conquer-ssl` | ❌ | ❌ |
@@ -47,7 +47,7 @@
 | `epifoundation` | ❌ 未找到 | ❌ |
 | `gene-repr-st` | ❌ | ❌ |
 | `genecompass` | ❌ 未找到 | ❌ |
-| `geneformer` | [https://hf-mirror.com/ctheodoris/Geneformer](https://hf-mirror.com/ctheodoris/Geneformer)（HuggingFace） | ✅ |
+| `geneformer` | HuggingFace: [hf-mirror.com/ctheodoris/Geneformer](https://hf-mirror.com/ctheodoris/Geneformer) | ✅ |
 | `genejepa` | ❌ 未找到 | ❌ |
 | `generative-pretraining` | ❌ | ❌ |
 | `langcell` | [https://github.com/PharMolix/LangCell](https://github.com/PharMolix/LangCell) | ✅ |
@@ -71,17 +71,17 @@
 | `scbert` | [https://github.com/TencentAILabHealthcare/scBERT](https://github.com/TencentAILabHealthcare/scBERT) | ✅ |
 | `scclip` | ❌ 未找到 | ❌ |
 | `scconcept` | ❌ 未找到 | ❌ |
-| `scelmo` | ❌ 未找到 | ❌ |
+| `scelmo` | [https://github.com/HelloWorldLTY/scELMo](https://github.com/HelloWorldLTY/scELMo) | ✅ |
 | `scfoundation` | [https://github.com/biomap-research/scFoundation](https://github.com/biomap-research/scFoundation) | ✅ |
 | `scgpt` | [https://github.com/bowang-lab/scGPT](https://github.com/bowang-lab/scGPT) | ✅ |
-| `scgpt-spatial` | [https://github.com/bowang-lab/scGPT](https://github.com/bowang-lab/scGPT)（同仓库） | ✅ |
+| `scgpt-spatial` | [https://github.com/bowang-lab/scGPT-spatial](https://github.com/bowang-lab/scGPT-spatial) | ✅ |
 | `schiena` (scHyena) | ❌ 未找到 | ❌ |
 | `sclinguist` | ❌ 未找到 | ❌ |
-| `sclong` | ❌ 未找到 | ❌ |
+| `sclong` | [https://github.com/BaiDing1234/scLong](https://github.com/BaiDing1234/scLong) | ✅ |
 | `scmformer` | ❌ | ❌ |
-| `scmulan` | ❌ 未找到 | ❌ |
-| `scnet` | ❌ 未找到 | ❌ |
-| `scpeft` | ❌ 未找到 | ❌ |
+| `scmulan` | [https://github.com/SuperBianC/scMulan](https://github.com/SuperBianC/scMulan) | ✅ |
+| `scnet` | [https://github.com/madilabcode/scNET](https://github.com/madilabcode/scNET) | ✅ |
+| `scpeft` | [https://github.com/coffee19850519/scPEFT](https://github.com/coffee19850519/scPEFT) | ✅ |
 | `scpoli` | [https://github.com/theislab/scPoli](https://github.com/theislab/scPoli) | ✅ |
 | `scpretrain` | ❌ 未找到 | ❌ |
 | `scprint` | [https://github.com/jkobject/scPRINT](https://github.com/jkobject/scPRINT) | ✅ |
@@ -93,7 +93,7 @@
 | `stofm` | ❌ | ❌ |
 | `stpath` | ❌ | ❌ |
 | `switch` | ❌ 未找到 | ❌ |
-| `tabulam` (Tabula) | ❌ | ❌ |
+| `tabulam` (Tabula) | ❌ 无公开仓库 (论文在 publications/) | ❌ |
 | `transcriptformer` | ❌ | ❌ |
 | `transcription-foundation` | ❌ 未找到 | ❌ |
 | `transcriptome-proteome` | ❌ | ❌ |
@@ -107,9 +107,9 @@
 
 | 目录名 | 代码仓库 | 状态 |
 |--------|---------|------|
-| `cassia` | ❌ 未找到 | ❌ |
-| `cell2sentence` | ❌ 未找到 | ❌ |
-| `cellama` | ❌ 未找到 | ❌ |
+| `cassia` | [https://github.com/ElliotXie/CASSIA](https://github.com/ElliotXie/CASSIA) | ✅ |
+| `cell2sentence` | [https://github.com/SiYangming/cell2sentence-ft](https://github.com/SiYangming/cell2sentence-ft) | ✅ |
+| `cellama` | [https://github.com/portrai-io/CELLama](https://github.com/portrai-io/CELLama) | ✅ |
 | `cellforge` | ❌ 未找到 | ❌ |
 | `cellhermes` | ❌ | ❌ |
 | `celltok` | ❌ | ❌ |
@@ -122,7 +122,7 @@
 | `llm-consensus-annotation` | ❌ | ❌ |
 | `okr-cell` | ❌ | ❌ |
 | `scaling-llm-sc` | ❌ | ❌ |
-| `scchat` | ❌ 未找到 | ❌ |
+| `scchat` | [https://github.com/li-group/scChat](https://github.com/li-group/scChat) | ✅ |
 | `scilama` | ❌ 未找到 | ❌ |
 | `scouter` | ❌ 未找到 | ❌ |
 | `screader` | ❌ 未找到 | ❌ |
@@ -141,17 +141,17 @@
 | `diffusion-debias-perturbation` | ❌ | ❌ |
 | `in-silico-discovery` | ❌ 未找到 | ❌ |
 | `pca-still-rules` | ❌ | ❌ |
-| `pertadapt` | ❌ 未找到 | ❌ |
+| `pertadapt` | [https://github.com/BaiDing1234/PertAdapt](https://github.com/BaiDing1234/PertAdapt) | ✅ |
 | `perteval-scfm` | ❌ 未找到 | ❌ |
 | `perturbation-linear-baselines` | ❌ | ❌ |
 | `scfme` | ❌ | ❌ |
 | `scgenept` | ❌ 未找到 | ❌ |
 | `sclambda` | ❌ 未找到 | ❌ |
 | `spatialprop` | ❌ | ❌ |
-| `state` | ❌ 未找到 | ❌ |
+| `state` | [https://github.com/ArcInstitute/state](https://github.com/ArcInstitute/state) | ✅ |
 | `systema` | ❌ 未找到 | ❌ |
-| `tahoe-100m` | ❌ 未找到 | ❌ |
-| `tahoe-x1` | ❌ 未找到（与 tahoe-100m 同仓库） | ❌ |
+| `tahoe-100m` | [https://github.com/tahoebio/tahoe-x1](https://github.com/tahoebio/tahoe-x1) | ✅ |
+| `tahoe-x1` | [https://github.com/tahoebio/tahoe-x1](https://github.com/tahoebio/tahoe-x1)（同仓库） | ✅ |
 
 ---
 
@@ -259,36 +259,37 @@
 
 ## 批量下载脚本
 
-### 已下载（`repos/` 目录中，已验证 31 个仓库）
+### 已下载（`repos/` 目录中，已验证 **32 个仓库**）
 
 | 仓库 | 实际 URL（已验证） | 对应笔记 |
 |------|-------------------|---------|
-| `Geneformer/` | HuggingFace (hf-mirror.com) | `notes/fm/geneformer/` |
-| `scGPT/` | `bowang-lab/scGPT` | `notes/fm/scgpt/`、`notes/fm/scgpt-spatial/` |
-| `scGPT-spatial/` | `bowang-lab/scGPT-spatial` | `notes/fm/scgpt-spatial/` |
-| `scFoundation/` | `biomap-research/scFoundation` | `notes/fm/scfoundation/` |
-| `UCE/` | `snap-stanford/UCE` | `notes/fm/cell-atlas-fm/` |
-| `nicheformer/` | `theislab/nicheformer` | `notes/fm/nicheformer/` |
-| `novae/` | `prism-oncology/novae` | `notes/fm/novae/` |
-| `saturn/` | `snap-stanford/saturn` | `notes/fm/saturn/` |
-| `scBERT/` | `TencentAILabHealthcare/scBERT` | `notes/fm/scbert/` |
-| `scPoli/` | `theislab/scPoli` | `notes/fm/scpoli/` |
-| `scPRINT/` | `jkobject/scPRINT` | `notes/fm/scprint/`、`notes/fm/scprint-2/` |
-| `LangCell/` | `PharMolix/LangCell` | `notes/fm-llm/langcell/` |
-| `scLong/` | `BaiDing1234/scLong` | `notes/fm/sclong/` |
-| `CellFM/` | `biomed-AI/CellFM` | `notes/fm/cellfm/` |
-| `CellPLM/` | `OmicsML/CellPLM` | `notes/fm/cell-plm/` |
-| `scPEFT/` | `coffee19850519/scPEFT` | `notes/fm/scpeft/` |
-| `scMulan/` | `SuperBianC/scMulan` | `notes/fm/scmulan/` |
-| `scNET/` | `madilabcode/scNET` | `notes/fm/scnet/` |
-| `scELMo/` | `HelloWorldLTY/scELMo` | `notes/fm/scelmo/` |
-| `CASSIA/` | `ElliotXie/CASSIA` | `notes/fm-llm/cassia/` |
-| `CELLama/` | `portrai-io/CELLama` | `notes/fm-llm/cellama/` |
-| `scChat/` | `li-group/scChat` | `notes/fm-llm/scchat/` |
-| `cell2sentence-ft/` | `SiYangming/cell2sentence-ft` | `notes/fm-llm/cell2sentence/` |
-| `PertAdapt/` | `BaiDing1234/PertAdapt` | `notes/perturbation/pertadapt/` |
-| `state/` | `ArcInstitute/state` | `notes/perturbation/state/` |
-| `tahoe-x1/` | `tahoebio/tahoe-x1` | `notes/perturbation/tahoe-100m/` |
+| `Geneformer/` | HuggingFace (hf-mirror.com) | `fm/geneformer/` |
+| `scGPT/` | `bowang-lab/scGPT` | `fm/scgpt/` |
+| `scGPT-spatial/` | `bowang-lab/scGPT-spatial` | `fm/scgpt-spatial/` |
+| `scFoundation/` | `biomap-research/scFoundation` | `fm/scfoundation/` |
+| `UCE/` | `snap-stanford/UCE` | `fm/cell-atlas-fm/` |
+| `nicheformer/` | `theislab/nicheformer` | `fm/nicheformer/` |
+| `novae/` | `prism-oncology/novae` | `fm/novae/` |
+| `saturn/` | `snap-stanford/saturn` | `fm/saturn/` |
+| `scBERT/` | `TencentAILabHealthcare/scBERT` | `fm/scbert/` |
+| `scPoli/` | `theislab/scPoli` | `fm/scpoli/` |
+| `scPRINT/` | `jkobject/scPRINT` | `fm/scprint/`、`fm/scprint-2/` |
+| `LangCell/` | `PharMolix/LangCell` | `fm-llm/langcell/` |
+| `scLong/` | `BaiDing1234/scLong` | `fm/sclong/` |
+| `CellFM/` | `biomed-AI/CellFM` | `fm/cellfm/` |
+| `CellPLM/` | `OmicsML/CellPLM` | `fm/cell-plm/` |
+| `scPEFT/` | `coffee19850519/scPEFT` | `fm/scpeft/` |
+| `scMulan/` | `SuperBianC/scMulan` | `fm/scmulan/` |
+| `scNET/` | `madilabcode/scNET` | `fm/scnet/` |
+| `scELMo/` | `HelloWorldLTY/scELMo` | `fm/scelmo/` |
+| `CASSIA/` | `ElliotXie/CASSIA` | `fm-llm/cassia/` |
+| `CELLama/` | `portrai-io/CELLama` | `fm-llm/cellama/` |
+| `scChat/` | `li-group/scChat` | `fm-llm/scchat/` |
+| `cell2sentence-ft/` | `SiYangming/cell2sentence-ft` | `fm-llm/cell2sentence/` |
+| `PertAdapt/` | `BaiDing1234/PertAdapt` | `perturbation/pertadapt/` |
+| `state/` | `ArcInstitute/state` | `perturbation/state/` |
+| `tahoe-x1/` | `tahoebio/tahoe-x1` | `perturbation/tahoe-100m/` |
+| `pertpy/` | `scverse/pertpy` | 扰动分析工具 |
 | `GraphST/` | `JinmiaoChenLab/GraphST` | 空间组学工具 |
 | `SpaceFlow/` | `hongleir/SpaceFlow` | 空间组学工具 |
 | `SpaGCN/` | `jianhuupenn/SpaGCN` | 空间组学工具 |
@@ -297,4 +298,4 @@
 
 ---
 
-> 📌 文档更新于 2026-05-27。已下载 **31 个仓库**，已完成 **26 篇深度笔记**。
+> 📌 文档更新于 2026-05-27。已下载 **32 个仓库**，已完成 **33 篇深度笔记**。
