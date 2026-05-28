@@ -201,7 +201,7 @@
 | 目录名 | 代码仓库 | 状态 |
 |--------|---------|------|
 | `ai-virtual-cell-preclinical` | 📝 综述 | ❌ |
-| `build-virtual-cell-ai` | 📝 观点文章 | ❌ |
+| `build-virtual-cell-ai` | 📝 观点文章（已撰写笔记） | ✅ |
 | `cellforge` | [https://github.com/gersteinlab/CellForge](https://github.com/gersteinlab/CellForge) | ✅ |
 | `grow-ai-virtual-cells` | 📝 观点文章 | ❌ |
 | `llm-virtual-cell-survey` | 📝 综述 | ❌ |

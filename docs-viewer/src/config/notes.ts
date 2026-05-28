@@ -90,4 +90,11 @@ export const noteMetas: NoteMeta[] = [
   { id: 'conch', title: 'CONCH', category: '病理基础模型', path: 'pathology/conch/README.md' },
   { id: 'uni', title: 'UNI', category: '病理基础模型', path: 'pathology/uni/README.md' },
   { id: 'whole-slide-fm', title: 'Whole-Slide FM', category: '病理基础模型', path: 'pathology/whole-slide-fm/README.md' },
+
+  // --- 综述与展望 ---
+  { id: 'build-virtual-cell-ai', title: 'Build Virtual Cell with AI', category: '综述与展望', path: 'surveys/build-virtual-cell-ai/README.md' },
+  { id: 'harnessing-fm-omics', title: 'Harnessing the Deep Learning Power of Foundation Models in Single-Cell Omics', category: '综述与展望', path: 'surveys/harnessing-fm-omics/README.md' },
+  { id: 'interpretation-perturbation-sc', title: 'Interpretation, Extrapolation and Perturbation of Single Cells', category: '综述与展望', path: 'surveys/interpretation-perturbation-sc/README.md' },
+  { id: 'multimodal-fm-cell-biology', title: 'Towards Multimodal Foundation Models in Molecular Cell Biology', category: '综述与展望', path: 'surveys/multimodal-fm-cell-biology/README.md' },
+  { id: 'transformers-sc-omics-review', title: 'Transformers in Single-Cell Omics: A Review and New Perspectives', category: '综述与展望', path: 'surveys/transformers-sc-omics-review/README.md' },
 ]
