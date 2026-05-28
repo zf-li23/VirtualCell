@@ -3,7 +3,7 @@
 > 📌 本文记录 `notes/` 下每篇论文对应的官方代码仓库地址。
 > 用途：批量 `git clone` 下载代码、快速定位源码。
 >
-> 最后更新：2026-06-17
+> 最后更新：2026-05-28
 >
 > 图例：
 > - ✅ 仓库已验证可用
@@ -58,7 +58,7 @@
 | `musegnn` | ❌ 未找到 | ❌ |
 | `nicheformer` | [https://github.com/theislab/nicheformer](https://github.com/theislab/nicheformer) | ✅ |
 | `novae` | [https://github.com/prism-oncology/novae](https://github.com/prism-oncology/novae) | ✅ |
-| `omnicell` | ❌ | ❌ |
+| `omnicell` | [https://github.com/BGIResearch/omnicell](https://github.com/BGIResearch/omnicell) | ✅ |
 | `privacy-federated` | ❌ | ❌ |
 | `pulsar` | ❌ | ❌ |
 | `rnaseq-coverage-dna` | ❌ | ❌ |
@@ -85,7 +85,7 @@
 | `scpoli` | [https://github.com/theislab/scPoli](https://github.com/theislab/scPoli) | ✅ |
 | `scpretrain` | ❌ 未找到 | ❌ |
 | `scprint` | [https://github.com/jkobject/scPRINT](https://github.com/jkobject/scPRINT) | ✅ |
-| `scprint-2` | [https://github.com/jkobject/scPRINT](https://github.com/jkobject/scPRINT)（同仓库） | ✅ |
+| `scprint-2` | [https://github.com/cantinilab/scPRINT-2](https://github.com/cantinilab/scPRINT-2) | ✅ |
 | `scprotein` | ❌ | ❌ |
 | `spatial-proteomics-fm` | ❌ | ❌ |
 | `spatranslator` | ❌ | ❌ |
@@ -94,7 +94,7 @@
 | `stpath` | ❌ | ❌ |
 | `switch` | ❌ 未找到 | ❌ |
 | `tabulam` (Tabula) | ❌ 无公开仓库 (论文在 publications/) | ❌ |
-| `transcriptformer` | ❌ | ❌ |
+| `transcriptformer` | [https://github.com/czi-ai/transcriptformer](https://github.com/czi-ai/transcriptformer) | ✅ |
 | `transcription-foundation` | ❌ 未找到 | ❌ |
 | `transcriptome-proteome` | ❌ | ❌ |
 | `unified-perturbation` | ❌ | ❌ |
@@ -111,9 +111,9 @@
 | `cassia` | [https://github.com/ElliotXie/CASSIA](https://github.com/ElliotXie/CASSIA) | ✅ |
 | `cell2sentence` | [https://github.com/SiYangming/cell2sentence-ft](https://github.com/SiYangming/cell2sentence-ft) | ✅ |
 | `cellama` | [https://github.com/portrai-io/CELLama](https://github.com/portrai-io/CELLama) | ✅ |
-| `cellforge` | ❌ 未找到 | ❌ |
+| `cellforge` | [https://github.com/gersteinlab/CellForge](https://github.com/gersteinlab/CellForge) | ✅（原在 fm-llm，已移至 virtual-cell） |
 | `cellhermes` | ❌ | ❌ |
-| `celltok` | ❌ | ❌ |
+| `celltok` | [https://github.com/sunnsset/CellTok](https://github.com/sunnsset/CellTok) | ✅ |
 | `chat-based-sc-exploration` | ❌ | ❌ |
 | `chatgpt-embedding-sc` | ❌ (基于 OpenAI API) | ❌ |
 | `gpt4-cell-annotation` | ❌ (基于 GPT-4 API) | ❌ |
@@ -125,7 +125,7 @@
 | `scaling-llm-sc` | ❌ | ❌ |
 | `scchat` | [https://github.com/li-group/scChat](https://github.com/li-group/scChat) | ✅ |
 | `scilama` | ❌ 未找到 | ❌ |
-| `scouter` | ❌ 未找到 | ❌ |
+| `scouter` | [https://github.com/PancakeZoy/scouter](https://github.com/PancakeZoy/scouter) | ✅ |
 | `screader` | ❌ 未找到 | ❌ |
 | `spemo` | ❌ | ❌ |
 | `teddy` | ❌ | ❌ |
@@ -202,11 +202,11 @@
 |--------|---------|------|
 | `ai-virtual-cell-preclinical` | 📝 综述 | ❌ |
 | `build-virtual-cell-ai` | 📝 观点文章 | ❌ |
-| `cellforge` | ❌ 未找到 | ❌ |
+| `cellforge` | [https://github.com/gersteinlab/CellForge](https://github.com/gersteinlab/CellForge) | ✅ |
 | `grow-ai-virtual-cells` | 📝 观点文章 | ❌ |
 | `llm-virtual-cell-survey` | 📝 综述 | ❌ |
 | `the-virtual-cell` | 📝 评论文章 | ❌ |
-| `vcworld` | ❌ 可能是闭源 | ❌ |
+| `vcworld` | [https://github.com/GENTEL-lab/VCWorld](https://github.com/GENTEL-lab/VCWorld) | ✅ |
 | `virtual-cell-challenge` | ❌ 未找到 | ❌ |
 | `virtual-cells-predict` | ❌ | ❌ |
 
@@ -218,9 +218,11 @@
 |--------|---------|------|
 | `biomedical-seg-det-rec` | ❌ 未找到 | ❌ |
 | `general-purpose-pathology` | ❌ 未找到 | ❌ |
-| `visual-language-pathology` | [https://github.com/mahmoodlab/CONCH](https://github.com/mahmoodlab/CONCH) | ⚠️ |
+| `visual-language-pathology` | [https://github.com/mahmoodlab/CONCH](https://github.com/mahmoodlab/CONCH) | ✅ |
 | `visual-language-pathology-twitter` | ❌ | ❌ |
-| `whole-slide-fm` | ❌ 未找到 | ❌ |
+| `whole-slide-fm` | [https://github.com/prov-gigapath/prov-gigapath](https://github.com/prov-gigapath/prov-gigapath) | ✅ |
+| `conch` | [https://github.com/mahmoodlab/CONCH](https://github.com/mahmoodlab/CONCH) | ✅ |
+| `uni` | [https://github.com/mahmoodlab/UNI](https://github.com/mahmoodlab/UNI) | ✅ |
 
 ---
 
@@ -259,7 +261,7 @@
 
 ## 批量下载脚本
 
-### 已下载（`repos/` 目录中，已验证 **32 个仓库**）
+### 已下载（`repos/` 目录中，已验证 **48 个仓库**）
 
 | 仓库 | 实际 URL（已验证） | 对应笔记 |
 |------|-------------------|---------|
@@ -282,14 +284,31 @@
 | `scMulan/` | `SuperBianC/scMulan` | `fm/scmulan/` |
 | `scNET/` | `madilabcode/scNET` | `fm/scnet/` |
 | `scELMo/` | `HelloWorldLTY/scELMo` | `fm/scelmo/` |
+| `Heimdall/` | `ma-compbio-lab/Heimdall` | `fm/heimdall/` |
+| `transcriptformer/` | `czi-ai/transcriptformer` | `fm/transcriptformer/` |
+| `omnicell/` | `BGIResearch/omnicell` | `fm/omnicell/` |
 | `CASSIA/` | `ElliotXie/CASSIA` | `fm-llm/cassia/` |
 | `CELLama/` | `portrai-io/CELLama` | `fm-llm/cellama/` |
 | `scChat/` | `li-group/scChat` | `fm-llm/scchat/` |
 | `cell2sentence-ft/` | `SiYangming/cell2sentence-ft` | `fm-llm/cell2sentence/` |
+| `celltok/` | `sunnsset/CellTok` | `fm-llm/celltok/` |
+| `scouter/` | `PancakeZoy/scouter` | `fm-llm/scouter/` |
 | `PertAdapt/` | `BaiDing1234/PertAdapt` | `perturbation/pertadapt/` |
 | `state/` | `ArcInstitute/state` | `perturbation/state/` |
 | `tahoe-x1/` | `tahoebio/tahoe-x1` | `perturbation/tahoe-100m/` |
-| `pertpy/` | `scverse/pertpy` | 扰动分析工具 |
+| `pertpy/` | `scverse/pertpy` | `perturbation/cinema-ot/` |
+| `systema/` | `mlbio-epfl/systema` | `perturbation/systema/` |
+| `scLAMBDA/` | `gefeiwang/scLAMBDA` | `perturbation/sclambda/` |
+| `scGenePT/` | `czi-ai/scGenePT` | `perturbation/scgenept/` |
+| `scDrugMap/` | `QSong-github/scDrugMap` | `perturbation/scdrugmap/` |
+| `linear_perturbation_prediction-Paper/` | `const-ae/linear_perturbation_prediction-Paper` | `perturbation/perturbation-linear-baselines/` |
+| `Islander/` | `Genentech/Islander` | `benchmarks/metric-mirages/` |
+| `scib-metrics/` | `YosefLab/scib-metrics` | `benchmarks/metric-mirages/` |
+| `perturbench/` | `altoslabs/perturbench` | `benchmarks/perturbench/` |
+| `VCWorld/` | `GENTEL-lab/VCWorld` | `virtual-cell/vcworld/` |
+| `CONCH/` | `mahmoodlab/CONCH` | `pathology/conch/` |
+| `UNI/` | `mahmoodlab/UNI` | `pathology/uni/` |
+| `prov-gigapath/` | `prov-gigapath/prov-gigapath` | `pathology/whole-slide-fm/` |
 | `GraphST/` | `JinmiaoChenLab/GraphST` | 空间组学工具 |
 | `SpaceFlow/` | `hongleir/SpaceFlow` | 空间组学工具 |
 | `SpaGCN/` | `jianhuupenn/SpaGCN` | 空间组学工具 |
@@ -298,4 +317,4 @@
 
 ---
 
-> 📌 文档更新于 2026-05-27。已下载 **32 个仓库**，已完成 **33 篇深度笔记**。
+> 📌 文档更新于 2026-05-28。已下载 **48 个仓库**，已完成 **43 篇深度笔记**。
