@@ -31,6 +31,7 @@ export const noteMetas: NoteMeta[] = [
   { id: 'heimdall', title: 'Heimdall', category: '单细胞基础模型 (FM)', path: 'fm/heimdall/README.md' },
   { id: 'nicheformer', title: 'Nicheformer', category: '单细胞基础模型 (FM)', path: 'fm/nicheformer/README.md' },
   { id: 'novae', title: 'Novae', category: '单细胞基础模型 (FM)', path: 'fm/novae/README.md' },
+  { id: 'omnicell', title: 'OmniCell', category: '单细胞基础模型 (FM)', path: 'fm/omnicell/README.md' },
   { id: 'saturn', title: 'SATURN', category: '单细胞基础模型 (FM)', path: 'fm/saturn/README.md' },
   { id: 'scbert', title: 'scBERT', category: '单细胞基础模型 (FM)', path: 'fm/scbert/README.md' },
   { id: 'scelmo', title: 'scELMo', category: '单细胞基础模型 (FM)', path: 'fm/scelmo/README.md' },
@@ -43,7 +44,9 @@ export const noteMetas: NoteMeta[] = [
   { id: 'scpeft', title: 'scPEFT', category: '单细胞基础模型 (FM)', path: 'fm/scpeft/README.md' },
   { id: 'scpoli', title: 'scPoli', category: '单细胞基础模型 (FM)', path: 'fm/scpoli/README.md' },
   { id: 'scprint', title: 'scPRINT', category: '单细胞基础模型 (FM)', path: 'fm/scprint/README.md' },
+  { id: 'scprint-2', title: 'scPRINT-2', category: '单细胞基础模型 (FM)', path: 'fm/scprint-2/README.md' },
   { id: 'tabulam', title: 'Tabula', category: '单细胞基础模型 (FM)', path: 'fm/tabulam/README.md' },
+  { id: 'transcriptformer', title: 'TranscriptFormer', category: '单细胞基础模型 (FM)', path: 'fm/transcriptformer/README.md' },
   { id: 'visual-omics-fm', title: 'Visual-Omics FM', category: '单细胞基础模型 (FM)', path: 'fm/visual-omics-fm/README.md' },
   { id: 'xtrimogene', title: 'xTrimoGene', category: '单细胞基础模型 (FM)', path: 'fm/xtrimogene/README.md' },
 
@@ -51,8 +54,10 @@ export const noteMetas: NoteMeta[] = [
   { id: 'cassia', title: 'CASSIA', category: 'FM + LLM', path: 'fm-llm/cassia/README.md' },
   { id: 'cell2sentence', title: 'Cell2Sentence', category: 'FM + LLM', path: 'fm-llm/cell2sentence/README.md' },
   { id: 'cellama', title: 'CELLama', category: 'FM + LLM', path: 'fm-llm/cellama/README.md' },
+  { id: 'celltok', title: 'CellTok', category: 'FM + LLM', path: 'fm-llm/celltok/README.md' },
   { id: 'langcell', title: 'LangCell', category: 'FM + LLM', path: 'fm-llm/langcell/README.md' },
   { id: 'scchat', title: 'scChat', category: 'FM + LLM', path: 'fm-llm/scchat/README.md' },
+  { id: 'scouter', title: 'Scouter', category: 'FM + LLM', path: 'fm-llm/scouter/README.md' },
 
   // --- 遗传扰动 ---
   { id: 'cinema-ot', title: 'CINEMA-OT', category: '遗传扰动', path: 'perturbation/cinema-ot/README.md' },
@@ -77,5 +82,12 @@ export const noteMetas: NoteMeta[] = [
   { id: 'zero-shot-limitations', title: 'Zero-shot Limitations', category: '评估与 Benchmark', path: 'benchmarks/zero-shot-limitations/README.md' },
 
   // --- 虚拟细胞 ---
+  { id: 'cellforge', title: 'CellForge', category: '虚拟细胞', path: 'virtual-cell/cellforge/README.md' },
   { id: 'the-virtual-cell', title: 'The Virtual Cell', category: '虚拟细胞', path: 'virtual-cell/the-virtual-cell/README.md' },
+  { id: 'vcworld', title: 'VCWorld', category: '虚拟细胞', path: 'virtual-cell/vcworld/README.md' },
+
+  // --- 病理基础模型 ---
+  { id: 'conch', title: 'CONCH', category: '病理基础模型', path: 'pathology/conch/README.md' },
+  { id: 'uni', title: 'UNI', category: '病理基础模型', path: 'pathology/uni/README.md' },
+  { id: 'whole-slide-fm', title: 'Whole-Slide FM', category: '病理基础模型', path: 'pathology/whole-slide-fm/README.md' },
 ]
