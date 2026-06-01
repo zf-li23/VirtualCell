@@ -18,6 +18,19 @@
 .sidebar-header {
   padding: 20px 16px 12px;
   border-bottom: 1px solid var(--border);
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: var(--sans);
+  transition: background 0.15s;
+}
+
+.sidebar-header:hover {
+  background: var(--accent-soft);
 }
 
 .sidebar-header h1 {
@@ -431,8 +444,12 @@
 
 /* ===== Overview Page ===== */
 
-.overview-layout {
-  display: block !important;
+.overview-layout .toc {
+  display: none;
+}
+
+.overview-layout .markdown-body {
+  max-width: none;
 }
 
 .overview {
@@ -735,9 +752,6 @@
   }
   .lab-grid {
     grid-template-columns: 1fr;
-  }
-  .overview-layout {
-    padding: 0;
   }
 }
 

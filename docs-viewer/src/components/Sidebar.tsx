@@ -17,10 +17,10 @@ export function Sidebar({
 }: SidebarProps) {
   return (
     <aside className="sidebar">
-      <div className="sidebar-header">
+      <button className="sidebar-header" onClick={() => onSelect('overview')}>
         <h1>🧬 VirtualCell</h1>
         <p className="subtitle">笔记浏览器</p>
-      </div>
+      </button>
       <div className="search-wrap">
         <input
           type="text"
