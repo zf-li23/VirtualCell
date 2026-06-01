@@ -43,7 +43,11 @@ TEMPLATE_MARKERS = [
 
 # 分类名称映射（目录名 → 前端显示名）
 CATEGORY_NAMES = {
-    "fm": "单细胞基础模型 (FM)",
+    "fm-classic": "FM + 经典语言模型",
+    "fm-spatial": "FM + 空间组学",
+    "fm-world-model": "FM + 世界模型",
+    "fm-cross-species": "FM + 跨物种/通用嵌入",
+    "fm-graph": "FM + 图与网络",
     "fm-llm": "FM + LLM",
     "perturbation": "遗传扰动",
     "benchmarks": "评估与 Benchmark",
@@ -52,7 +56,9 @@ CATEGORY_NAMES = {
     "surveys": "综述与展望",
 }
 
-CATEGORY_ORDER = ["fm", "fm-llm", "perturbation", "benchmarks",
+CATEGORY_ORDER = ["fm-classic", "fm-spatial", "fm-world-model",
+                  "fm-cross-species", "fm-graph", "fm-llm",
+                  "perturbation", "benchmarks",
                   "virtual-cell", "pathology", "surveys"]
 
 

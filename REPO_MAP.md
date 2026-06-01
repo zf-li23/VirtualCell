@@ -15,7 +15,11 @@
 
 ## 目录
 
-- [单细胞基础模型 (FM) — `notes/fm/`](#单细胞基础模型-fm--notesfm)
+- [FM + 经典语言模型 — `notes/fm-classic/`](#fm--经典语言模型--notesfm-classic)
+- [FM + 空间组学 — `notes/fm-spatial/`](#fm--空间组学--notesfm-spatial)
+- [FM + 世界模型 — `notes/fm-world-model/`](#fm--世界模型--notesfm-world-model)
+- [FM + 跨物种/通用嵌入 — `notes/fm-cross-species/`](#fm--跨物种通用嵌入--notesfm-cross-species)
+- [FM + 图与网络 — `notes/fm-graph/`](#fm--图与网络--notesfm-graph)
 - [FM + LLM — `notes/fm-llm/`](#fm--llm--notesfm-llm)
 - [遗传扰动 — `notes/perturbation/`](#遗传扰动--notesperturbation)
 - [评估与 Benchmark — `notes/benchmarks/`](#评估与-benchmark--notesbenchmarks)
@@ -25,82 +29,66 @@
 
 ---
 
-## 单细胞基础模型 (FM) — `notes/fm/`
+## FM + 经典语言模型 — `notes/fm-classic/`
 
 | 目录名 | 代码仓库 | 状态 |
 |--------|---------|------|
-| `atacformer` | ❌ 未找到 | ❌ |
-| `bidir-mamba` | ❌ 未找到 | ❌ |
-| `cancerfoundation` | ❌ 未找到 | ❌ |
-| `captain` | ❌ 未找到 | ❌ |
-| `cell-atlas-fm` | [https://github.com/snap-stanford/UCE](https://github.com/snap-stanford/UCE) | ✅ |
-| `cell-graphcompass` | ❌ 未找到 | ❌ |
-| `cell-niche-graph` | ❌ 未找到 | ❌ |
-| `cell-ontology-fm` | ❌ 未找到 | ❌ |
-| `cell-plm` | [https://github.com/OmicsML/CellPLM](https://github.com/OmicsML/CellPLM) | ✅ |
-| `cellfm` | [https://github.com/biomed-AI/CellFM](https://github.com/biomed-AI/CellFM) | ✅ |
-| `cellpolaris` | ❌ 未找到 | ❌ |
-| `chromfound` | ❌ 未找到 | ❌ |
-| `divide-conquer-ssl` | ❌ | ❌ |
-| `dna-to-expression` | ❌ 未找到 | ❌ |
-| `epiagent` | ❌ 未找到 | ❌ |
-| `epifoundation` | ❌ 未找到 | ❌ |
-| `gene-repr-st` | ❌ | ❌ |
-| `genecompass` | ❌ 未找到 | ❌ |
 | `geneformer` | HuggingFace: [hf-mirror.com/ctheodoris/Geneformer](https://hf-mirror.com/ctheodoris/Geneformer) | ✅ |
-| `genejepa` | [https://github.com/Genentech/GeneJEPA](https://github.com/Genentech/GeneJEPA) | ✅ |
-| `generative-pretraining` | ❌ | ❌ |
-| `langcell` | [https://github.com/PharMolix/LangCell](https://github.com/PharMolix/LangCell) | ✅ |
-| `latent-diffusion-sc` | ❌ 未找到 | ❌ |
-| `metadata-as-language` | ❌ 博客文章 | ❌ |
-| `multi-cellular-repr` | ❌ | ❌ |
-| `multimodal-perturbation` | ❌ 未找到 | ❌ |
-| `musegnn` | ❌ 未找到 | ❌ |
+| `scgpt` | [https://github.com/bowang-lab/scGPT](https://github.com/bowang-lab/scGPT) | ✅ |
+| `scfoundation` | [https://github.com/biomap-research/scFoundation](https://github.com/biomap-research/scFoundation) | ✅ |
+| `scbert` | [https://github.com/TencentAILabHealthcare/scBERT](https://github.com/TencentAILabHealthcare/scBERT) | ✅ |
+| `scmulan` | [https://github.com/SuperBianC/scMulan](https://github.com/SuperBianC/scMulan) | ✅ |
+| `cellfm` | [https://github.com/biomed-AI/CellFM](https://github.com/biomed-AI/CellFM) | ✅ |
+| `sclong` | [https://github.com/BaiDing1234/scLong](https://github.com/BaiDing1234/scLong) | ✅ |
+| `xtrimogene` | ❌ 未找到 | ❌ |
+| `scelmo` | [https://github.com/HelloWorldLTY/scELMo](https://github.com/HelloWorldLTY/scELMo) | ✅ |
+| `heimdall` | [https://github.com/ma-compbio-lab/Heimdall](https://github.com/ma-compbio-lab/Heimdall) | ✅ |
+| `scpeft` | [https://github.com/coffee19850519/scPEFT](https://github.com/coffee19850519/scPEFT) | ✅ |
+| `epiagent` | ❌ 未找到 | ❌ |
+
+---
+
+## FM + 空间组学 — `notes/fm-spatial/`
+
+| 目录名 | 代码仓库 | 状态 |
+|--------|---------|------|
 | `nicheformer` | [https://github.com/theislab/nicheformer](https://github.com/theislab/nicheformer) | ✅ |
 | `novae` | [https://github.com/prism-oncology/novae](https://github.com/prism-oncology/novae) | ✅ |
-| `omnicell` | [https://github.com/BGIResearch/omnicell](https://github.com/BGIResearch/omnicell) | ✅ |
-| `privacy-federated` | ❌ | ❌ |
-| `pulsar` | ❌ | ❌ |
-| `rnaseq-coverage-dna` | ❌ | ❌ |
-| `saturn` | [https://github.com/snap-stanford/saturn](https://github.com/snap-stanford/saturn) | ✅ |
-| `sc-expression-lm` | ❌ | ❌ |
-| `sc-mae` | ❌ 未找到 | ❌ |
-| `scaling-dense` | ❌ | ❌ |
-| `scaraf` | ❌ 无法确定对应论文 | ❌ |
-| `scarf` | ❌ 未找到 | ❌ |
-| `scbert` | [https://github.com/TencentAILabHealthcare/scBERT](https://github.com/TencentAILabHealthcare/scBERT) | ✅ |
-| `scclip` | ❌ 未找到 | ❌ |
-| `scconcept` | ❌ 未找到 | ❌ |
-| `scelmo` | [https://github.com/HelloWorldLTY/scELMo](https://github.com/HelloWorldLTY/scELMo) | ✅ |
-| `scfoundation` | [https://github.com/biomap-research/scFoundation](https://github.com/biomap-research/scFoundation) | ✅ |
-| `scgpt` | [https://github.com/bowang-lab/scGPT](https://github.com/bowang-lab/scGPT) | ✅ |
 | `scgpt-spatial` | [https://github.com/bowang-lab/scGPT-spatial](https://github.com/bowang-lab/scGPT-spatial) | ✅ |
-| `schiena` (scHyena) | ❌ 未找到 | ❌ |
-| `sclinguist` | ❌ 未找到 | ❌ |
-| `sclong` | [https://github.com/BaiDing1234/scLong](https://github.com/BaiDing1234/scLong) | ✅ |
-| `scmformer` | ❌ | ❌ |
-| `scmulan` | [https://github.com/SuperBianC/scMulan](https://github.com/SuperBianC/scMulan) | ✅ |
-| `scnet` | [https://github.com/madilabcode/scNET](https://github.com/madilabcode/scNET) | ✅ |
-| `scpeft` | [https://github.com/coffee19850519/scPEFT](https://github.com/coffee19850519/scPEFT) | ✅ |
-| `scpoli` | [https://github.com/theislab/scPoli](https://github.com/theislab/scPoli) | ✅ |
-| `scpretrain` | ❌ 未找到 | ❌ |
+| `visual-omics-fm` | ❌ 未找到 | ❌ |
+| `omnicell` | [https://github.com/BGIResearch/omnicell](https://github.com/BGIResearch/omnicell) | ✅ |
+
+---
+
+## FM + 世界模型 — `notes/fm-world-model/`
+
+| 目录名 | 代码仓库 | 状态 |
+|--------|---------|------|
+| `genejepa` | [https://github.com/Genentech/GeneJEPA](https://github.com/Genentech/GeneJEPA) | ✅ |
+| `transcriptformer` | [https://github.com/czi-ai/transcriptformer](https://github.com/czi-ai/transcriptformer) | ✅ |
 | `scprint` | [https://github.com/jkobject/scPRINT](https://github.com/jkobject/scPRINT) | ✅ |
 | `scprint-2` | [https://github.com/cantinilab/scPRINT-2](https://github.com/cantinilab/scPRINT-2) | ✅ |
-| `scprotein` | ❌ | ❌ |
-| `spatial-proteomics-fm` | ❌ | ❌ |
-| `spatranslator` | ❌ | ❌ |
-| `stack` | ❌ | ❌ |
-| `stofm` | ❌ | ❌ |
-| `stpath` | ❌ | ❌ |
-| `switch` | ❌ 未找到 | ❌ |
+
+---
+
+## FM + 跨物种/通用嵌入 — `notes/fm-cross-species/`
+
+| 目录名 | 代码仓库 | 状态 |
+|--------|---------|------|
+| `cell-atlas-fm` | [https://github.com/snap-stanford/UCE](https://github.com/snap-stanford/UCE) | ✅ |
+| `saturn` | [https://github.com/snap-stanford/saturn](https://github.com/snap-stanford/saturn) | ✅ |
+| `genecompass` | ❌ 未找到 | ❌ |
+| `cell-plm` | [https://github.com/OmicsML/CellPLM](https://github.com/OmicsML/CellPLM) | ✅ |
+
+---
+
+## FM + 图与网络 — `notes/fm-graph/`
+
+| 目录名 | 代码仓库 | 状态 |
+|--------|---------|------|
+| `scnet` | [https://github.com/madilabcode/scNET](https://github.com/madilabcode/scNET) | ✅ |
+| `scpoli` | [https://github.com/theislab/scPoli](https://github.com/theislab/scPoli) | ✅ |
 | `tabulam` (Tabula) | ❌ 无公开仓库 (论文在 publications/) | ❌ |
-| `transcriptformer` | [https://github.com/czi-ai/transcriptformer](https://github.com/czi-ai/transcriptformer) | ✅ |
-| `transcription-foundation` | ❌ 未找到 | ❌ |
-| `transcriptome-proteome` | ❌ | ❌ |
-| `unified-perturbation` | ❌ | ❌ |
-| `visual-omics-fm` | ❌ 未找到 | ❌ |
-| `xtrimogene` | ❌ 未找到 | ❌ |
-| `heimdall` | [https://github.com/ma-compbio-lab/Heimdall](https://github.com/ma-compbio-lab/Heimdall) | ✅ |
 
 ---
 

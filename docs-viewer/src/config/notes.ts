@@ -9,7 +9,11 @@ export interface NoteMeta {
 }
 
 export const categories = [
-  '单细胞基础模型 (FM)',
+  'FM + 经典语言模型',
+  'FM + 空间组学',
+  'FM + 世界模型',
+  'FM + 跨物种/通用嵌入',
+  'FM + 图与网络',
   'FM + LLM',
   '遗传扰动',
   '评估与 Benchmark',
@@ -21,35 +25,43 @@ export const categories = [
 export const noteMetas: NoteMeta[] = [
   { id: 'overview', title: '总览', category: '概览', path: 'README.md' },
 
-  // --- 单细胞基础模型 (FM) ---
-  { id: 'cell-atlas-fm', title: 'UCE / Cell Atlas FM', category: '单细胞基础模型 (FM)', path: 'fm/cell-atlas-fm/README.md' },
-  { id: 'cell-plm', title: 'CellPLM', category: '单细胞基础模型 (FM)', path: 'fm/cell-plm/README.md' },
-  { id: 'cellfm', title: 'CellFM', category: '单细胞基础模型 (FM)', path: 'fm/cellfm/README.md' },
-  { id: 'epiagent', title: 'EpiAgent', category: '单细胞基础模型 (FM)', path: 'fm/epiagent/README.md' },
-  { id: 'genecompass', title: 'GeneCompass', category: '单细胞基础模型 (FM)', path: 'fm/genecompass/README.md' },
-  { id: 'geneformer', title: 'Geneformer', category: '单细胞基础模型 (FM)', path: 'fm/geneformer/README.md' },
-  { id: 'genejepa', title: 'GeneJEPA', category: '单细胞基础模型 (FM)', path: 'fm/genejepa/README.md' },
-  { id: 'heimdall', title: 'Heimdall', category: '单细胞基础模型 (FM)', path: 'fm/heimdall/README.md' },
-  { id: 'nicheformer', title: 'Nicheformer', category: '单细胞基础模型 (FM)', path: 'fm/nicheformer/README.md' },
-  { id: 'novae', title: 'Novae', category: '单细胞基础模型 (FM)', path: 'fm/novae/README.md' },
-  { id: 'omnicell', title: 'OmniCell', category: '单细胞基础模型 (FM)', path: 'fm/omnicell/README.md' },
-  { id: 'saturn', title: 'SATURN', category: '单细胞基础模型 (FM)', path: 'fm/saturn/README.md' },
-  { id: 'scbert', title: 'scBERT', category: '单细胞基础模型 (FM)', path: 'fm/scbert/README.md' },
-  { id: 'scelmo', title: 'scELMo', category: '单细胞基础模型 (FM)', path: 'fm/scelmo/README.md' },
-  { id: 'scfoundation', title: 'scFoundation', category: '单细胞基础模型 (FM)', path: 'fm/scfoundation/README.md' },
-  { id: 'scgpt', title: 'scGPT', category: '单细胞基础模型 (FM)', path: 'fm/scgpt/README.md' },
-  { id: 'scgpt-spatial', title: 'scGPT-spatial', category: '单细胞基础模型 (FM)', path: 'fm/scgpt-spatial/README.md' },
-  { id: 'sclong', title: 'scLong', category: '单细胞基础模型 (FM)', path: 'fm/sclong/README.md' },
-  { id: 'scmulan', title: 'scMulan', category: '单细胞基础模型 (FM)', path: 'fm/scmulan/README.md' },
-  { id: 'scnet', title: 'scNET', category: '单细胞基础模型 (FM)', path: 'fm/scnet/README.md' },
-  { id: 'scpeft', title: 'scPEFT', category: '单细胞基础模型 (FM)', path: 'fm/scpeft/README.md' },
-  { id: 'scpoli', title: 'scPoli', category: '单细胞基础模型 (FM)', path: 'fm/scpoli/README.md' },
-  { id: 'scprint', title: 'scPRINT', category: '单细胞基础模型 (FM)', path: 'fm/scprint/README.md' },
-  { id: 'scprint-2', title: 'scPRINT-2', category: '单细胞基础模型 (FM)', path: 'fm/scprint-2/README.md' },
-  { id: 'tabulam', title: 'Tabula', category: '单细胞基础模型 (FM)', path: 'fm/tabulam/README.md' },
-  { id: 'transcriptformer', title: 'TranscriptFormer', category: '单细胞基础模型 (FM)', path: 'fm/transcriptformer/README.md' },
-  { id: 'visual-omics-fm', title: 'Visual-Omics FM', category: '单细胞基础模型 (FM)', path: 'fm/visual-omics-fm/README.md' },
-  { id: 'xtrimogene', title: 'xTrimoGene', category: '单细胞基础模型 (FM)', path: 'fm/xtrimogene/README.md' },
+  // --- FM + 经典语言模型 ---
+  { id: 'cellfm', title: 'CellFM', category: 'FM + 经典语言模型', path: 'fm-classic/cellfm/README.md' },
+  { id: 'epiagent', title: 'EpiAgent', category: 'FM + 经典语言模型', path: 'fm-classic/epiagent/README.md' },
+  { id: 'geneformer', title: 'Geneformer', category: 'FM + 经典语言模型', path: 'fm-classic/geneformer/README.md' },
+  { id: 'heimdall', title: 'Heimdall', category: 'FM + 经典语言模型', path: 'fm-classic/heimdall/README.md' },
+  { id: 'scbert', title: 'scBERT', category: 'FM + 经典语言模型', path: 'fm-classic/scbert/README.md' },
+  { id: 'scelmo', title: 'scELMo', category: 'FM + 经典语言模型', path: 'fm-classic/scelmo/README.md' },
+  { id: 'scfoundation', title: 'scFoundation', category: 'FM + 经典语言模型', path: 'fm-classic/scfoundation/README.md' },
+  { id: 'scgpt', title: 'scGPT', category: 'FM + 经典语言模型', path: 'fm-classic/scgpt/README.md' },
+  { id: 'sclong', title: 'scLong', category: 'FM + 经典语言模型', path: 'fm-classic/sclong/README.md' },
+  { id: 'scmulan', title: 'scMulan', category: 'FM + 经典语言模型', path: 'fm-classic/scmulan/README.md' },
+  { id: 'scpeft', title: 'scPEFT', category: 'FM + 经典语言模型', path: 'fm-classic/scpeft/README.md' },
+  { id: 'xtrimogene', title: 'xTrimoGene', category: 'FM + 经典语言模型', path: 'fm-classic/xtrimogene/README.md' },
+
+  // --- FM + 空间组学 ---
+  { id: 'nicheformer', title: 'Nicheformer', category: 'FM + 空间组学', path: 'fm-spatial/nicheformer/README.md' },
+  { id: 'novae', title: 'Novae', category: 'FM + 空间组学', path: 'fm-spatial/novae/README.md' },
+  { id: 'omnicell', title: 'OmniCell', category: 'FM + 空间组学', path: 'fm-spatial/omnicell/README.md' },
+  { id: 'scgpt-spatial', title: 'scGPT-spatial', category: 'FM + 空间组学', path: 'fm-spatial/scgpt-spatial/README.md' },
+  { id: 'visual-omics-fm', title: 'Visual-Omics FM', category: 'FM + 空间组学', path: 'fm-spatial/visual-omics-fm/README.md' },
+
+  // --- FM + 世界模型 ---
+  { id: 'genejepa', title: 'GeneJEPA', category: 'FM + 世界模型', path: 'fm-world-model/genejepa/README.md' },
+  { id: 'scprint', title: 'scPRINT', category: 'FM + 世界模型', path: 'fm-world-model/scprint/README.md' },
+  { id: 'scprint-2', title: 'scPRINT-2', category: 'FM + 世界模型', path: 'fm-world-model/scprint-2/README.md' },
+  { id: 'transcriptformer', title: 'TranscriptFormer', category: 'FM + 世界模型', path: 'fm-world-model/transcriptformer/README.md' },
+
+  // --- FM + 跨物种/通用嵌入 ---
+  { id: 'cell-atlas-fm', title: 'UCE / Cell Atlas FM', category: 'FM + 跨物种/通用嵌入', path: 'fm-cross-species/cell-atlas-fm/README.md' },
+  { id: 'cell-plm', title: 'CellPLM', category: 'FM + 跨物种/通用嵌入', path: 'fm-cross-species/cell-plm/README.md' },
+  { id: 'genecompass', title: 'GeneCompass', category: 'FM + 跨物种/通用嵌入', path: 'fm-cross-species/genecompass/README.md' },
+  { id: 'saturn', title: 'SATURN', category: 'FM + 跨物种/通用嵌入', path: 'fm-cross-species/saturn/README.md' },
+
+  // --- FM + 图与网络 ---
+  { id: 'scnet', title: 'scNET', category: 'FM + 图与网络', path: 'fm-graph/scnet/README.md' },
+  { id: 'scpoli', title: 'scPoli', category: 'FM + 图与网络', path: 'fm-graph/scpoli/README.md' },
+  { id: 'tabulam', title: 'Tabula', category: 'FM + 图与网络', path: 'fm-graph/tabulam/README.md' },
 
   // --- FM + LLM ---
   { id: 'cassia', title: 'CASSIA', category: 'FM + LLM', path: 'fm-llm/cassia/README.md' },

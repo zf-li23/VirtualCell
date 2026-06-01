@@ -10,7 +10,11 @@
 
 | 分类 | 篇数 | 代表性笔记 |
 |------|:----:|-----------|
-| 单细胞基础模型 (FM) | 16 | Geneformer, scGPT, scFoundation, scBERT, scPoli, scPRINT, Nicheformer, Novae, UCE, SATURN, LangCell, GeneCompass, EpiAgent, Visual-Omics FM, xTrimoGene, scLong, CellFM |
+| FM + 经典语言模型 | 12 | Geneformer, scGPT, scFoundation, scBERT, scMulan, CellFM, scLong, xTrimoGene, scELMo, Heimdall, scPEFT, EpiAgent |
+| FM + 空间组学 | 5 | Nicheformer, Novae, scGPT-spatial, Visual-Omics FM, OmniCell |
+| FM + 世界模型 | 4 | GeneJEPA, TranscriptFormer, scPRINT, scPRINT-2 |
+| FM + 跨物种/通用嵌入 | 4 | UCE, SATURN, GeneCompass, CellPLM |
+| FM + 图与网络 | 3 | scNET, scPoli, Tabula |
 | FM + LLM | 4 | Cell2Sentence, CELLama, CASSIA, scChat |
 | 遗传扰动 | 5 | GEARS, CPA, Tahoe-100M/x1, STATE, PertAdapt |
 | 虚拟细胞 | 2 | Virtual Cell Challenge, The Virtual Cell |
@@ -19,13 +23,21 @@
 ## 🗺️ 学习路线
 
 ```
-基础模型 →  了解主流架构 (BERT/GPT/AE/GNN)
-    ↓
-    FM+LLM →  细胞与语言模型的交叉
-    ↓
-  扰动预测 →  从描述到预测的跨越
-    ↓
- 虚拟细胞 →  终极目标
+经典语言模型 →  掌握 BERT/GPT/ELMo 等核心架构
+        ↓
+空间组学  →    从单细胞到空间转录组的跨越
+        ↓
+  图与网络  →   基因调控与蛋白交互网络融合
+        ↓
+  跨物种嵌入 →  统一不同物种的细胞表示
+        ↓
+  世界模型  →   生成式/预测式细胞建模
+        ↓
+    FM+LLM  →   细胞与语言模型的交叉
+        ↓
+  扰动预测  →   从描述到预测的跨越
+        ↓
+  虚拟细胞  →   终极目标
 ```
 
 ## 📝 笔记状态
