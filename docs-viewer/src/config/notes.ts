@@ -31,12 +31,15 @@ export const noteMetas: NoteMeta[] = [
   { id: 'geneformer', title: 'Geneformer', category: 'FM + 经典语言模型', path: 'fm-classic/geneformer/README.md' },
   { id: 'heimdall', title: 'Heimdall', category: 'FM + 经典语言模型', path: 'fm-classic/heimdall/README.md' },
   { id: 'scbert', title: 'scBERT', category: 'FM + 经典语言模型', path: 'fm-classic/scbert/README.md' },
-  { id: 'scelmo', title: 'scELMo', category: 'FM + 经典语言模型', path: 'fm-classic/scelmo/README.md' },
   { id: 'scfoundation', title: 'scFoundation', category: 'FM + 经典语言模型', path: 'fm-classic/scfoundation/README.md' },
   { id: 'scgpt', title: 'scGPT', category: 'FM + 经典语言模型', path: 'fm-classic/scgpt/README.md' },
   { id: 'sclong', title: 'scLong', category: 'FM + 经典语言模型', path: 'fm-classic/sclong/README.md' },
   { id: 'scmulan', title: 'scMulan', category: 'FM + 经典语言模型', path: 'fm-classic/scmulan/README.md' },
   { id: 'scpeft', title: 'scPEFT', category: 'FM + 经典语言模型', path: 'fm-classic/scpeft/README.md' },
+  { id: 'scpoli', title: 'scPoli', category: 'FM + 经典语言模型', path: 'fm-classic/scpoli/README.md' },
+  { id: 'scprint', title: 'scPRINT', category: 'FM + 经典语言模型', path: 'fm-classic/scprint/README.md' },
+  { id: 'scprint-2', title: 'scPRINT-2', category: 'FM + 经典语言模型', path: 'fm-classic/scprint-2/README.md' },
+  { id: 'tabulam', title: 'Tabula', category: 'FM + 经典语言模型', path: 'fm-classic/tabulam/README.md' },
   { id: 'xtrimogene', title: 'xTrimoGene', category: 'FM + 经典语言模型', path: 'fm-classic/xtrimogene/README.md' },
 
   // --- FM + 空间组学 ---
@@ -48,20 +51,18 @@ export const noteMetas: NoteMeta[] = [
 
   // --- FM + 世界模型 ---
   { id: 'genejepa', title: 'GeneJEPA', category: 'FM + 世界模型', path: 'fm-world-model/genejepa/README.md' },
-  { id: 'scprint', title: 'scPRINT', category: 'FM + 世界模型', path: 'fm-world-model/scprint/README.md' },
-  { id: 'scprint-2', title: 'scPRINT-2', category: 'FM + 世界模型', path: 'fm-world-model/scprint-2/README.md' },
-  { id: 'transcriptformer', title: 'TranscriptFormer', category: 'FM + 世界模型', path: 'fm-world-model/transcriptformer/README.md' },
 
   // --- FM + 跨物种/通用嵌入 ---
   { id: 'cell-atlas-fm', title: 'UCE / Cell Atlas FM', category: 'FM + 跨物种/通用嵌入', path: 'fm-cross-species/cell-atlas-fm/README.md' },
-  { id: 'cell-plm', title: 'CellPLM', category: 'FM + 跨物种/通用嵌入', path: 'fm-cross-species/cell-plm/README.md' },
   { id: 'genecompass', title: 'GeneCompass', category: 'FM + 跨物种/通用嵌入', path: 'fm-cross-species/genecompass/README.md' },
   { id: 'saturn', title: 'SATURN', category: 'FM + 跨物种/通用嵌入', path: 'fm-cross-species/saturn/README.md' },
+  { id: 'transcriptformer', title: 'TranscriptFormer', category: 'FM + 跨物种/通用嵌入', path: 'fm-cross-species/transcriptformer/README.md' },
 
   // --- FM + 图与网络 ---
+  { id: 'cell-plm', title: 'CellPLM', category: 'FM + 图与网络', path: 'fm-graph/cell-plm/README.md' },
+  { id: 'gears', title: 'GEARS', category: 'FM + 图与网络', path: 'fm-graph/gears/README.md' },
+  { id: 'pertadapt', title: 'PertAdapt', category: 'FM + 图与网络', path: 'fm-graph/pertadapt/README.md' },
   { id: 'scnet', title: 'scNET', category: 'FM + 图与网络', path: 'fm-graph/scnet/README.md' },
-  { id: 'scpoli', title: 'scPoli', category: 'FM + 图与网络', path: 'fm-graph/scpoli/README.md' },
-  { id: 'tabulam', title: 'Tabula', category: 'FM + 图与网络', path: 'fm-graph/tabulam/README.md' },
 
   // --- FM + LLM ---
   { id: 'cassia', title: 'CASSIA', category: 'FM + LLM', path: 'fm-llm/cassia/README.md' },
@@ -70,14 +71,13 @@ export const noteMetas: NoteMeta[] = [
   { id: 'celltok', title: 'CellTok', category: 'FM + LLM', path: 'fm-llm/celltok/README.md' },
   { id: 'langcell', title: 'LangCell', category: 'FM + LLM', path: 'fm-llm/langcell/README.md' },
   { id: 'scchat', title: 'scChat', category: 'FM + LLM', path: 'fm-llm/scchat/README.md' },
+  { id: 'scelmo', title: 'scELMo', category: 'FM + LLM', path: 'fm-llm/scelmo/README.md' },
   { id: 'scouter', title: 'Scouter', category: 'FM + LLM', path: 'fm-llm/scouter/README.md' },
 
   // --- 遗传扰动 ---
   { id: 'cinema-ot', title: 'CINEMA-OT', category: '遗传扰动', path: 'perturbation/cinema-ot/README.md' },
   { id: 'cpa', title: 'CPA', category: '遗传扰动', path: 'perturbation/cpa/README.md' },
-  { id: 'gears', title: 'GEARS', category: '遗传扰动', path: 'perturbation/gears/README.md' },
   { id: 'pca-still-rules', title: 'PCA Still Rules', category: '遗传扰动', path: 'perturbation/pca-still-rules/README.md' },
-  { id: 'pertadapt', title: 'PertAdapt', category: '遗传扰动', path: 'perturbation/pertadapt/README.md' },
   { id: 'perturbation-linear-baselines', title: 'Perturbation Linear Baselines', category: '遗传扰动', path: 'perturbation/perturbation-linear-baselines/README.md' },
   { id: 'scdrugmap', title: 'scDrugMap', category: '遗传扰动', path: 'perturbation/scdrugmap/README.md' },
   { id: 'scgenept', title: 'scGenePT', category: '遗传扰动', path: 'perturbation/scgenept/README.md' },

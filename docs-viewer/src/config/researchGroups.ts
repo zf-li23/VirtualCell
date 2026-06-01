@@ -50,23 +50,23 @@ export const labGroups: LabGroup[] = [
     members: ['cell-atlas-fm', 'virtual-cell-challenge'],
   },
   {
-    name: 'BGI Research (华大)',
-    members: ['omnicell'],
-  },
-  {
     name: 'ETH Zurich / EPFL',
-    members: ['systema', 'scgpt'],
+    members: ['systema'],
   },
   {
     name: 'Microsoft Research',
     members: ['whole-slide-fm'],
   },
   {
-    name: 'Snap Stanford / PNNL',
-    members: ['cell-plm'],
-  },
-  {
     name: 'Altos Labs',
     members: ['perturbench'],
+  },
+  {
+    name: 'Broad Institute / MIT',
+    members: ['pertadapt'],
+  },
+  {
+    name: 'Baidu Research / PNNL',
+    members: ['cell-plm'],
   },
 ]

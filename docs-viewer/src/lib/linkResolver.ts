@@ -11,7 +11,6 @@ const notePathToId: Record<string, string> = {
   'fm-classic/scgpt/README.md': 'scgpt',
   'fm-classic/scfoundation/README.md': 'scfoundation',
   'fm-classic/scbert/README.md': 'scbert',
-  'fm-classic/scelmo/README.md': 'scelmo',
   'fm-classic/scmulan/README.md': 'scmulan',
   'fm-classic/cellfm/README.md': 'cellfm',
   'fm-classic/sclong/README.md': 'sclong',
@@ -19,6 +18,10 @@ const notePathToId: Record<string, string> = {
   'fm-classic/heimdall/README.md': 'heimdall',
   'fm-classic/scpeft/README.md': 'scpeft',
   'fm-classic/epiagent/README.md': 'epiagent',
+  'fm-classic/scprint/README.md': 'scprint',
+  'fm-classic/scprint-2/README.md': 'scprint-2',
+  'fm-classic/scpoli/README.md': 'scpoli',
+  'fm-classic/tabulam/README.md': 'tabulam',
 
   // fm-spatial/ 空间组学
   'fm-spatial/nicheformer/README.md': 'nicheformer',
@@ -29,20 +32,18 @@ const notePathToId: Record<string, string> = {
 
   // fm-world-model/ 世界模型
   'fm-world-model/genejepa/README.md': 'genejepa',
-  'fm-world-model/transcriptformer/README.md': 'transcriptformer',
-  'fm-world-model/scprint/README.md': 'scprint',
-  'fm-world-model/scprint-2/README.md': 'scprint-2',
 
   // fm-cross-species/ 跨物种
   'fm-cross-species/cell-atlas-fm/README.md': 'cell-atlas-fm',
   'fm-cross-species/saturn/README.md': 'saturn',
   'fm-cross-species/genecompass/README.md': 'genecompass',
-  'fm-cross-species/cell-plm/README.md': 'cell-plm',
+  'fm-cross-species/transcriptformer/README.md': 'transcriptformer',
 
   // fm-graph/ 图与网络
   'fm-graph/scnet/README.md': 'scnet',
-  'fm-graph/scpoli/README.md': 'scpoli',
-  'fm-graph/tabulam/README.md': 'tabulam',
+  'fm-graph/gears/README.md': 'gears',
+  'fm-graph/pertadapt/README.md': 'pertadapt',
+  'fm-graph/cell-plm/README.md': 'cell-plm',
 
   // fm-llm/ FM + LLM
   'fm-llm/cell2sentence/README.md': 'cell2sentence',
@@ -52,12 +53,11 @@ const notePathToId: Record<string, string> = {
   'fm-llm/celltok/README.md': 'celltok',
   'fm-llm/langcell/README.md': 'langcell',
   'fm-llm/scouter/README.md': 'scouter',
+  'fm-llm/scelmo/README.md': 'scelmo',
 
   // perturbation/ 遗传扰动
   'perturbation/tahoe-100m/README.md': 'tahoe-100m',
   'perturbation/state/README.md': 'state',
-  'perturbation/pertadapt/README.md': 'pertadapt',
-  'perturbation/gears/README.md': 'gears',
   'perturbation/cpa/README.md': 'cpa',
   'perturbation/systema/README.md': 'systema',
   'perturbation/sclambda/README.md': 'sclambda',

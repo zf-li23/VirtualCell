@@ -41,10 +41,13 @@
 | `cellfm` | [https://github.com/biomed-AI/CellFM](https://github.com/biomed-AI/CellFM) | ✅ |
 | `sclong` | [https://github.com/BaiDing1234/scLong](https://github.com/BaiDing1234/scLong) | ✅ |
 | `xtrimogene` | ❌ 未找到 | ❌ |
-| `scelmo` | [https://github.com/HelloWorldLTY/scELMo](https://github.com/HelloWorldLTY/scELMo) | ✅ |
 | `heimdall` | [https://github.com/ma-compbio-lab/Heimdall](https://github.com/ma-compbio-lab/Heimdall) | ✅ |
 | `scpeft` | [https://github.com/coffee19850519/scPEFT](https://github.com/coffee19850519/scPEFT) | ✅ |
 | `epiagent` | ❌ 未找到 | ❌ |
+| `scprint` | [https://github.com/jkobject/scPRINT](https://github.com/jkobject/scPRINT) | ✅ |
+| `scprint-2` | [https://github.com/cantinilab/scPRINT-2](https://github.com/cantinilab/scPRINT-2) | ✅ |
+| `scpoli` | [https://github.com/theislab/scPoli](https://github.com/theislab/scPoli) | ✅ |
+| `tabulam` (Tabula) | ❌ 无公开仓库 (论文在 publications/) | ❌ |
 
 ---
 
@@ -65,9 +68,6 @@
 | 目录名 | 代码仓库 | 状态 |
 |--------|---------|------|
 | `genejepa` | [https://github.com/Genentech/GeneJEPA](https://github.com/Genentech/GeneJEPA) | ✅ |
-| `transcriptformer` | [https://github.com/czi-ai/transcriptformer](https://github.com/czi-ai/transcriptformer) | ✅ |
-| `scprint` | [https://github.com/jkobject/scPRINT](https://github.com/jkobject/scPRINT) | ✅ |
-| `scprint-2` | [https://github.com/cantinilab/scPRINT-2](https://github.com/cantinilab/scPRINT-2) | ✅ |
 
 ---
 
@@ -78,7 +78,7 @@
 | `cell-atlas-fm` | [https://github.com/snap-stanford/UCE](https://github.com/snap-stanford/UCE) | ✅ |
 | `saturn` | [https://github.com/snap-stanford/saturn](https://github.com/snap-stanford/saturn) | ✅ |
 | `genecompass` | ❌ 未找到 | ❌ |
-| `cell-plm` | [https://github.com/OmicsML/CellPLM](https://github.com/OmicsML/CellPLM) | ✅ |
+| `transcriptformer` | [https://github.com/czi-ai/transcriptformer](https://github.com/czi-ai/transcriptformer) | ✅ |
 
 ---
 
@@ -87,8 +87,9 @@
 | 目录名 | 代码仓库 | 状态 |
 |--------|---------|------|
 | `scnet` | [https://github.com/madilabcode/scNET](https://github.com/madilabcode/scNET) | ✅ |
-| `scpoli` | [https://github.com/theislab/scPoli](https://github.com/theislab/scPoli) | ✅ |
-| `tabulam` (Tabula) | ❌ 无公开仓库 (论文在 publications/) | ❌ |
+| `gears` | [https://github.com/snap-stanford/GEARS](https://github.com/snap-stanford/GEARS) | ✅ |
+| `pertadapt` | [https://github.com/BaiDing1234/PertAdapt](https://github.com/BaiDing1234/PertAdapt) | ✅ |
+| `cell-plm` | [https://github.com/OmicsML/CellPLM](https://github.com/OmicsML/CellPLM) | ✅ |
 
 ---
 
@@ -114,6 +115,7 @@
 | `scchat` | [https://github.com/li-group/scChat](https://github.com/li-group/scChat) | ✅ |
 | `scilama` | ❌ 未找到 | ❌ |
 | `scouter` | [https://github.com/PancakeZoy/scouter](https://github.com/PancakeZoy/scouter) | ✅ |
+| `scelmo` | [https://github.com/HelloWorldLTY/scELMo](https://github.com/HelloWorldLTY/scELMo) | ✅ |
 | `screader` | ❌ 未找到 | ❌ |
 | `spemo` | ❌ | ❌ |
 | `teddy` | ❌ | ❌ |
@@ -130,9 +132,7 @@
 | `cpa` | [https://github.com/theislab/cpa](https://github.com/theislab/cpa) | ✅ |
 | `diffusion-debias-perturbation` | ❌ | ❌ |
 | `in-silico-discovery` | ❌ 未找到 | ❌ |
-| `gears` | [https://github.com/snap-stanford/GEARS](https://github.com/snap-stanford/GEARS) | ✅ |
 | `pca-still-rules` | ❌（仅出版物） | ❌ |
-| `pertadapt` | [https://github.com/BaiDing1234/PertAdapt](https://github.com/BaiDing1234/PertAdapt) | ✅ |
 | `perteval-scfm` | ❌ 未找到 | ❌ |
 | `perturbation-linear-baselines` | [https://github.com/const-ae/linear_perturbation_prediction-Paper](https://github.com/const-ae/linear_perturbation_prediction-Paper) | ✅ |
 | `scfme` | ❌ | ❌ |
