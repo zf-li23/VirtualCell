@@ -171,6 +171,8 @@
 
 
 ## Foundation-Model-Genetic-Perturbation
+1. [2023 Nature Biotechnology] **Predicting transcriptional outcomes of novel multigene perturbations with GEARS** [[paper]](https://www.nature.com/articles/s41587-023-01905-6)
+1. [2023 Nature Biotechnology] **Predicting cellular responses to complex perturbations in high-throughput screens (CPA)** [[paper]](https://www.embopress.org/doi/full/10.15252/msb.202211517)
 1. [2025 PNAS] **Predicting the unseen: A diffusion-based debiasing framework for transcriptional response prediction at single-cell resolution** [[paper]](https://www.pnas.org/doi/10.1073/pnas.2525268122)
 1. [2025 bioRxiv] **Tahoe-100M: A Giga-Scale Single-Cell Perturbation Atlas for Context-Dependent Gene Function and Cellular Modeling** [[paper]](https://www.biorxiv.org/content/10.1101/2025.02.20.639398v3)
 1. [2025 biorxiv] **Tahoe-x1: Scaling Perturbation-Trained Single-Cell Foundation Models to 3 Billion Parameters** [[paper]](https://www.biorxiv.org/content/10.1101/2025.10.23.683759v1)

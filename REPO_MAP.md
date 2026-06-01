@@ -48,7 +48,7 @@
 | `gene-repr-st` | ❌ | ❌ |
 | `genecompass` | ❌ 未找到 | ❌ |
 | `geneformer` | HuggingFace: [hf-mirror.com/ctheodoris/Geneformer](https://hf-mirror.com/ctheodoris/Geneformer) | ✅ |
-| `genejepa` | ❌ 未找到 | ❌ |
+| `genejepa` | [https://github.com/Genentech/GeneJEPA](https://github.com/Genentech/GeneJEPA) | ✅ |
 | `generative-pretraining` | ❌ | ❌ |
 | `langcell` | [https://github.com/PharMolix/LangCell](https://github.com/PharMolix/LangCell) | ✅ |
 | `latent-diffusion-sc` | ❌ 未找到 | ❌ |
@@ -139,8 +139,10 @@
 |--------|---------|------|
 | `benchmark-cell-model-perturbation` | ❌ | ❌ |
 | `cinema-ot` | [https://github.com/scverse/pertpy](https://github.com/scverse/pertpy) | ✅ |
+| `cpa` | [https://github.com/theislab/cpa](https://github.com/theislab/cpa) | ✅ |
 | `diffusion-debias-perturbation` | ❌ | ❌ |
 | `in-silico-discovery` | ❌ 未找到 | ❌ |
+| `gears` | [https://github.com/snap-stanford/GEARS](https://github.com/snap-stanford/GEARS) | ✅ |
 | `pca-still-rules` | ❌（仅出版物） | ❌ |
 | `pertadapt` | [https://github.com/BaiDing1234/PertAdapt](https://github.com/BaiDing1234/PertAdapt) | ✅ |
 | `perteval-scfm` | ❌ 未找到 | ❌ |

@@ -6,13 +6,13 @@
 
 ## 📊 统计概览
 
-当前已涵盖 **26 篇深度笔记**，覆盖以下分类：
+当前已涵盖 **29 篇深度笔记**，覆盖以下分类：
 
 | 分类 | 篇数 | 代表性笔记 |
 |------|:----:|-----------|
 | 单细胞基础模型 (FM) | 16 | Geneformer, scGPT, scFoundation, scBERT, scPoli, scPRINT, Nicheformer, Novae, UCE, SATURN, LangCell, GeneCompass, EpiAgent, Visual-Omics FM, xTrimoGene, scLong, CellFM |
 | FM + LLM | 4 | Cell2Sentence, CELLama, CASSIA, scChat |
-| 遗传扰动 | 3 | Tahoe-100M/x1, STATE, PertAdapt |
+| 遗传扰动 | 5 | GEARS, CPA, Tahoe-100M/x1, STATE, PertAdapt |
 | 虚拟细胞 | 2 | Virtual Cell Challenge, The Virtual Cell |
 | 评估与 Benchmark | 1 | Virtual Cell Challenge |
 
