@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-28
+id: genejepa
+title: GeneJEPA
+category: fm-world-model
+code_url: https://github.com/Genentech/GeneJEPA
 ---
-
 # GeneJEPA 学习笔记
 
 > GeneJEPA (Gene Joint-Embedding Predictive Architecture) 是一个基于 I-JEPA 范式的自监督单细胞转录组基础模型。它不再重构嘈杂的表达计数，而是学习在表示空间中预测掩码基因集的潜在结构。采用 Perceiver 架构编码可变长度的基因集、连续值 Fourier 特征编码器、EMA 教师目标与方差-协方差正则化（VICReg），在 Tahoe-100M 图谱上训练。
@@ -488,26 +491,28 @@ python run.py --help
 
 ## 9. 关键概念 Q&A
 
-### Q1: 这个模型与 X 模型的核心区别是什么？
+### Q1: GeneJEPA 和 scGPT 的核心区别是什么？
 
-**A**: ...
+参见[第 3 章的对比表格](#33-与同类模型的对比)。
 
-### Q2: 这个模型有什么已知的局限性？
+### Q2: GeneJEPA 的稳定性门控解决了什么问题？
 
-**A**: ...
+JEPA 训练中一个常见的困难是**表示 collapse**。GeneJEPA 通过 VICReg 的方差项和稳定性门控双重机制防止 collapse。
 
-### Q3: 这个模型适合什么场景？
+### Q3: 什么是"预测世界模型"范式？
 
-**A**: ...
+GeneJEPA 不学习重建数据，而是学习**预测细胞状态的潜在结构**。类比：重建范式像临摹照片（scGPT），JEPA 范式像理解物体的三维结构（GeneJEPA）。后者更关注内在因果和结构关系。
 
 ---
 
 ## 10. 延伸阅读
 
-- **[相关论文1]**：说明
-- **[相关论文2]**：说明
-- **[官方文档]**：链接
+- [I-JEPA](https://arxiv.org/abs/2301.08243) — Meta AI 的图像 JEPA 框架
+- [VICReg](https://arxiv.org/abs/2105.04906) — 方差-协方差正则化
+- [Perceiver IO](https://arxiv.org/abs/2107.14795) — DeepMind Perceiver 架构
+- [Tahoe-100M](https://www.biorxiv.org/content/10.1101/2025.02.20.639398v3) — 预训练数据来源
+- [scGPT](https://www.nature.com/articles/s41592-024-02201-0) — 生成式单细胞基础模型（对比参考）
 
 ---
 
-> *笔记最后更新：YYYY-MM-DD*
+> *笔记最后更新：2026-06-01*

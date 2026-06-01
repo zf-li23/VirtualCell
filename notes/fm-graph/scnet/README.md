@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: scnet
+title: scNET
+category: fm-graph
+code_url: https://github.com/madilabcode/scNET
 ---
-
 # scNET 学习笔记
 
 > scNET 是一个通过将单细胞基因表达数据与蛋白质-蛋白质相互作用（PPI）网络整合来学习上下文特异性基因和细胞嵌入的新方法。它采用基于 GNN 的双图架构，联合表示基因表达和 PPI 网络数据，利用注意力机制建模上下文中的基因-基因关系并细化细胞-细胞关系。最终产出的基因嵌入可用于基因功能预测、细胞状态发现等任务。

@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: scmulan
+title: scMulan
+category: fm-classic
+code_url: https://github.com/SuperBianC/scMulan
 ---
-
 # scMulan 学习笔记
 
 > scMulan 是一个多任务生成式预训练语言模型，用于单细胞转录组学分析。它借鉴了 minGPT 架构和 flash-attention 优化，支持零样本细胞类型注释、零样本批次整合和条件细胞生成（模拟 in-silico 扰动）。目前支持心脏、肺、肝脏、骨髓、血液、大脑和胸腺等 7 个人体器官的零样本细胞注释。

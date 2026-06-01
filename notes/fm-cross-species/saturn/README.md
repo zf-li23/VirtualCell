@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: saturn
+title: SATURN
+category: fm-cross-species
+code_url: https://github.com/snap-stanford/saturn
 ---
-
 # SATURN 学习笔记
 
 > SATURN (Single-cell ATlas of Universal Representation Network) 是一个用于**跨物种细胞嵌入对齐**的模型，通过对比学习在基因嵌入空间中建立不同物种的"语义对应"，实现零样本的跨物种细胞类型匹配。

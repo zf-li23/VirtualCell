@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-28
+id: gears
+title: GEARS
+category: fm-graph
+code_url: https://github.com/snap-stanford/GEARS
 ---
-
 # GEARS 学习笔记
 
 > GEARS (Graph-Enhanced gene Expression And Regulatory System) 是一个结合基因共表达网络和 Gene Ontology 知识的图神经网络方法，用于预测单基因和多基因扰动的转录响应。它的核心思想是通过 GNN 将扰动效应沿基因功能关系图传播，支持零样本预测未见过的多基因组合扰动。

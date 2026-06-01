@@ -1,8 +1,10 @@
 ---
 status: done
 filled: 2026-05-27
+id: virtual-cell-challenge
+title: Virtual Cell Challenge
+category: benchmarks
 ---
-
 # Virtual Cell Challenge 学习笔记
 
 > Virtual Cell Challenge（虚拟细胞挑战赛）是由 Arc Institute 和 CZ Biohub 联合发起的**首个系统化虚拟细胞基准测试**，被称为"虚拟细胞领域的 ImageNet 时刻"。它像图灵测试评估 AI 一样评估虚拟细胞模型——给定对照细胞的表达谱和扰动条件，模型能否准确预测扰动后的细胞状态？首届挑战（2025）吸引了 **4,325 个团队**参与，重点测试**跨上下文（跨细胞类型）泛化**能力。

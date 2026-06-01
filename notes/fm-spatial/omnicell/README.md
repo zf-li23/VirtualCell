@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-28
+id: omnicell
+title: OmniCell
+category: fm-spatial
+code_url: https://github.com/BGIResearch/omnicell
 ---
-
 # OmniCell 学习笔记
 
 > OmniCell 是一个统一的单细胞和空间转录组学基础模型，尝试在同一个框架下处理单细胞和空间转录组数据。由 BGI 研究团队开发。

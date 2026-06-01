@@ -1,8 +1,10 @@
 ---
 status: done
 filled: 2026-05-27
+id: multimodal-integration-benchmark
+title: Multimodal Integration Benchmark
+category: benchmarks
 ---
-
 # Multimodal Integration Benchmark 学习笔记
 
 > 系统评估多模态单细胞数据集成方法。

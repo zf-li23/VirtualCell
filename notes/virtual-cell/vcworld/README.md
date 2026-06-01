@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-28
+id: vcworld
+title: VCWorld
+category: virtual-cell
+code_url: https://github.com/VCWorld
 ---
-
 # VCWorld 学习笔记
 
 > VCWorld 是一个细胞级别的白盒模拟器（white-box simulator），将结构化生物学知识与 LLM 推理相结合，以可解释、数据高效的方式预测细胞对扰动的响应。核心思想是通过机制推理（mechanism reasoning）而非黑盒预测来理解细胞行为。包含 GeneTAK 基准数据集。

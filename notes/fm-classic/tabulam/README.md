@@ -1,8 +1,10 @@
 ---
 status: done
 filled: 2026-05-27
+id: tabulam
+title: Tabula (Tabular Pretraining for scRNA-seq)
+category: fm-classic
 ---
-
 # Tabula (Tabular Pretraining for scRNA-seq) 学习笔记
 
 > Tabula 探索了将表格数据自监督学习范式应用于单细胞 RNA-seq 数据的可能性。核心思路是将 scRNA-seq 表达矩阵视为表格数据，利用表格数据的自监督预训练方法来学习细胞表示。相关工作显示，简单的方法（如 PCA）在某些场景下可以不亚于复杂的深度模型。

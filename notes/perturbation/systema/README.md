@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: systema
+title: Systema
+category: perturbation
+code_url: https://github.com/mlbio-epfl/systema
 ---
-
 # Systema 学习笔记
 
 > Systema 是一个系统性的遗传扰动预测评估框架。它对多种扰动预测方法（从简单的线性模型到复杂的深度学习方法）进行了大规模的标准化评估，揭示了简单线性基线的竞争力以及当前评估中的常见缺陷。该工作为扰动预测领域建立了严格的评估标准和最佳实践。

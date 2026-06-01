@@ -1,8 +1,10 @@
 ---
 status: done
 filled: 2026-05-27
+id: xtrimogene
+title: xTrimoGene
+category: fm-classic
 ---
-
 # xTrimoGene 学习笔记
 
 > xTrimoGene 提出了一种**非对称编码器-解码器 Transformer 架构**，灵感来自 MAE（Masked Autoencoder）。它利用单细胞转录组数据的**天然稀疏性**——细胞中 ~90% 的基因为零表达——仅用标准 Transformer FLOPs 的 **3.4%** 即可达到甚至超越全尺寸模型的性能。它是 scFoundation 的前身工作，也是首个系统展示单细胞领域 scaling law 的模型。

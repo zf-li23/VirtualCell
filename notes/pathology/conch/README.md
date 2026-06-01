@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-28
+id: conch
+title: CONCH
+category: pathology
+code_url: https://github.com/mahmoodlab/CONCH
 ---
-
 # CONCH 学习笔记
 
 > CONCH（CONtrastive learning from Captions for Histopathology）是一个视觉-语言基础模型，用于计算病理学。在 117 万张图像-描述配对的最大病理学视觉-语言数据集上通过任务无关预训练训练。在 14 个不同基准上评估，支持图像分类、分割、描述生成、文本到图像和图像到文本检索等任务。不使用 TCGA/PAIP/GTEX 等公开数据集进行预训练，避免数据污染风险。

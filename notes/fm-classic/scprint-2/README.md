@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-28
+id: scprint-2
+title: scPRINT-2
+category: fm-classic
+code_url: https://github.com/cantinilab/scPRINT-2
 ---
-
 # scPRINT-2 学习笔记
 
 > scPRINT-2 是下一代单细胞 RNA-seq 基础模型，由 Jérémie Kalfon（Cantini Lab）构建。采用新颖的架构、编码/解码方式和训练范式，在超过 3.5 亿细胞、22,000+ 数据集和 16 个物种上预训练。零样本支持表达去噪与插补、细胞嵌入与批次校正、标签预测（细胞类型、疾病、组织等）、基因网络推断和跨物种整合。基于 Lightning + lamin.ai + scDataLoader 生态构建，支持通过 pLLM 生成基因 token。

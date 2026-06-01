@@ -1,8 +1,10 @@
 ---
 status: done
 filled: 2026-05-27
+id: tahoe-100m
+title: Tahoe-100M / Tahoe-x1
+category: perturbation
 ---
-
 # Tahoe-100M / Tahoe-x1 学习笔记
 
 > Tahoe-100M 和 Tahoe-x1 是**全球最大的单细胞扰动图谱和扰动预训练基础模型**。Tahoe-100M 构建了包含 **1 亿+ 扰动细胞**的数据集（覆盖 ~60,000 个药物扰动实验，50 种细胞系），揭示了扰动响应的**上下文依赖性**；Tahoe-x1 在此基础上训练了首个 **30 亿参数**的扰动预训练单细胞 FM，在癌症相关基准上达到 SOTA。

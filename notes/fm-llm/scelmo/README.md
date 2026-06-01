@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: scelmo
+title: scELMo
+category: fm-llm
+code_url: https://github.com/HelloWorldLTY/scELMo
 ---
-
 # scELMo 学习笔记
 
 > scELMo（Embeddings from Language Models for Single-Cell）受到 NLP 中 ELMo 的启发，利用大语言模型（GPT-4o、DeepSeek 等）生成的基因功能描述嵌入来增强单细胞数据分析。核心思想是将 LLM 对基因功能的语义理解注入到 scRNA-seq 分析流程中，支持零样本细胞注释、批次校正、聚类分析和扰动分析。提供了一个包含预计算嵌入的公开数据库。

@@ -1,8 +1,10 @@
 ---
 status: done
 filled: 2026-05-27
+id: cell2sentence
+title: Cell2Sentence
+category: fm-llm
 ---
-
 # Cell2Sentence 学习笔记
 
 > Cell2Sentence（C2S）提出了一种将**单细胞转录组数据转化为自然语言句子**的创新方法，使得**预训练的大语言模型（如 GPT-2）可以直接理解和生成细胞数据**。这种方法桥接了 NLP 和单细胞基因组学两个领域，开创了"细胞→句子→LLM"的全新范式。

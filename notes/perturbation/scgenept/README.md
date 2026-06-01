@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: scgenept
+title: scGenePT
+category: perturbation
+code_url: https://github.com/czi-ai/scGenePT
 ---
-
 # scGenePT 学习笔记
 
 > scGenePT 是一个利用语言知识增强单细胞扰动预测的模型集合。它通过将 LLM 生成的基因描述嵌入（来自 NCBI、UniProt、GO 等知识源）注入 scGPT 基础模型的架构中，实现了大规模知识的融入。该工作展示了语言知识和基因表达数据结合的巨大潜力，支持多种知识源和多个预训练/微调模型。

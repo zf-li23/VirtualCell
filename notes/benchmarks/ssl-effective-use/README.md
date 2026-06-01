@@ -1,8 +1,10 @@
 ---
 status: done
 filled: 2026-05-27
+id: ssl-effective-use
+title: When Does Self-Supervised Learning Work in scRNA-seq?
+category: benchmarks
 ---
-
 # When Does Self-Supervised Learning Work in scRNA-seq? 学习笔记
 
 > 研究 SSL 在 scRNA-seq 中的有效性边界。

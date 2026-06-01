@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: novae
+title: Novae
+category: fm-spatial
+code_url: https://github.com/prism-oncology/novae
 ---
-
 # Novae 学习笔记
 
 > Novae 是一个基于**图的视觉自监督学习 (SwAV on Graphs)** 的空间转录组基础模型，通过将基因表达构建为细胞图并在图上进行 SwAV 自监督学习，实现空间域的无监督分割和细胞微环境分析。

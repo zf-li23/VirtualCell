@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-28
+id: transcriptformer
+title: TranscriptFormer
+category: fm-cross-species
+code_url: https://github.com/transcriptformer
 ---
-
 # TranscriptFormer 学习笔记
 
 > TranscriptFormer 是一个跨物种生成式基础模型家族，代表了一个跨物种的生成式细胞图谱。在高达 1.12 亿细胞、跨越 15.3 亿年进化历史的 12 个物种上训练。包含三个版本：TF-Metazoa（12 物种，4.44 亿可训练参数）、TF-Exemplar（5 物种，5.42 亿参数）、TF-Sapiens（仅人类，3.68 亿参数）。采用生成式自回归联合建模基因及其表达水平，引入表达感知多头自注意力、因果掩码和计数似然函数。

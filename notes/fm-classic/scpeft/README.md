@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: scpeft
+title: scPEFT
+category: fm-classic
+code_url: https://github.com/coffee19850519/scPEFT
 ---
-
 # scPEFT 学习笔记
 
 > scPEFT 是一个将参数高效微调（PEFT）技术应用于单细胞大语言模型（scLLMs）的框架。不同于全参数微调，scPEFT 在冻结原始 scLLM 参数的同时，仅学习少量低维可插拔适配器（adapters）来估计"模型增量"，实现对 scGPT、scBERT、scFoundation、Geneformer 等多种 scLLM 后端的高效领域适配。发表在 Nature Machine Intelligence。

@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: cellfm
+title: CellFM
+category: fm-classic
+code_url: https://github.com/biomed-AI/CellFM
 ---
-
 # CellFM 学习笔记
 
 > CellFM 是腾讯 AI Lab 开发的**大规模单细胞基础模型**，在 **1 亿人类细胞**上预训练。作为目前公开报道中预训练数据量最大的单细胞基础模型之一，CellFM 专注于通过海量多样本数据学习通用的细胞表示，在下游多种任务中展现了优异性能。

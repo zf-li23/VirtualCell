@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: state
+title: STATE
+category: perturbation
+code_url: https://github.com/ArcInstitute/state
 ---
-
 # STATE 学习笔记
 
 > STATE（State Transition + State Embedding）是 Arc Institute 开发的**跨上下文扰动响应预测框架**。它由两个组件构成：(1) **State Embedding (SE) 模型**——预训练通用细胞嵌入；(2) **State Transition (ST) 模型**——给定对照表达和扰动条件，预测扰动后的表达。STATE 的核心能力是在**未见过的细胞类型**上泛化，与 Virtual Cell Challenge 的目标高度一致。

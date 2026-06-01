@@ -1,8 +1,10 @@
 ---
 status: done
 filled: 2026-05-28
+id: harnessing-fm-omics
+title: Harnessing the Deep Learning Power of Foundation Models in Single-Cell Omics
+category: surveys
 ---
-
 # Harnessing the Deep Learning Power of Foundation Models in Single-Cell Omics 学习笔记
 
 > 这篇 Comment 文章讨论了基础模型在单细胞组学分析中的进展、局限和最佳实践。将现有方法分为两类：在单细胞数据上预训练的模型（如 scGPT、Geneformer）和利用 NLP 大语言模型的提示工程方法。讨论了基础模型面临的挑战（数据需求、计算资源、可解释性等）及可能的解决方案。

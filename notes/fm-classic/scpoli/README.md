@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: scpoli
+title: scPoli
+category: fm-classic
+code_url: https://github.com/theislab/scPoli
 ---
-
 # scPoli 学习笔记
 
 > scPoli (Single-Cell Population-level Integration) 是一个基于 **条件变分自编码器 (cVAE)** 的框架，用于在种群级别整合单细胞数据集，实现跨样本、跨条件的多尺度分析。它是单细胞领域**最早引入"参考映射 + 迁移学习"范式**的方法之一。

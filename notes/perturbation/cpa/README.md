@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-28
+id: cpa
+title: CPA
+category: perturbation
+code_url: https://github.com/theislab/cpa
 ---
-
 # CPA 学习笔记
 
 > CPA (Compositional Perturbation Autoencoder) 是一个基于变分自编码器的组合扰动响应预测框架。它通过加性解耦的潜在空间设计，将扰动效应分解为基线状态、扰动分量和协变量分量的组合，支持分布外预测、剂量-响应曲线估计和跨细胞类型的扰动效应迁移。

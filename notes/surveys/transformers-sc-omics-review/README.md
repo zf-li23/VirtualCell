@@ -1,8 +1,10 @@
 ---
 status: done
 filled: 2026-05-28
+id: transformers-sc-omics-review
+title: Transformers in Single-Cell Omics: A Review and New Perspectives
+category: surveys
 ---
-
 # Transformers in Single-Cell Omics: A Review and New Perspectives 学习笔记
 
 > 由 Fabian Theis 团队撰写的综合性综述，系统回顾了 Transformer 架构在单细胞组学中的应用。首先介绍 Transformer 架构及其单细胞适配方案，然后全面综述现有应用，并批判性地讨论未来潜力。研究了 Transformer 在单细胞数据中面临的无序性挑战、计算效率问题等局限性，为机器学习与单细胞生物学的交叉领域提供了结构化展望。

@@ -1,8 +1,10 @@
 ---
 status: done
 filled: 2026-05-27
+id: deeper-evaluation-scfms
+title: Deeper Evaluation of Single-Cell Foundation Models
+category: benchmarks
 ---
-
 # Deeper Evaluation of Single-Cell Foundation Models 学习笔记
 
 > 深入评估 scFM 的生物学能力（GRN、扰动、通路等）。

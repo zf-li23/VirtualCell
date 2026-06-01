@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-28
+id: cellforge
+title: CellForge
+category: virtual-cell
+code_url: https://github.com/gersteinlab/CellForge
 ---
-
 # CellForge 学习笔记
 
 > CellForge 是一个开放式的端到端多智能体（multi-agent）框架，用于单细胞组学计算方法的自主设计。不同于传统的单细胞模型，CellForge 通过多智能体协作和 LLM 驱动的任务分解，自动完成任务分析、方法设计到代码生成的全流程。它本身不是模型，而是一个"设计模型的模型"（meta-tool）。

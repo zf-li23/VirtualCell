@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-28
+id: celltok
+title: CellTok
+category: fm-llm
+code_url: https://github.com/sunnsset/CellTok
 ---
-
 # CellTok 学习笔记
 
 > CellTok 是一个早融合（early-fusion）多模态大语言模型，专为单细胞转录组学设计。通过基于 token 的细胞统一表示，支持细胞级别任务、群体级别任务和交互式问答。

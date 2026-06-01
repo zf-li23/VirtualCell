@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: scdrugmap
+title: scDrugMap
+category: perturbation
+code_url: https://github.com/QSong-github/scDrugMap
 ---
-
 # scDrugMap 学习笔记
 
 > scDrugMap 是跨基础模型的药物响应映射框架，支持 GPT4、Geneformer、scGPT、UCE 等模型上统一预测药物效应。

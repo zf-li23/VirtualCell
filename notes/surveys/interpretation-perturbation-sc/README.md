@@ -1,8 +1,10 @@
 ---
 status: done
 filled: 2026-05-28
+id: interpretation-perturbation-sc
+title: Interpretation, Extrapolation and Perturbation of Single Cells
+category: surveys
 ---
-
 # Interpretation, Extrapolation and Perturbation of Single Cells 学习笔记
 
 > 由 Oliver Stegle（EMBL/德国癌症研究中心）团队撰写的综述，系统回顾了单细胞分析从描述性图谱向因果推断和机制关系建模的转变。涵盖了解释（interpretation）、外推（extrapolation）和扰动（perturbation）三大主题，讨论了技术进步和不断增长的观测与干预数据集如何推动细胞逻辑的定量理解。

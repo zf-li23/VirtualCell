@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: heimdall
+title: Heimdall
+category: fm-classic
+code_url: https://github.com/ma-compbio-lab/Heimdall
 ---
-
 # Heimdall 学习笔记
 
 > Heimdall 是一个用于单细胞基础模型的通用词元化（tokenization）工具包和基准测试框架，基于 Hydra 配置框架，系统比较多种策略。

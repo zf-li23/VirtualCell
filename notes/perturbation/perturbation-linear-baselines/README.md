@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: perturbation-linear-baselines
+title: Simple Linear Baselines for Perturbation Prediction
+category: perturbation
+code_url: https://github.com/ekernf01/perturbation_prediction
 ---
-
 # Simple Linear Baselines for Perturbation Prediction 学习笔记
 
 > 该论文系统性地验证了简单线性模型在扰动预测中的竞争力。与 PCA Still Rules 类似，本文发现简单的线性基线方法在多种扰动预测任务上可以匹配甚至超越复杂的深度学习方法，挑战了"越复杂越好"的普遍假设。该工作为扰动预测领域的实验设计提供了重要指导。

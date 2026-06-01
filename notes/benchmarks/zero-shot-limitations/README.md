@@ -1,8 +1,10 @@
 ---
 status: done
 filled: 2026-05-27
+id: zero-shot-limitations
+title: Zero-Shot Limitations of Single-Cell Foundation Models
+category: benchmarks
 ---
-
 # Zero-Shot Limitations of Single-Cell Foundation Models 学习笔记
 
 > 该论文对单细胞基础模型的零样本学习能力进行了系统性评估。作者发现，现有的单细胞基础模型（如 scGPT、Geneformer 等）在零样本迁移到新任务或新数据时的表现远不如预期，暴露出泛化能力不足、批次效应敏感等关键限制。这项工作为单细胞基础模型的评估和未来发展方向提供了重要参考。

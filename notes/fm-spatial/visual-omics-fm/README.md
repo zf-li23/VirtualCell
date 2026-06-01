@@ -1,8 +1,10 @@
 ---
 status: done
 filled: 2026-05-27
+id: visual-omics-fm
+title: A visual–omics foundation model
+category: fm-spatial
 ---
-
 # A visual–omics foundation model 学习笔记
 
 > 这是一个**视觉-组学融合基础模型**，将组织病理学图像（H&E）与空间转录组数据统一到一个模型中。它直接解决了"如何将组织形态学与基因表达对齐"的问题。

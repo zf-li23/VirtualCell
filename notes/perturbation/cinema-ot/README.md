@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: cinema-ot
+title: CINEMA-OT
+category: perturbation
+code_url: https://github.com/scverse/pertpy
 ---
-
 # CINEMA-OT 学习笔记
 
 > CINEMA-OT（Causal INdependent Effect Module Attribution - Optimal Transport）是一个基于最优传输理论的因果扰动推断方法。它利用最优传输（OT）将对照细胞与扰动细胞对齐，将表达变化分解为独立的因果效应模块，从而识别受扰动直接影响的关键基因。它是 pertpy 工具包的核心组件之一。

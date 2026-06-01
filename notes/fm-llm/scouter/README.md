@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-28
+id: scouter
+title: Scouter
+category: fm-llm
+code_url: https://github.com/PancakeZoy/scouter
 ---
-
 # Scouter 学习笔记
 
 > Scouter 是一个架构简单的深度神经网络，用于预测未见基因的转录扰动响应。核心创新在于使用 LLM 从基因文本描述生成的嵌入作为模型输入，从而实现对未在训练中出现的基因的预测能力。通过 pip 可直接安装使用。

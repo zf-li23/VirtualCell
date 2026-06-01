@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: metric-mirages
+title: Metric Mirages in Cell Embeddings
+category: benchmarks
+code_url: https://github.com/Genentech/Islander
 ---
-
 # Metric Mirages in Cell Embeddings 学习笔记
 
 > Metric Mirages 是一项对单细胞嵌入评估指标的系统性批判研究。作者提出了一种"漂移群岛"（drifting islands）框架，通过构造已知最优嵌入的合成数据，揭示了广泛使用的单细胞评估指标（如批次校正指标、细胞类型分离指标等）存在严重偏差——许多指标在明显不合理的嵌入上给出高分。该工作为单细胞分析方法评估建立了更可靠的标准。

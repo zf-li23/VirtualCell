@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: cell-plm
+title: CellPLM
+category: fm-graph
+code_url: https://github.com/OmicsML/CellPLM
 ---
-
 # CellPLM 学习笔记
 
 > CellPLM 是首个对细胞间关系进行编码的单细胞预训练语言模型。不同于仅编码单个细胞信息的 scGPT/Geneformer，CellPLM 通过基于图的预训练策略捕捉细胞-细胞相互作用关系，在细胞类型注释任务上持续超越现有方法，同时推理速度比现有预训练模型快 100 倍。论文发表于 ICLR 2024。

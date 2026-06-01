@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: perturbench
+title: PerturBench
+category: benchmarks
+code_url: https://github.com/altoslabs/perturbench
 ---
-
 # PerturBench 学习笔记
 
 > PerturBench 是针对单细胞扰动预测方法的综合基准测试框架，提供模块化评估管道，涵盖多种数据集、方法和指标，支持扩展。

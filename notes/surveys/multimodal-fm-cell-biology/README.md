@@ -1,8 +1,10 @@
 ---
 status: done
 filled: 2026-05-28
+id: multimodal-fm-cell-biology
+title: Towards Multimodal Foundation Models in Molecular Cell Biology
+category: surveys
 ---
-
 # Towards Multimodal Foundation Models in Molecular Cell Biology 学习笔记
 
 > 由 Bo Wang（Vector Institute）、Fabian Theis（Helmholtz Munich）等联合撰写的 Nature Perspective，提出在基因组学、转录组学、表观基因组学、蛋白质组学、代谢组学和空间分析等多种组学数据上预训练多模态基础模型的愿景。这些模型有望实现细胞的分子状态表征，促进细胞、基因和组织的整体图谱构建，赋能从新细胞类型识别到 in silico 扰动预测的广泛应用。

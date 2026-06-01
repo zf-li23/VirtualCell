@@ -1,8 +1,10 @@
 ---
 status: done
 filled: 2026-05-28
+id: build-virtual-cell-ai
+title: How to Build the Virtual Cell with Artificial Intelligence: Priorities and Opportunities
+category: surveys
 ---
-
 # How to Build the Virtual Cell with Artificial Intelligence: Priorities and Opportunities 学习笔记
 
 > 由斯坦福大学、Arc Institute、CZI 等机构联合撰写的纲领性观点文章，定义了虚拟细胞（Virtual Cell）的概念框架和建设路线图。从数据基础设施、模型架构、评估标准、社区建设四个维度提出了建设虚拟细胞的优先级和机遇。强调了虚拟细胞作为 AI 与生物学交叉领域的核心目标——预测细胞对扰动的响应。

@@ -22,9 +22,11 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 NOTES_DIR = PROJECT_ROOT / "notes"
+DATA_DIR = PROJECT_ROOT / "data"
 CONFIG_DIR = PROJECT_ROOT / "docs-viewer" / "src" / "config"
 LOADER_PATH = PROJECT_ROOT / "docs-viewer" / "src" / "lib" / "loaders.ts"
 CONFIG_PATH = CONFIG_DIR / "notes.ts"
+LIB_DIR = PROJECT_ROOT / "docs-viewer" / "src" / "lib"
 
 # frontmatter 正则
 FM_PATTERN = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.DOTALL)
@@ -149,7 +151,7 @@ def validate_all_notes(notes: list[dict]):
 
 
 def scan_notes() -> list[dict]:
-    """扫描所有笔记，返回信息列表"""
+    """扫描所有笔记，从 frontmatter 读取元数据"""
     notes = []
     for section in sorted(NOTES_DIR.iterdir()):
         if not section.is_dir() or section.name.startswith("."):
@@ -161,11 +163,14 @@ def scan_notes() -> list[dict]:
             text = readme.read_text(encoding="utf-8")
             fm = parse_frontmatter(text)
             status = fm.get("status") or infer_status(text)
-            title = _guess_title(note_dir.name, text)
+            # 优先从 frontmatter 读取，fallback 到推导
+            note_id = fm.get("id") or note_dir.name
+            title = fm.get("title") or _guess_title_fallback(note_dir.name, text)
+            category = fm.get("category") or section.name
             notes.append({
-                "id": note_dir.name,
+                "id": note_id,
                 "title": title,
-                "category": section.name,
+                "category": category,
                 "path": f"{section.name}/{note_dir.name}/README.md",
                 "status": status,
                 "file": readme,
@@ -174,125 +179,16 @@ def scan_notes() -> list[dict]:
     return notes
 
 
-def _guess_title(dir_name: str, text: str) -> str:
-    """从内容或目录名推断标题"""
-    # 优先使用硬编码映射表（确保标题规范性）
-    name_map = {
-        "cell-atlas-fm": "UCE / Cell Atlas FM",
-        "scgpt-spatial": "scGPT-spatial",
-        "scprint-2": "scPRINT-2",
-        "gpt4-cell-annotation": "GPT-4 Cell Annotation",
-        "the-virtual-cell": "The Virtual Cell",
-        "virtual-cell-challenge": "Virtual Cell Challenge",
-        "cell-plm": "CellPLM",
-        "sc-mae": "scMAE",
-        "gene-repr-st": "Gene Representation for ST",
-        "multi-cellular-repr": "Multi-cellular Representations",
-        "metadata-as-language": "Metadata as Language",
-        "sc-expression-lm": "scRNA-seq Expression LM",
-        "divide-conquer-ssl": "Divide-and-Conquer SSL",
-        "dna-to-expression": "DNA to Expression",
-        "rnaseq-coverage-dna": "RNA-seq Coverage from DNA",
-        "privacy-federated": "Privacy-preserving Federated",
-        "scaling-dense": "Scaling Dense Representations",
-        "spatial-proteomics-fm": "Spatial Proteomics FM",
-        "visual-omics-fm": "Visual-Omics FM",
-        "transcription-foundation": "Transcription Foundation Model",
-        "transcriptome-proteome": "Transcriptome to Proteome",
-        "unified-perturbation": "Unified Perturbation Model",
-        "multimodal-perturbation": "Multimodal Perturbation FM",
-        "cell-niche-graph": "Cell Niche Graph",
-        "cell-ontology-fm": "Cell Ontology FM",
-        "chatgpt-embedding-sc": "ChatGPT Embedding for SC",
-        "chat-based-sc-exploration": "Chat-based SC Exploration",
-        "joint-embed-transcript-text": "Joint Embed Transcript-Text",
-        "language-enhanced-repr": "Language-enhanced Representation",
-        "llm-complement-scfm": "LLM Complement scFM",
-        "llm-consensus-annotation": "LLM Consensus Annotation",
-        "scaling-llm-sc": "Scaling LLM for SC",
-        "llm-gene-set-function": "LLM Gene Set Function",
-        "llm-virtual-cell-survey": "LLM + Virtual Cell Survey",
-        "open-problems-sc-analysis": "Open Problems SC Analysis",
-        "perturbation-benchmarking": "Perturbation Benchmarking",
-        "perturbation-baselines": "Perturbation Baselines",
-        "ssl-effective-use": "SSL Effective Use",
-        "systematic-perturbation-compare": "Systematic Perturbation Compare",
-        "batch-effects-barrier": "Batch Effects Barrier",
-        "biology-driven-insights": "Biology-driven Insights",
-        "cancer-outcomes-evaluation": "Cancer Outcomes Evaluation",
-        "cell-type-classification-eval": "Cell Type Classification Eval",
-        "deep-dive-scfms": "Deep Dive into scFMs",
-        "deeper-evaluation-scfms": "Deeper Evaluation of scFMs",
-        "gene-embeddings-benchmark": "Gene Embeddings Benchmark",
-        "imbalanced-cell-annotation": "Imbalanced Cell Annotation",
-        "mode-collapse-perturbation": "Mode Collapse Perturbation",
-        "multimodal-integration-benchmark": "Multimodal Integration Benchmark",
-        "pretraining-size-diversity": "Pretraining Size & Diversity",
-        "transferability-sc-to-st": "Transferability SC to ST",
-        "unified-benchmarking-framework": "Unified Benchmarking Framework",
-        "zero-shot-limitations": "Zero-shot Limitations",
-        "metric-mirages": "Metric Mirages",
-        "sparse-autoencoders-scfm": "Sparse Autoencoders for scFMs",
-        "transcriptional-grammar": "Transcriptional Grammar",
-        "in-silico-discovery": "In Silico Discovery",
-        "perturbation-linear-baselines": "Perturbation Linear Baselines",
-        "pca-still-rules": "PCA Still Rules",
-        "benchmark-cell-model-perturbation": "Benchmark Cell Model Perturbation",
-        "ai-virtual-cell-preclinical": "AI Virtual Cell Preclinical",
-        "build-virtual-cell-ai": "Build Virtual Cell with AI",
-        "grow-ai-virtual-cells": "Grow AI Virtual Cells",
-        "virtual-cells-predict": "Virtual Cells: Predict, Explain, Discover",
-        "general-purpose-pathology": "General Purpose Pathology FM",
-        "visual-language-pathology": "Visual-Language Pathology FM",
-        "visual-language-pathology-twitter": "Visual-Language Pathology (Twitter)",
-        "whole-slide-fm": "Whole-Slide FM",
-        "biomedical-seg-det-rec": "Biomedical Seg/Det/Rec",
-        "geneformer": "Geneformer",
-        "scgpt": "scGPT",
-        "scfoundation": "scFoundation",
-        "scbert": "scBERT",
-        "scpoli": "scPoli",
-        "scprint": "scPRINT",
-        "scprint-2": "scPRINT-2",
-        "nicheformer": "Nicheformer",
-        "novae": "Novae",
-        "saturn": "SATURN",
-        "genecompass": "GeneCompass",
-        "epiagent": "EpiAgent",
-        "xtrimogene": "xTrimoGene",
-        "sclong": "scLong",
-        "cellfm": "CellFM",
-        "scpeft": "scPEFT",
-        "scnet": "scNET",
-        "scelmo": "scELMo",
-        "genejepa": "GeneJEPA",
-        "tabulam": "Tabula",
-        "cell2sentence": "Cell2Sentence",
-        "cellama": "CELLama",
-        "scchat": "scChat",
-        "cassia": "CASSIA",
-        "celltok": "CellTok",
-        "langcell": "LangCell",
-        "scouter": "Scouter",
-        "cinema-ot": "CINEMA-OT",
-        "gears": "GEARS",
-        "cpa": "CPA",
-        "pertadapt": "PertAdapt",
-        "tahoe-100m": "Tahoe-100M / Tahoe-x1",
-        "scmulan": "scMulan",
-        "transcriptformer": "TranscriptFormer",
-        "cell-plm": "CellPLM",
-        "genejepa": "GeneJEPA",
-    }
-    if dir_name in name_map:
-        return name_map[dir_name]
-    # 从 h1 获取
+def _guess_title_fallback(dir_name: str, text: str) -> str:
+    """从 H1 标题或目录名推断标题（仅当 frontmatter 没有 title 时使用）"""
     m = re.search(r"^# (.+?)学习笔记", text, re.MULTILINE)
     if m:
         t = m.group(1).strip()
-        if t != "[模型名称]":
+        if t and t != "[模型名称]":
             return t
-    # 从目录名转换
+    m = re.search(r"^# (.+)", text, re.MULTILINE)
+    if m:
+        return m.group(1).strip()
     return dir_name.replace("-", " ").title()
 
 
@@ -334,6 +230,41 @@ def generate_notes_ts(notes: list[dict]) -> str:
     return "\n".join(lines)
 
 
+def generate_link_resolver_ts(notes: list[dict]) -> str:
+    """生成 linkResolver.ts，从 frontmatter 自动映射路径→id"""
+    lines = []
+    lines.append('// ⚠️ 此文件由 scripts/sync_notes_config.py 自动生成')
+    lines.append('// 手动修改将被覆盖！请修改笔记的 frontmatter 后重新运行。')
+    lines.append('')
+    lines.append('/**')
+    lines.append(' * 将 Markdown 中的相对笔记链接路径映射到 note ID。')
+    lines.append(' */')
+    lines.append('const notePathToId: Record<string, string> = {')
+    lines.append("  'README.md': 'overview',")
+    for n in notes:
+        if n["status"] != "done":
+            continue
+        lines.append(f"  '{n['path']}': '{n['id']}',")
+    lines.append('}')
+    lines.append('')
+    lines.append('export function resolveNoteId(href: string): string | null {')
+    lines.append("  const normalized = href.replace(/^\\.\\//, '').split('#')[0].split('?')[0]")
+    lines.append('  return notePathToId[normalized] ?? null')
+    lines.append('}')
+    lines.append('')
+    lines.append('/** 判断是否外部链接 */')
+    lines.append('export function isExternalLink(href: string): boolean {')
+    lines.append("  return href.startsWith('http://') || href.startsWith('https://')")
+    lines.append('}')
+    lines.append('')
+    lines.append('/** 判断是否锚点链接 */')
+    lines.append('export function isAnchorLink(href: string): boolean {')
+    lines.append("  return href.startsWith('#')")
+    lines.append('}')
+    lines.append('')
+    return "\n".join(lines)
+
+
 def generate_loaders_ts(notes: list[dict]) -> str:
     """生成 loaders.ts 内容"""
     lines = []
@@ -353,6 +284,98 @@ def generate_loaders_ts(notes: list[dict]) -> str:
     lines.append('  noteLoaders[meta.id] = fetchNote(meta.path)')
     lines.append('}')
     lines.append('')
+    return "\n".join(lines)
+
+
+# ====== 校验与生成工具 ======
+
+CONFIG_FILES_TO_VALIDATE = [
+    Path(__file__).resolve().parents[1] / "docs-viewer/src/config/researchGroups.ts",
+    Path(__file__).resolve().parents[1] / "docs-viewer/src/config/techLineage.ts",
+    Path(__file__).resolve().parents[1] / "docs-viewer/src/config/roadmap.ts",
+]
+
+
+def validate_config_refs(notes: list[dict]):
+    """检查所有手动配置文件中引用的 noteId 是否存在于已完成笔记中"""
+    done_ids = {n["id"] for n in notes if n["status"] == "done"}
+    has_error = False
+    for cfg_path in CONFIG_FILES_TO_VALIDATE:
+        if not cfg_path.exists():
+            continue
+        text = cfg_path.read_text(encoding="utf-8")
+        refs = re.findall(r"noteId:\s*'([^']+)'", text)
+        for m in re.finditer(r"members:\s*\[([^\]]+)\]", text):
+            refs.extend(re.findall(r"'([^']+)'", m.group(1)))
+        refs = sorted(set(refs))
+        bad = [r for r in refs if r not in done_ids]
+        if bad:
+            print(f"  ❌ {cfg_path.name}: 缺失的 noteId: {bad}")
+            has_error = True
+        else:
+            print(f"  ✅ {cfg_path.name}: 所有 {len(refs)} 个引用均有效")
+    if has_error:
+        sys.exit(1)
+    return not has_error
+
+
+def find_code_url(note_id: str) -> str:
+    """从 data/*.json 查找代码仓库 URL"""
+    for f in sorted(DATA_DIR.glob("*.json")):
+        try:
+            d = json.loads(f.read_text())
+            if d.get("id") == note_id and d.get("code_url"):
+                return d["code_url"]
+        except:
+            pass
+    return ""
+
+
+def generate_repo_map_md(notes: list[dict]) -> str:
+    """从 notes + data/*.json + repos/ 自动生成 REPO_MAP.md"""
+    lines = []
+    lines.append("# 论文 ↔ GitHub 仓库映射表")
+    lines.append("")
+    lines.append("> 📌 此文件由 `scripts/sync_notes_config.py` 自动生成。")
+    lines.append("> 手动修改将被覆盖！请修改笔记 frontmatter 或 data/*.json。")
+    lines.append(">")
+    lines.append("> 图例：")
+    lines.append("> - ✅ 仓库已验证可用")
+    lines.append("> - ❌ 未找到公开仓库")
+    lines.append("")
+    from collections import OrderedDict
+    cat_notes = OrderedDict()
+    for n in notes:
+        if n["status"] != "done":
+            continue
+        cat = n["category"]
+        cat_notes.setdefault(cat, []).append(n)
+    CAT_HEADERS = {
+        "fm-classic": "FM + 经典语言模型", "fm-spatial": "FM + 空间组学",
+        "fm-world-model": "FM + 世界模型", "fm-cross-species": "FM + 跨物种/通用嵌入",
+        "fm-graph": "FM + 图与网络", "fm-llm": "FM + LLM",
+        "perturbation": "遗传扰动", "benchmarks": "评估与 Benchmark",
+        "virtual-cell": "虚拟细胞", "pathology": "病理基础模型", "surveys": "综述与展望",
+    }
+    for cat, cat_list in cat_notes.items():
+        lines.append("")
+        lines.append(f"## {CAT_HEADERS.get(cat, cat)}")
+        lines.append("")
+        lines.append("| 目录名 | 代码仓库 | 状态 |")
+        lines.append("|--------|---------|------|")
+        for n in cat_list:
+            note_id = n["id"]
+            # 尝试多个来源获取 code_url
+            code_url = ""
+            fm = parse_frontmatter(n["text"])
+            if "code_url" in fm:
+                code_url = fm["code_url"]
+            if not code_url:
+                code_url = find_code_url(note_id)
+            if code_url:
+                lines.append(f"| `{note_id}` | [{code_url}]({code_url}) | ✅ |")
+            else:
+                lines.append(f"| `{note_id}` | ❌ 未找到 | ❌ |")
     return "\n".join(lines)
 
 
@@ -397,6 +420,15 @@ def main():
 
     if "--validate" in sys.argv:
         validate_all_notes(notes)
+        validate_config_refs(notes)
+        return
+
+    if "--generate-repo-map" in sys.argv:
+        print("生成 REPO_MAP.md...")
+        repo_map = generate_repo_map_md(notes)
+        REPO_MAP_PATH = PROJECT_ROOT / "REPO_MAP.md"
+        REPO_MAP_PATH.write_text(repo_map, encoding="utf-8")
+        print(f"  ✅ {REPO_MAP_PATH}")
         return
 
     # 重新扫描（frontmatter 已更新）
@@ -413,6 +445,7 @@ def main():
 
     print(f"生成前端配置 ({len(done)} 条笔记)...")
     CONFIG_DIR.mkdir(parents=True, exist_ok=True)
+    LIB_DIR.mkdir(parents=True, exist_ok=True)
 
     config_ts = generate_notes_ts(notes)
     CONFIG_PATH.write_text(config_ts, encoding="utf-8")
@@ -421,6 +454,15 @@ def main():
     loaders_ts = generate_loaders_ts(notes)
     LOADER_PATH.write_text(loaders_ts, encoding="utf-8")
     print(f"  ✅ {LOADER_PATH}")
+
+    link_resolver_ts = generate_link_resolver_ts(notes)
+    LINK_RESOLVER_PATH = LIB_DIR / "linkResolver.ts"
+    LINK_RESOLVER_PATH.write_text(link_resolver_ts, encoding="utf-8")
+    print(f"  ✅ {LINK_RESOLVER_PATH}")
+
+    # 校验引用
+    print("\n校验配置文件引用...")
+    validate_config_refs(notes)
 
     print("\n完成！请运行 npm run build 验证构建。")
 

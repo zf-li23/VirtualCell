@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-28
+id: whole-slide-fm
+title: Prov-GigaPath / Whole-Slide Foundation Model
+category: pathology
+code_url: https://github.com/prov-gigapath/prov-gigapath
 ---
-
 # Prov-GigaPath / Whole-Slide Foundation Model 学习笔记
 
 > Prov-GigaPath 是一个全切片病理基础模型，由 Providence + Microsoft 合作开发。在来自 Providence 医疗系统的 28,000+ 全切片图像上预训练，使用创新的长上下文 Vision Transformer 架构处理病理全切片图像的超高分辨率。在多种病理学任务上达到 SOTA。

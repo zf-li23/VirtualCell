@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: sclambda
+title: scLAMBDA
+category: perturbation
+code_url: https://github.com/gefeiwang/scLAMBDA
 ---
-
 # scLAMBDA 学习笔记
 
 > scLAMBDA 是一个基于深度生成模型的框架，用于建模和预测单细胞多基因扰动响应。它利用大语言模型的嵌入能力来编码基因和扰动信息，并通过解耦表示学习分离基线细胞状态和扰动状态表征，从而实现对未观测靶基因或基因组合的扰动结果预测。支持单基因和组合式多基因扰动的 in silico 预测。

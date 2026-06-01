@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: scfoundation
+title: scFoundation
+category: fm-classic
+code_url: https://github.com/biomap-research/scFoundation
 ---
-
 # scFoundation 学习笔记
 
 > scFoundation 是一个基于 **xTrimoGene 非对称自编码器架构**的大规模单细胞基础模型（~100M-1B 参数），采用 **Performer 线性复杂度注意力**和**可微分软分箱编码**，在百万级单细胞数据上进行预训练。

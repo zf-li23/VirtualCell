@@ -1,8 +1,10 @@
 ---
 status: done
 filled: 2026-05-27
+id: biology-driven-insights
+title: Biology-Driven Insights in Single-Cell Foundation Models
+category: benchmarks
 ---
-
 # Biology-Driven Insights in Single-Cell Foundation Models 学习笔记
 
 > 该论文提出了"生物学驱动的洞察力评估"框架，用于评测单细胞基础模型是否真正学到了生物学知识。不同于传统的技术指标（如批次校正、聚类性能），作者设计了依赖生物学先验知识的评估任务，检验模型是否能够捕捉已知的生物学关系、通路激活模式和基因调控网络。研究发现许多模型在技术指标上表现优异，但在生物学洞察力测试中表现平平。

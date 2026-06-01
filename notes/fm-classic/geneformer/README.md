@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: geneformer
+title: Geneformer
+category: fm-classic
+code_url: https://hf-mirror.com/ctheodoris/Geneformer
 ---
-
 # Geneformer 学习笔记
 
 > Geneformer 是一个基于 Transformer 架构的**单细胞转录组基础模型**（foundational model），通过在大量人类单细胞转录组数据上进行自监督预训练，学习基因调控网络动力学。

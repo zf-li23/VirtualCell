@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: scgpt-spatial
+title: scGPT-spatial
+category: fm-spatial
+code_url: https://github.com/bowang-lab/scGPT-spatial
 ---
-
 # scGPT-spatial 学习笔记
 
 > scGPT-spatial 是 scGPT 模型在空间转录组学领域的持续预训练扩展。在 3000 万细胞/spot 的 SpatialHuman30M 语料库上进行持续预训练，引入了混合专家（MoE）解码器、空间感知采样和基于邻域的重建目标。支持 Visium、Visium HD、Xenium、MERFISH 等多种空间技术平台，实现多模态多切片整合、细胞类型反卷积和缺失基因插补。

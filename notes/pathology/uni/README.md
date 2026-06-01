@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-28
+id: uni
+title: UNI
+category: pathology
+code_url: https://github.com/mahmoodlab/UNI
 ---
-
 # UNI 学习笔记
 
 > UNI 是一个通用的病理学基础模型，在大规模多样化的病理图像数据上通过自监督学习预训练。与 CONCH 同属 Mahmood Lab 的病理基础模型系列，UNI 专注于纯视觉（图像）表示，而 CONCH 增加了文本模态。在多种病理学任务上达到 SOTA。

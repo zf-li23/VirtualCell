@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: scgpt
+title: scGPT
+category: fm-classic
+code_url: https://github.com/bowang-lab/scGPT
 ---
-
 # scGPT 学习笔记
 
 > scGPT 是一个基于 **GPT（Causal Transformer）架构**的单细胞基础模型，通过自回归生成式预训练学习单细胞转录组数据，并支持多组学（mRNA + ATAC + 蛋白）分析。

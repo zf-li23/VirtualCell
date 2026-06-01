@@ -1,8 +1,11 @@
 ---
 status: done
 filled: 2026-05-27
+id: nicheformer
+title: NicheFormer
+category: fm-spatial
+code_url: https://github.com/theislab/nicheformer
 ---
-
 # NicheFormer 学习笔记
 
 > NicheFormer 是一个基于 **BERT 架构的空间转录组基础模型**，通过整合单细胞与空间转录组数据，学习细胞在其微环境（niche）中的上下文表示，支持多模态数据集成。

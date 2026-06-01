@@ -1,8 +1,10 @@
 ---
 status: done
 filled: 2026-05-27
+id: epiagent
+title: EpiAgent
+category: fm-classic
 ---
-
 # EpiAgent 学习笔记
 
 > EpiAgent 是一个**单细胞表观基因组学基础模型**，专注于分析 scATAC-seq 等染色质可及性数据。它是继 scBERT/scGPT 等转录组模型之后，首个专门为**表观组学**设计的大规模基础模型。

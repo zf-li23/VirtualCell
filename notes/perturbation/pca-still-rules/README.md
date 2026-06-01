@@ -1,8 +1,10 @@
 ---
 status: done
 filled: 2026-05-27
+id: pca-still-rules
+title: PCA Still Rules
+category: perturbation
 ---
-
 # PCA Still Rules 学习笔记
 
 > PCA Still Rules 是一篇对单细胞基础模型进行系统性批评的重要论文。作者通过严格的基准测试发现，在扰动预测任务中，简单的 PCA 降维后接线性回归模型并不比复杂的深度学习方法（如 scGPT、Geneformer、scFoundation 等）差。这一发现对该领域的实验设计和评估标准提出了重要挑战。

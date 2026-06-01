@@ -1,8 +1,10 @@
 ---
 status: done
 filled: 2026-05-27
+id: the-virtual-cell
+title: The Virtual Cell
+category: virtual-cell
 ---
-
 # The Virtual Cell 学习笔记
 
 > "虚拟细胞"（The Virtual Cell）是 Nature Methods 2025 年发表的一篇**短篇社论/评论文章**，提出了一个宏伟愿景：构建一个能够**模拟和预测细胞行为**（特别是对扰动的响应）的计算模型。这篇文章虽然没有提出具体方法，但它为整个"虚拟细胞"领域定下了基调，与同期发表的 Virtual Cell Challenge 一起，共同推动了这一方向的快速发展。
