@@ -3,7 +3,7 @@ status: done
 filled: 2026-05-27
 id: the-virtual-cell
 title: The Virtual Cell
-category: virtual-cell
+category: surveys
 ---
 # The Virtual Cell 学习笔记
 

@@ -3,7 +3,7 @@ status: done
 filled: 2026-05-28
 id: vcworld
 title: VCWorld
-category: virtual-cell
+category: fm-llm
 code_url: https://github.com/VCWorld
 ---
 # VCWorld 学习笔记

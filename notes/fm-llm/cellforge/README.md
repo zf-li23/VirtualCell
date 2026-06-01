@@ -3,7 +3,7 @@ status: done
 filled: 2026-05-28
 id: cellforge
 title: CellForge
-category: virtual-cell
+category: fm-llm
 code_url: https://github.com/gersteinlab/CellForge
 ---
 # CellForge 学习笔记

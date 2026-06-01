@@ -31,7 +31,7 @@ export const labGroups: LabGroup[] = [
   },
   {
     name: 'Arc Institute',
-    members: ['state', 'virtual-cell-challenge', 'transcriptformer'],
+    members: ['state', 'virtual-cell-challenge', 'transcriptformer', 'the-virtual-cell'],
   },
   {
     name: 'Cantini Lab (Institut Curie)',

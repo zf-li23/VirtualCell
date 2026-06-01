@@ -50,6 +50,7 @@ CATEGORY_NAMES = {
     "fm-world-model": "FM + 世界模型",
     "fm-cross-species": "FM + 跨物种/通用嵌入",
     "fm-graph": "FM + 图与网络",
+    "fm-multi-omics": "FM + 多组学整合",
     "fm-llm": "FM + LLM",
     "perturbation": "遗传扰动",
     "benchmarks": "评估与 Benchmark",
@@ -59,7 +60,7 @@ CATEGORY_NAMES = {
 }
 
 CATEGORY_ORDER = ["fm-classic", "fm-spatial", "fm-world-model",
-                  "fm-cross-species", "fm-graph", "fm-llm",
+                  "fm-cross-species", "fm-graph", "fm-multi-omics", "fm-llm",
                   "perturbation", "benchmarks",
                   "virtual-cell", "pathology", "surveys"]
 
@@ -355,7 +356,7 @@ def generate_repo_map_md(notes: list[dict]) -> str:
         "fm-world-model": "FM + 世界模型", "fm-cross-species": "FM + 跨物种/通用嵌入",
         "fm-graph": "FM + 图与网络", "fm-llm": "FM + LLM",
         "perturbation": "遗传扰动", "benchmarks": "评估与 Benchmark",
-        "virtual-cell": "虚拟细胞", "pathology": "病理基础模型", "surveys": "综述与展望",
+        "fm-multi-omics": "FM + 多组学整合", "pathology": "病理基础模型", "surveys": "综述与展望",
     }
     for cat, cat_list in cat_notes.items():
         lines.append("")

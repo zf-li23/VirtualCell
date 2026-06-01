@@ -29,7 +29,7 @@ export const techLineage: TechNode[] = [
     name: 'GPT 路线',
     description: '单向因果 Transformer + 自回归生成',
     children: [
-      { name: 'scGPT', noteId: 'scgpt', description: 'GPT + 基因对 Tokenization (2024)' },
+      { name: 'scGPT', noteId: 'scgpt', description: 'GPT + 多组学统一建模 (2024)' },
       { name: 'scMulan', noteId: 'scmulan', description: '多任务生成式预训练 (2024)' },
       { name: 'scLong', noteId: 'sclong', description: '长上下文 + GO 引导注意力 (2024)' },
       { name: 'CellFM', noteId: 'cellfm', description: '1 亿细胞 BERT 规模 (2025)' },
@@ -72,6 +72,18 @@ export const techLineage: TechNode[] = [
     ],
   },
   {
+    name: '多组学整合路线',
+    description: '跨模态数据整合与翻译',
+    children: [
+      { name: 'visual-omics-fm', noteId: 'visual-omics-fm', description: 'H&E + 空间转录组跨模态 (2025)' },
+      { name: 'scGPT', noteId: 'scgpt', description: '多组学 GPT 基础模型 (2024)' },
+      { name: 'CAPTAIN', noteId: 'captain', description: 'RNA + 蛋白联合预训练 (2025)' },
+      { name: 'SWITCH', noteId: 'switch', description: '空间 RNA + ATAC 整合 (2025)' },
+      { name: 'SpaTranslator', noteId: 'spatranslator', description: '空间跨模态生成 (2025)' },
+      { name: 'scPROTEIN', noteId: 'scprotein', description: '蛋白质组学去噪嵌入 (2024)' },
+    ],
+  },
+  {
     name: '跨物种 / 对比学习路线',
     description: '跨物种对齐 + 通用细胞表示',
     children: [
@@ -92,6 +104,16 @@ export const techLineage: TechNode[] = [
       { name: 'Scouter', noteId: 'scouter', description: 'LLM 嵌入做扰动预测 (2025)' },
       { name: 'scELMo', noteId: 'scelmo', description: 'LLM 基因描述嵌入 (2023)' },
       { name: 'LangCell', noteId: 'langcell', description: '语言-细胞联合预训练 (ICML 2024)' },
+      { name: 'VCWorld', noteId: 'vcworld', description: '知识图谱+LLM 白盒模拟器 (2025)' },
+      { name: 'CellForge', noteId: 'cellforge', description: '多智能体 LLM 方法设计 (2025)' },
+    ],
+  },
+  {
+    name: '多组学融合路线',
+    description: '跨模态/多组学数据整合建模',
+    children: [
+      { name: 'scGPT', noteId: 'scgpt', description: 'GPT + 多组学统一建模 (2024)' },
+      { name: 'Visual-Omics FM', noteId: 'visual-omics-fm', description: 'H&E + ST 跨模态融合 (2025)' },
     ],
   },
 ]

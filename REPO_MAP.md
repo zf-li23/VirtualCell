@@ -31,7 +31,6 @@
 | `heimdall` | [https://github.com/ma-compbio-lab/Heimdall](https://github.com/ma-compbio-lab/Heimdall) | ✅ |
 | `scbert` | [https://github.com/TencentAILabHealthcare/scBERT](https://github.com/TencentAILabHealthcare/scBERT) | ✅ |
 | `scfoundation` | [https://github.com/biomap-research/scFoundation](https://github.com/biomap-research/scFoundation) | ✅ |
-| `scgpt` | [https://github.com/bowang-lab/scGPT](https://github.com/bowang-lab/scGPT) | ✅ |
 | `sclong` | [https://github.com/BaiDing1234/scLong](https://github.com/BaiDing1234/scLong) | ✅ |
 | `scmulan` | [https://github.com/SuperBianC/scMulan](https://github.com/SuperBianC/scMulan) | ✅ |
 | `scpeft` | [https://github.com/coffee19850519/scPEFT](https://github.com/coffee19850519/scPEFT) | ✅ |
@@ -66,11 +65,20 @@
 | `cassia` | [https://github.com/ElliotXie/CASSIA](https://github.com/ElliotXie/CASSIA) | ✅ |
 | `cell2sentence` | ❌ 未找到 | ❌ |
 | `cellama` | [https://github.com/portrai-io/CELLama](https://github.com/portrai-io/CELLama) | ✅ |
+| `cellforge` | [https://github.com/gersteinlab/CellForge](https://github.com/gersteinlab/CellForge) | ✅ |
 | `celltok` | [https://github.com/sunnsset/CellTok](https://github.com/sunnsset/CellTok) | ✅ |
 | `langcell` | [https://github.com/PharMolix/LangCell](https://github.com/PharMolix/LangCell) | ✅ |
 | `scchat` | [https://github.com/li-group/scChat](https://github.com/li-group/scChat) | ✅ |
 | `scelmo` | [https://github.com/HelloWorldLTY/scELMo](https://github.com/HelloWorldLTY/scELMo) | ✅ |
 | `scouter` | [https://github.com/PancakeZoy/scouter](https://github.com/PancakeZoy/scouter) | ✅ |
+| `vcworld` | [https://github.com/VCWorld](https://github.com/VCWorld) | ✅ |
+
+## FM + 多组学整合
+
+| 目录名 | 代码仓库 | 状态 |
+|--------|---------|------|
+| `scgpt` | [https://github.com/bowang-lab/scGPT](https://github.com/bowang-lab/scGPT) | ✅ |
+| `visual-omics-fm` | ❌ 未找到 | ❌ |
 
 ## FM + 空间组学
 
@@ -80,7 +88,6 @@
 | `novae` | [https://github.com/prism-oncology/novae](https://github.com/prism-oncology/novae) | ✅ |
 | `omnicell` | [https://github.com/BGIResearch/omnicell](https://github.com/BGIResearch/omnicell) | ✅ |
 | `scgpt-spatial` | [https://github.com/bowang-lab/scGPT-spatial](https://github.com/bowang-lab/scGPT-spatial) | ✅ |
-| `visual-omics-fm` | ❌ 未找到 | ❌ |
 
 ## FM + 世界模型
 
@@ -119,12 +126,5 @@
 | `harnessing-fm-omics` | ❌ 未找到 | ❌ |
 | `interpretation-perturbation-sc` | ❌ 未找到 | ❌ |
 | `multimodal-fm-cell-biology` | ❌ 未找到 | ❌ |
-| `transformers-sc-omics-review` | ❌ 未找到 | ❌ |
-
-## 虚拟细胞
-
-| 目录名 | 代码仓库 | 状态 |
-|--------|---------|------|
-| `cellforge` | [https://github.com/gersteinlab/CellForge](https://github.com/gersteinlab/CellForge) | ✅ |
 | `the-virtual-cell` | ❌ 未找到 | ❌ |
-| `vcworld` | [https://github.com/VCWorld](https://github.com/VCWorld) | ✅ |
+| `transformers-sc-omics-review` | ❌ 未找到 | ❌ |

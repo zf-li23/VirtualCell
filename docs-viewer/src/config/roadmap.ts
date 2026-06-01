@@ -68,6 +68,15 @@ export const roadmapRoutes: RoadmapRoute[] = [
     ],
   },
   {
+    title: '🧬 FM + 多组学整合',
+    description: '跨模态/多组学数据统一建模',
+    category: 'FM + 多组学整合',
+    items: [
+      { noteId: 'scgpt', label: '⭐🔥 scGPT — GPT + 多组学统一建模 (Nat Methods 2024)', category: 'FM + 多组学整合' },
+      { noteId: 'visual-omics-fm', label: '🎯 Visual-Omics FM — H&E + ST 跨模态融合', category: 'FM + 多组学整合' },
+    ],
+  },
+  {
     title: '💬 FM + LLM',
     description: '大语言模型与单细胞数据的交叉融合',
     category: 'FM + LLM',
@@ -76,6 +85,8 @@ export const roadmapRoutes: RoadmapRoute[] = [
       { noteId: 'scelmo', label: '🎯 scELMo — LLM 基因描述嵌入增强单细胞分析', category: 'FM + LLM' },
       { noteId: 'cassia', label: '🔥 CASSIA — 多智能体自动注释 (Nat Comms 2025)', category: 'FM + LLM' },
       { noteId: 'scchat', label: '🔥 scChat — LLM Co-Pilot 交互式分析', category: 'FM + LLM' },
+      { noteId: 'vcworld', label: '🎯 VCWorld — 知识图谱+LLM 白盒模拟器', category: 'FM + LLM' },
+      { noteId: 'cellforge', label: '🎯 CellForge — 多智能体 LLM 方法设计', category: 'FM + LLM' },
     ],
   },
   {
@@ -112,16 +123,6 @@ export const roadmapRoutes: RoadmapRoute[] = [
     ],
   },
   {
-    title: '🌌 虚拟细胞',
-    description: '所有基础模型努力的终极目标',
-    category: '虚拟细胞',
-    items: [
-      { noteId: 'the-virtual-cell', label: '⭐ The Virtual Cell — 定义虚拟细胞蓝图', category: '虚拟细胞' },
-      { noteId: 'vcworld', label: '🎯 VCWorld — 知识图谱+LLM 白盒模拟器', category: '虚拟细胞' },
-      { noteId: 'cellforge', label: '🎯 CellForge — Agentic 虚拟细胞设计', category: '虚拟细胞' },
-    ],
-  },
-  {
     title: '📚 综述与展望',
     description: '领域全景综述（优先阅读）',
     category: '综述与展望',
@@ -129,6 +130,7 @@ export const roadmapRoutes: RoadmapRoute[] = [
       { noteId: 'transformers-sc-omics-review', label: '📝 Transformers in sc Omics — 引用最高的综述', category: '综述与展望' },
       { noteId: 'multimodal-fm-cell-biology', label: '📝 多模态 FM — Nature 2025 纲领性展望', category: '综述与展望' },
       { noteId: 'build-virtual-cell-ai', label: '📝 构建虚拟细胞 — 优先事项 (Cell 2024)', category: '综述与展望' },
+      { noteId: 'the-virtual-cell', label: '📝 The Virtual Cell — 虚拟细胞蓝图 (Nat Methods 2025)', category: '综述与展望' },
     ],
   },
 ]

@@ -14,6 +14,7 @@ export const categories = [
   'FM + 世界模型',
   'FM + 跨物种/通用嵌入',
   'FM + 图与网络',
+  'FM + 多组学整合',
   'FM + LLM',
   '遗传扰动',
   '评估与 Benchmark',
@@ -64,15 +65,23 @@ export const noteMetas: NoteMeta[] = [
   { id: 'pertadapt', title: 'PertAdapt', category: 'FM + 图与网络', path: 'fm-graph/pertadapt/README.md' },
   { id: 'scnet', title: 'scNET', category: 'FM + 图与网络', path: 'fm-graph/scnet/README.md' },
 
+  // --- FM + 多组学整合 ---
+  { id: 'captain', title: 'CAPTAIN', category: 'FM + 多组学整合', path: 'fm-multi-omics/captain/README.md' },
+  { id: 'scprotein', title: 'scPROTEIN', category: 'FM + 多组学整合', path: 'fm-multi-omics/scprotein/README.md' },
+  { id: 'spatranslator', title: 'SpaTranslator', category: 'FM + 多组学整合', path: 'fm-multi-omics/spatranslator/README.md' },
+  { id: 'switch', title: 'SWITCH', category: 'FM + 多组学整合', path: 'fm-multi-omics/switch/README.md' },
+
   // --- FM + LLM ---
   { id: 'cassia', title: 'CASSIA', category: 'FM + LLM', path: 'fm-llm/cassia/README.md' },
   { id: 'cell2sentence', title: 'Cell2Sentence', category: 'FM + LLM', path: 'fm-llm/cell2sentence/README.md' },
   { id: 'cellama', title: 'CELLama', category: 'FM + LLM', path: 'fm-llm/cellama/README.md' },
+  { id: 'cellforge', title: 'CellForge', category: 'FM + LLM', path: 'fm-llm/cellforge/README.md' },
   { id: 'celltok', title: 'CellTok', category: 'FM + LLM', path: 'fm-llm/celltok/README.md' },
   { id: 'langcell', title: 'LangCell', category: 'FM + LLM', path: 'fm-llm/langcell/README.md' },
   { id: 'scchat', title: 'scChat', category: 'FM + LLM', path: 'fm-llm/scchat/README.md' },
   { id: 'scelmo', title: 'scELMo', category: 'FM + LLM', path: 'fm-llm/scelmo/README.md' },
   { id: 'scouter', title: 'Scouter', category: 'FM + LLM', path: 'fm-llm/scouter/README.md' },
+  { id: 'vcworld', title: 'VCWorld', category: 'FM + LLM', path: 'fm-llm/vcworld/README.md' },
 
   // --- 遗传扰动 ---
   { id: 'cinema-ot', title: 'CINEMA-OT', category: '遗传扰动', path: 'perturbation/cinema-ot/README.md' },
@@ -96,11 +105,6 @@ export const noteMetas: NoteMeta[] = [
   { id: 'virtual-cell-challenge', title: 'Virtual Cell Challenge', category: '评估与 Benchmark', path: 'benchmarks/virtual-cell-challenge/README.md' },
   { id: 'zero-shot-limitations', title: 'Zero-Shot Limitations of Single-Cell Foundation Models', category: '评估与 Benchmark', path: 'benchmarks/zero-shot-limitations/README.md' },
 
-  // --- 虚拟细胞 ---
-  { id: 'cellforge', title: 'CellForge', category: '虚拟细胞', path: 'virtual-cell/cellforge/README.md' },
-  { id: 'the-virtual-cell', title: 'The Virtual Cell', category: '虚拟细胞', path: 'virtual-cell/the-virtual-cell/README.md' },
-  { id: 'vcworld', title: 'VCWorld', category: '虚拟细胞', path: 'virtual-cell/vcworld/README.md' },
-
   // --- 病理基础模型 ---
   { id: 'conch', title: 'CONCH', category: '病理基础模型', path: 'pathology/conch/README.md' },
   { id: 'uni', title: 'UNI', category: '病理基础模型', path: 'pathology/uni/README.md' },
@@ -111,5 +115,6 @@ export const noteMetas: NoteMeta[] = [
   { id: 'harnessing-fm-omics', title: 'Harnessing the Deep Learning Power of Foundation Models in Single-Cell Omics', category: '综述与展望', path: 'surveys/harnessing-fm-omics/README.md' },
   { id: 'interpretation-perturbation-sc', title: 'Interpretation, Extrapolation and Perturbation of Single Cells', category: '综述与展望', path: 'surveys/interpretation-perturbation-sc/README.md' },
   { id: 'multimodal-fm-cell-biology', title: 'Towards Multimodal Foundation Models in Molecular Cell Biology', category: '综述与展望', path: 'surveys/multimodal-fm-cell-biology/README.md' },
+  { id: 'the-virtual-cell', title: 'The Virtual Cell', category: '综述与展望', path: 'surveys/the-virtual-cell/README.md' },
   { id: 'transformers-sc-omics-review', title: 'Transformers in Single-Cell Omics: A Review and New Perspectives', category: '综述与展望', path: 'surveys/transformers-sc-omics-review/README.md' },
 ]
