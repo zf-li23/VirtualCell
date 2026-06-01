@@ -1,125 +1,159 @@
 export interface RoadmapItem {
   noteId: string
   label: string
+  category: string
   optional?: boolean
 }
 
 export interface RoadmapRoute {
   title: string
   description: string
+  category: string
   items: RoadmapItem[]
 }
 
 /**
- * 学习路线图配置 — 覆盖基础、核心、空间、LLM、扰动、前沿等方向。
- *
- * 选入标准：
- * 1. ⭐ 路线早期奠基工作（chronological significance）
- * 2. 🏆 高性能 / 大规模模型（performance / scale）
- * 3. 🎯 代表性 / 范式开创模型（representative / paradigm-shifting）
- * 4. 🔥 广泛使用的高引用模型（widely used / cited）
+ * 学习路线图配置 — 按 11 个分类组织，标注学习依赖关系。
  */
 export const roadmapRoutes: RoadmapRoute[] = [
-  // ──────────────────────────────────────────────
-  // 1️⃣ 溯源：早期探索 (2022-2023)
-  // ──────────────────────────────────────────────
   {
-    title: '🕰️ 溯源：早期探索 (2022-2023)',
-    description: '奠基工作，理解细胞模型从何而来——从 BERT 迁移到单细胞的第一步',
+    title: '🏛️ FM + 经典语言模型',
+    description: 'BERT/GPT/ELMo 等经典 Transformer 架构在单细胞数据上的适配',
+    category: 'FM + 经典语言模型',
     items: [
-      { noteId: 'scbert', label: '⭐ scBERT — 首个将 BERT 引入 scRNA-seq 的开山之作' },
-      { noteId: 'geneformer', label: '⭐🔥 Geneformer — Rank Encoding + 30M 细胞，最广泛使用的基础模型' },
-      { noteId: 'scpoli', label: '⭐ scPoli — 条件 VAE + 参考映射，开创迁移学习范式' },
-      { noteId: 'xtrimogene', label: '🏆 xTrimoGene — 非对称 AE 架构先驱，scFoundation 的前身 (NeurIPS 2023)' },
+      { noteId: 'scbert', label: '⭐ scBERT — 首个 BERT 迁移到 scRNA-seq 的开山之作', category: 'FM + 经典语言模型' },
+      { noteId: 'geneformer', label: '⭐🔥 Geneformer — Rank Encoding + 30M 细胞', category: 'FM + 经典语言模型' },
+      { noteId: 'scgpt', label: '⭐🔥 scGPT — GPT + 基因对 Tokenization，最高引用量', category: 'FM + 经典语言模型' },
+      { noteId: 'scfoundation', label: '🏆 scFoundation — 非对称 AE + Performer，300M~1B 参数', category: 'FM + 经典语言模型' },
+      { noteId: 'scmulan', label: '🏆 scMulan — 多任务生成式预训练语言模型', category: 'FM + 经典语言模型' },
+      { noteId: 'cellfm', label: '🔥 CellFM — 1 亿细胞预训练的最大公开 FM 之一', category: 'FM + 经典语言模型' },
+      { noteId: 'sclong', label: '🏆 scLong — 十亿参数，长距离基因上下文', category: 'FM + 经典语言模型' },
+      { noteId: 'xtrimogene', label: '🏆 xTrimoGene — 非对称 AE 架构先驱', category: 'FM + 经典语言模型' },
+      { noteId: 'scelmo', label: '🎯 scELMo — ELMo 风格嵌入的单细胞适配', category: 'FM + 经典语言模型' },
+      { noteId: 'heimdall', label: '🎯 Heimdall — Tokenization 系统框架', category: 'FM + 经典语言模型' },
+      { noteId: 'scpeft', label: '🔥 scPEFT — 参数高效微调框架', category: 'FM + 经典语言模型' },
+      { noteId: 'epiagent', label: '⭐ EpiAgent — 表观基因组首个 FM', category: 'FM + 经典语言模型' },
     ],
   },
-  // ──────────────────────────────────────────────
-  // 2️⃣ 奠基：BERT 与表示学习
-  // ──────────────────────────────────────────────
   {
-    title: '🏛️ 奠基：BERT 与表示学习',
-    description: '深度理解细胞嵌入学习——跨物种、跨数据集的通用表示',
-    items: [
-      { noteId: 'cell-atlas-fm', label: '⭐ UCE / Cell Atlas — 跨物种通用细胞嵌入 (Nature 2024)' },
-      { noteId: 'saturn', label: '⭐ SATURN — DNA 序列引导的基因嵌入，跨物种零样本 (Nat Methods 2024)' },
-      { noteId: 'genecompass', label: '🏆 GeneCompass — GO/KEGG 知识注入，跨物种调控推断 (Cell Res 2024)' },
-      { noteId: 'scprint', label: '🔥 scPRINT — 5000 万细胞预训练，注意力权重→基因调控网络 (Nat Comms 2025)' },
-    ],
-  },
-  // ──────────────────────────────────────────────
-  // 3️⃣ 浪潮：GPT 与生成式革命
-  // ──────────────────────────────────────────────
-  {
-    title: '🌊 浪潮：GPT 与生成式革命',
-    description: '生成式预训练 + 大规模模型——当前单细胞 FM 的主流范式',
-    items: [
-      { noteId: 'scgpt', label: '⭐🔥 scGPT — GPT + 基因对 Tokenization，最高引用量的单细胞 FM (Nat Methods 2024)' },
-      { noteId: 'scfoundation', label: '🏆 scFoundation — 非对称 AE + Performer 线性注意力，300M~1B 参数 (Nat Methods 2024)' },
-      { noteId: 'sclong', label: '🏆 scLong — 十亿参数，捕捉长距离基因上下文 (2024)' },
-      { noteId: 'cellfm', label: '🔥 CellFM — 1 亿细胞预训练，最大的公开单细胞 FM 之一 (Nat Comms 2025)' },
-    ],
-  },
-  // ──────────────────────────────────────────────
-  // 4️⃣ 空间：从单细胞到组织微环境
-  // ──────────────────────────────────────────────
-  {
-    title: '🧫 空间：从单细胞到组织微环境',
+    title: '🧫 FM + 空间组学',
     description: '将细胞放入空间上下文——空间转录组基础模型',
+    category: 'FM + 空间组学',
     items: [
-      { noteId: 'nicheformer', label: '⭐ Nicheformer — BERT + 空间邻域上下文，sc→ST 桥梁 (Nat Methods 2025)' },
-      { noteId: 'novae', label: '⭐🔥 Novae — 图自监督 SwAV 空间域分割，实际应用最多的空间 FM (Nat Methods 2025)' },
-      { noteId: 'visual-omics-fm', label: '🎯 Visual-Omics FM — H&E + ST 跨模态融合 (Nat Methods 2025)' },
-      { noteId: 'scgpt', label: 'scGPT-spatial (延展) — scGPT 空间持续预训练', optional: true },
+      { noteId: 'nicheformer', label: '⭐ Nicheformer — BERT + 空间邻域，sc→ST 桥梁', category: 'FM + 空间组学' },
+      { noteId: 'novae', label: '⭐🔥 Novae — 图自监督 SwAV 空间域分割', category: 'FM + 空间组学' },
+      { noteId: 'scgpt-spatial', label: '🎯 scGPT-spatial — scGPT 空间持续预训练', category: 'FM + 空间组学' },
+      { noteId: 'visual-omics-fm', label: '🎯 Visual-Omics FM — H&E + ST 跨模态融合', category: 'FM + 空间组学' },
+      { noteId: 'omnicell', label: '🏆 OmniCell — 统一 sc + 空间编码器', category: 'FM + 空间组学' },
     ],
   },
-  // ──────────────────────────────────────────────
-  // 5️⃣ 对话：细胞与语言模型
-  // ──────────────────────────────────────────────
   {
-    title: '💬 对话：细胞与语言模型',
-    description: 'LLM 时代的细胞生物学——用自然语言理解细胞',
+    title: '🌌 FM + 世界模型',
+    description: '生成式 / 预测式世界模型范式',
+    category: 'FM + 世界模型',
     items: [
-      { noteId: 'cell2sentence', label: '⭐ Cell2Sentence — 将细胞"翻译"成句子，用 LLM 建模 (ICML 2024)' },
-      { noteId: 'cellama', label: '🎯 CELLama — LLM 驱动的细胞嵌入，同时支持 sc 和 ST (2024)' },
-      { noteId: 'cassia', label: '🎯 CASSIA — 多智能体 LLM，自动细胞注释 (Nat Comms 2025)' },
-      { noteId: 'scchat', label: '🔥 scChat — LLM Co-Pilot 用于单细胞分析 (2024)' },
+      { noteId: 'genejepa', label: '🎯 GeneJEPA — Perceiver + VICReg 表示预测', category: 'FM + 世界模型' },
+      { noteId: 'transcriptformer', label: '🏆 TranscriptFormer — 跨物种生成式细胞图谱', category: 'FM + 世界模型' },
+      { noteId: 'scprint', label: '🔥 scPRINT — Performer + 5000 万细胞 + GRN 推断', category: 'FM + 世界模型' },
+      { noteId: 'scprint-2', label: '🔥 scPRINT-2 — 下一代细胞基础模型', category: 'FM + 世界模型' },
     ],
   },
-  // ──────────────────────────────────────────────
-  // 6️⃣ 扰动：虚拟实验
-  // ──────────────────────────────────────────────
   {
-    title: '🧪 扰动：虚拟细胞实验',
-    description: '预测基因扰动后的细胞状态——药物发现与机制研究',
+    title: '🔗 FM + 跨物种/通用嵌入',
+    description: '跨物种对齐和通用细胞表示学习',
+    category: 'FM + 跨物种/通用嵌入',
     items: [
-      { noteId: 'tahoe-100m', label: '🏆 Tahoe-100M — 十亿级扰动图谱，最大规模 (2025)' },
-      { noteId: 'state', label: '🎯 STATE — 跨上下文扰动响应预测 (2025)' },
-      { noteId: 'pertadapt', label: '🎯 PertAdapt — 将 scFM 适配到扰动预测 (2025)' },
-      { noteId: 'scprint', label: '⭐ scPRINT（扰动篇）— 注意力权重推断 GRN', optional: true },
+      { noteId: 'cell-atlas-fm', label: '⭐ UCE — 跨物种通用细胞嵌入 (Nature 2024)', category: 'FM + 跨物种/通用嵌入' },
+      { noteId: 'saturn', label: '⭐ SATURN — DNA 序列引导跨物种零样本', category: 'FM + 跨物种/通用嵌入' },
+      { noteId: 'genecompass', label: '🏆 GeneCompass — GO/KEGG 知识注入跨物种 FM', category: 'FM + 跨物种/通用嵌入' },
+      { noteId: 'cell-plm', label: '🎯 CellPLM — 细胞间关系编码', category: 'FM + 跨物种/通用嵌入' },
     ],
   },
-  // ──────────────────────────────────────────────
-  // 7️⃣ 前沿：新模态与新架构
-  // ──────────────────────────────────────────────
   {
-    title: '🔬 前沿：新模态与新架构',
-    description: '突破转录组的边界——表观组、蛋白组、新架构',
+    title: '🕸️ FM + 图与网络',
+    description: '图结构 / 网络生物学方法',
+    category: 'FM + 图与网络',
     items: [
-      { noteId: 'epiagent', label: '⭐ EpiAgent — scATAC-seq 首个表观基因组 FM (Nat Methods 2025)' },
-      { noteId: 'visual-omics-fm', label: '🎯 视觉-组学融合 — H&E ↔ ST 双向预测', optional: true },
-      { noteId: 'novae', label: 'Novae (图架构) — SwAV 在图结构上的应用', optional: true },
+      { noteId: 'scnet', label: '⭐ scNET — PPI 网络 + 表达数据融合', category: 'FM + 图与网络' },
+      { noteId: 'scpoli', label: '⭐ scPoli — cVAE + 群体水平整合', category: 'FM + 图与网络' },
+      { noteId: 'tabulam', label: '🎯 Tabula — 表格自监督学习范式', category: 'FM + 图与网络' },
     ],
   },
-  // ──────────────────────────────────────────────
-  // 8️⃣ 愿景：虚拟细胞
-  // ──────────────────────────────────────────────
   {
-    title: '🌌 愿景：虚拟细胞',
-    description: '概念性 / 展望——所有基础模型努力的终极目标',
+    title: '💬 FM + LLM',
+    description: '大语言模型与单细胞数据的交叉',
+    category: 'FM + LLM',
     items: [
-      { noteId: 'virtual-cell-challenge', label: '🎯 Virtual Cell Challenge — Turing Test for Cells (Cell 2025)' },
-      { noteId: 'the-virtual-cell', label: '⭐ The Virtual Cell — 定义虚拟细胞蓝图 (Nat Methods 2025)' },
-      { noteId: 'scgpt', label: '回顾：scGPT — 从数据到虚拟细胞的桥梁', optional: true },
+      { noteId: 'cell2sentence', label: '⭐ Cell2Sentence — 细胞→句子→LLM', category: 'FM + LLM' },
+      { noteId: 'cellama', label: '🎯 CELLama — LLM 驱动细胞嵌入', category: 'FM + LLM' },
+      { noteId: 'celltok', label: '🎯 CellTok — 早期融合多模态 LLM', category: 'FM + LLM' },
+      { noteId: 'langcell', label: '🏆 LangCell — 语言-细胞联合预训练', category: 'FM + LLM' },
+      { noteId: 'cassia', label: '🔥 CASSIA — 多智能体自动注释', category: 'FM + LLM' },
+      { noteId: 'scchat', label: '🔥 scChat — LLM Co-Pilot 分析', category: 'FM + LLM' },
+      { noteId: 'scouter', label: '🎯 Scouter — LLM 嵌入做扰动预测', category: 'FM + LLM' },
+    ],
+  },
+  {
+    title: '🧪 遗传扰动',
+    description: '预测基因/药物扰动后的细胞状态',
+    category: '遗传扰动',
+    items: [
+      { noteId: 'gears', label: '⭐🔥 GEARS — GNN + GO 图传播扰动效应', category: '遗传扰动' },
+      { noteId: 'cpa', label: '⭐ CPA — 加性解耦 VAE + 剂量响应', category: '遗传扰动' },
+      { noteId: 'cinema-ot', label: '⭐ CINEMA-OT — 因果最优传输扰动推断', category: '遗传扰动' },
+      { noteId: 'systema', label: '🔥 Systema — 扰动预测系统性评估框架', category: '遗传扰动' },
+      { noteId: 'state', label: '🎯 STATE — 跨上下文扰动预测', category: '遗传扰动' },
+      { noteId: 'tahoe-100m', label: '🏆 Tahoe-100M — 十亿级扰动图谱', category: '遗传扰动' },
+      { noteId: 'scdrugmap', label: '🎯 scDrugMap — 药物响应基准', category: '遗传扰动' },
+      { noteId: 'pca-still-rules', label: '📊 PCA Still Rules — 批评：DL ≠ 更好', category: '遗传扰动' },
+      { noteId: 'perturbation-linear-baselines', label: '📊 线性基线 — 简单方法仍具竞争力', category: '遗传扰动' },
+    ],
+  },
+  {
+    title: '📊 评估与 Benchmark',
+    description: '系统性评估单细胞基础模型的性能与局限',
+    category: '评估与 Benchmark',
+    items: [
+      { noteId: 'perturbench', label: '🔥 PerturBench — 扰动分析标准基准', category: '评估与 Benchmark' },
+      { noteId: 'metric-mirages', label: '📊 Metric Mirages — 细胞嵌入评估的度量幻觉', category: '评估与 Benchmark' },
+      { noteId: 'zero-shot-limitations', label: '📊 Zero-shot 局限 — 揭示 scFM 泛化边界', category: '评估与 Benchmark' },
+      { noteId: 'ssl-effective-use', label: '📊 SSL 有效使用 — 自监督学习指导', category: '评估与 Benchmark' },
+      { noteId: 'biology-driven-insights', label: '📊 Biology-driven Insights — scFM 学到了什么', category: '评估与 Benchmark' },
+      { noteId: 'deeper-evaluation-scfms', label: '📊 Deeper Evaluation — 深入评估 scFM', category: '评估与 Benchmark' },
+      { noteId: 'multimodal-integration-benchmark', label: '📊 多模态整合 — 多组学方法对比', category: '评估与 Benchmark' },
+      { noteId: 'virtual-cell-challenge', label: '🎯 Virtual Cell Challenge — Turing Test', category: '评估与 Benchmark' },
+    ],
+  },
+  {
+    title: '🔬 病理基础模型',
+    description: '计算病理学基础模型',
+    category: '病理基础模型',
+    items: [
+      { noteId: 'uni', label: '⭐🔥 UNI — 通用病理 FM (Nature Med 2024)', category: '病理基础模型' },
+      { noteId: 'conch', label: '⭐ CONCH — 视觉-语言病理 FM (Nature Med 2024)', category: '病理基础模型' },
+      { noteId: 'whole-slide-fm', label: '🏆 Whole-Slide FM — 真实世界全切片', category: '病理基础模型' },
+    ],
+  },
+  {
+    title: '🌌 虚拟细胞',
+    description: '所有努力的终极目标——虚拟细胞',
+    category: '虚拟细胞',
+    items: [
+      { noteId: 'the-virtual-cell', label: '⭐ The Virtual Cell — 定义蓝图 (Nat Methods 2025)', category: '虚拟细胞' },
+      { noteId: 'vcworld', label: '🎯 VCWorld — 生物世界模型', category: '虚拟细胞' },
+      { noteId: 'cellforge', label: '🎯 CellForge — Agentic 虚拟细胞设计', category: '虚拟细胞' },
+    ],
+  },
+  {
+    title: '📚 综述与展望',
+    description: '领域全景综述和未来方向',
+    category: '综述与展望',
+    items: [
+      { noteId: 'transformers-sc-omics-review', label: '📝 Transformers in sc Omics — 被引最多的综述', category: '综述与展望' },
+      { noteId: 'harnessing-fm-omics', label: '📝 Harnessing FM — 基础模型在组学中的应用', category: '综述与展望' },
+      { noteId: 'multimodal-fm-cell-biology', label: '📝 多模态 FM — 分子细胞生物学 (Nature 2025)', category: '综述与展望' },
+      { noteId: 'interpretation-perturbation-sc', label: '📝 解释/外推/扰动 — 三大任务', category: '综述与展望' },
+      { noteId: 'build-virtual-cell-ai', label: '📝 构建虚拟细胞 — 优先事项 (Cell 2024)', category: '综述与展望' },
     ],
   },
 ]

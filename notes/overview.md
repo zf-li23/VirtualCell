@@ -1,44 +1,26 @@
 # 🧬 VirtualCell 笔记浏览器
 
-> 单细胞基础模型 | 虚拟细胞 | 空间组学 | 深度学习
+> 单细胞基础模型 | 空间组学 | 世界模型 | 虚拟细胞 | 深度学习
+
+欢迎来到 VirtualCell 笔记浏览器！本站收录了单细胞基础模型、空间转录组学、遗传扰动预测、虚拟细胞等方向的**深度技术笔记**。
+
+**使用指南**：
+- 左侧边栏按分类浏览所有笔记
+- 总览页面的交互式路线图可追踪学习进度
+- 点击技术谱系或课题组卡片可快速跳转到对应笔记
 
 ---
 
-## 📊 统计概览
+## 关于这个项目
 
-当前已涵盖 **29 篇深度笔记**，覆盖以下分类：
+本项目旨在系统性地梳理单细胞组学 + 深度学习领域的核心论文，每篇笔记包含：
+- 模型架构的详细解析（含代码结构和伪代码）
+- 核心创新点分析
+- 预处理、Tokenization、训练流程的深入理解
+- 与同类模型的对比和延伸阅读
 
-| 分类 | 篇数 | 代表性笔记 |
-|------|:----:|-----------|
-| FM + 经典语言模型 | 12 | Geneformer, scGPT, scFoundation, scBERT, scMulan, CellFM, scLong, xTrimoGene, scELMo, Heimdall, scPEFT, EpiAgent |
-| FM + 空间组学 | 5 | Nicheformer, Novae, scGPT-spatial, Visual-Omics FM, OmniCell |
-| FM + 世界模型 | 4 | GeneJEPA, TranscriptFormer, scPRINT, scPRINT-2 |
-| FM + 跨物种/通用嵌入 | 4 | UCE, SATURN, GeneCompass, CellPLM |
-| FM + 图与网络 | 3 | scNET, scPoli, Tabula |
-| FM + LLM | 4 | Cell2Sentence, CELLama, CASSIA, scChat |
-| 遗传扰动 | 5 | GEARS, CPA, Tahoe-100M/x1, STATE, PertAdapt |
-| 虚拟细胞 | 2 | Virtual Cell Challenge, The Virtual Cell |
-| 评估与 Benchmark | 1 | Virtual Cell Challenge |
+所有笔记均基于对官方代码仓库的深入阅读和分析。
 
-## 🗺️ 学习路线
-
-```
-经典语言模型 →  掌握 BERT/GPT/ELMo 等核心架构
-        ↓
-空间组学  →    从单细胞到空间转录组的跨越
-        ↓
-  图与网络  →   基因调控与蛋白交互网络融合
-        ↓
-  跨物种嵌入 →  统一不同物种的细胞表示
-        ↓
-  世界模型  →   生成式/预测式细胞建模
-        ↓
-    FM+LLM  →   细胞与语言模型的交叉
-        ↓
-  扰动预测  →   从描述到预测的跨越
-        ↓
-  虚拟细胞  →   终极目标
-```
 
 ## 📝 笔记状态
 

@@ -6,38 +6,94 @@
 const notePathToId: Record<string, string> = {
   'README.md': 'overview',
 
-  // fm/ 单细胞基础模型
-  'fm/geneformer/README.md': 'geneformer',
-  'fm/scgpt/README.md': 'scgpt',
-  'fm/scfoundation/README.md': 'scfoundation',
-  'fm/cell-atlas-fm/README.md': 'cell-atlas-fm',
-  'fm/nicheformer/README.md': 'nicheformer',
-  'fm/novae/README.md': 'novae',
-  'fm/scbert/README.md': 'scbert',
-  'fm/scpoli/README.md': 'scpoli',
-  'fm/scprint/README.md': 'scprint',
-  'fm/genecompass/README.md': 'genecompass',
-  'fm/saturn/README.md': 'saturn',
-  'fm/epiagent/README.md': 'epiagent',
-  'fm/visual-omics-fm/README.md': 'visual-omics-fm',
-  'fm/xtrimogene/README.md': 'xtrimogene',
-  'fm/sclong/README.md': 'sclong',
-  'fm/cellfm/README.md': 'cellfm',
+  // fm-classic/ 经典语言模型
+  'fm-classic/geneformer/README.md': 'geneformer',
+  'fm-classic/scgpt/README.md': 'scgpt',
+  'fm-classic/scfoundation/README.md': 'scfoundation',
+  'fm-classic/scbert/README.md': 'scbert',
+  'fm-classic/scelmo/README.md': 'scelmo',
+  'fm-classic/scmulan/README.md': 'scmulan',
+  'fm-classic/cellfm/README.md': 'cellfm',
+  'fm-classic/sclong/README.md': 'sclong',
+  'fm-classic/xtrimogene/README.md': 'xtrimogene',
+  'fm-classic/heimdall/README.md': 'heimdall',
+  'fm-classic/scpeft/README.md': 'scpeft',
+  'fm-classic/epiagent/README.md': 'epiagent',
+
+  // fm-spatial/ 空间组学
+  'fm-spatial/nicheformer/README.md': 'nicheformer',
+  'fm-spatial/novae/README.md': 'novae',
+  'fm-spatial/scgpt-spatial/README.md': 'scgpt-spatial',
+  'fm-spatial/visual-omics-fm/README.md': 'visual-omics-fm',
+  'fm-spatial/omnicell/README.md': 'omnicell',
+
+  // fm-world-model/ 世界模型
+  'fm-world-model/genejepa/README.md': 'genejepa',
+  'fm-world-model/transcriptformer/README.md': 'transcriptformer',
+  'fm-world-model/scprint/README.md': 'scprint',
+  'fm-world-model/scprint-2/README.md': 'scprint-2',
+
+  // fm-cross-species/ 跨物种
+  'fm-cross-species/cell-atlas-fm/README.md': 'cell-atlas-fm',
+  'fm-cross-species/saturn/README.md': 'saturn',
+  'fm-cross-species/genecompass/README.md': 'genecompass',
+  'fm-cross-species/cell-plm/README.md': 'cell-plm',
+
+  // fm-graph/ 图与网络
+  'fm-graph/scnet/README.md': 'scnet',
+  'fm-graph/scpoli/README.md': 'scpoli',
+  'fm-graph/tabulam/README.md': 'tabulam',
 
   // fm-llm/ FM + LLM
   'fm-llm/cell2sentence/README.md': 'cell2sentence',
   'fm-llm/cellama/README.md': 'cellama',
   'fm-llm/cassia/README.md': 'cassia',
   'fm-llm/scchat/README.md': 'scchat',
+  'fm-llm/celltok/README.md': 'celltok',
+  'fm-llm/langcell/README.md': 'langcell',
+  'fm-llm/scouter/README.md': 'scouter',
 
   // perturbation/ 遗传扰动
   'perturbation/tahoe-100m/README.md': 'tahoe-100m',
   'perturbation/state/README.md': 'state',
   'perturbation/pertadapt/README.md': 'pertadapt',
+  'perturbation/gears/README.md': 'gears',
+  'perturbation/cpa/README.md': 'cpa',
+  'perturbation/systema/README.md': 'systema',
+  'perturbation/sclambda/README.md': 'sclambda',
+  'perturbation/cinema-ot/README.md': 'cinema-ot',
+  'perturbation/scdrugmap/README.md': 'scdrugmap',
+  'perturbation/scgenept/README.md': 'scgenept',
+  'perturbation/pca-still-rules/README.md': 'pca-still-rules',
+  'perturbation/perturbation-linear-baselines/README.md': 'perturbation-linear-baselines',
+
+  // benchmarks/ 评估
+  'benchmarks/virtual-cell-challenge/README.md': 'virtual-cell-challenge',
+  'benchmarks/perturbench/README.md': 'perturbench',
+  'benchmarks/metric-mirages/README.md': 'metric-mirages',
+  'benchmarks/zero-shot-limitations/README.md': 'zero-shot-limitations',
+  'benchmarks/ssl-effective-use/README.md': 'ssl-effective-use',
+  'benchmarks/biology-driven-insights/README.md': 'biology-driven-insights',
+  'benchmarks/deeper-evaluation-scfms/README.md': 'deeper-evaluation-scfms',
+  'benchmarks/multimodal-integration-benchmark/README.md': 'multimodal-integration-benchmark',
 
   // virtual-cell/ 虚拟细胞
   'virtual-cell/virtual-cell-challenge/README.md': 'virtual-cell-challenge',
   'virtual-cell/the-virtual-cell/README.md': 'the-virtual-cell',
+  'virtual-cell/vcworld/README.md': 'vcworld',
+  'virtual-cell/cellforge/README.md': 'cellforge',
+
+  // pathology/ 病理
+  'pathology/uni/README.md': 'uni',
+  'pathology/conch/README.md': 'conch',
+  'pathology/whole-slide-fm/README.md': 'whole-slide-fm',
+
+  // surveys/ 综述
+  'surveys/transformers-sc-omics-review/README.md': 'transformers-sc-omics-review',
+  'surveys/harnessing-fm-omics/README.md': 'harnessing-fm-omics',
+  'surveys/multimodal-fm-cell-biology/README.md': 'multimodal-fm-cell-biology',
+  'surveys/interpretation-perturbation-sc/README.md': 'interpretation-perturbation-sc',
+  'surveys/build-virtual-cell-ai/README.md': 'build-virtual-cell-ai',
 }
 
 /**
