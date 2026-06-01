@@ -28,6 +28,7 @@ export const noteMetas: NoteMeta[] = [
   { id: 'epiagent', title: 'EpiAgent', category: '单细胞基础模型 (FM)', path: 'fm/epiagent/README.md' },
   { id: 'genecompass', title: 'GeneCompass', category: '单细胞基础模型 (FM)', path: 'fm/genecompass/README.md' },
   { id: 'geneformer', title: 'Geneformer', category: '单细胞基础模型 (FM)', path: 'fm/geneformer/README.md' },
+  { id: 'genejepa', title: 'GeneJEPA', category: '单细胞基础模型 (FM)', path: 'fm/genejepa/README.md' },
   { id: 'heimdall', title: 'Heimdall', category: '单细胞基础模型 (FM)', path: 'fm/heimdall/README.md' },
   { id: 'nicheformer', title: 'Nicheformer', category: '单细胞基础模型 (FM)', path: 'fm/nicheformer/README.md' },
   { id: 'novae', title: 'Novae', category: '单细胞基础模型 (FM)', path: 'fm/novae/README.md' },
@@ -61,6 +62,8 @@ export const noteMetas: NoteMeta[] = [
 
   // --- 遗传扰动 ---
   { id: 'cinema-ot', title: 'CINEMA-OT', category: '遗传扰动', path: 'perturbation/cinema-ot/README.md' },
+  { id: 'cpa', title: 'CPA', category: '遗传扰动', path: 'perturbation/cpa/README.md' },
+  { id: 'gears', title: 'GEARS', category: '遗传扰动', path: 'perturbation/gears/README.md' },
   { id: 'pca-still-rules', title: 'PCA Still Rules', category: '遗传扰动', path: 'perturbation/pca-still-rules/README.md' },
   { id: 'pertadapt', title: 'PertAdapt', category: '遗传扰动', path: 'perturbation/pertadapt/README.md' },
   { id: 'perturbation-linear-baselines', title: 'Perturbation Linear Baselines', category: '遗传扰动', path: 'perturbation/perturbation-linear-baselines/README.md' },
