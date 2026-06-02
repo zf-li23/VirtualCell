@@ -9,6 +9,7 @@ export interface FrontMatter {
   title?: string
   category?: string
   code_url?: string
+  [key: string]: string | undefined
 }
 
 export interface LoadedNote extends NoteMeta {
