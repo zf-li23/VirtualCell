@@ -2,8 +2,34 @@ import { useState, useMemo, useEffect, useReducer, useRef } from 'react'
 import { noteMetas, categories, type NoteMeta } from '../config/notes'
 import { noteLoaders } from '../lib/loaders'
 
+export interface FrontMatter {
+  status?: string
+  filled?: string
+  id?: string
+  title?: string
+  category?: string
+  code_url?: string
+}
+
 export interface LoadedNote extends NoteMeta {
   content: string
+  frontmatter: FrontMatter
+}
+
+/** 解析 YAML frontmatter，返回 { fm, body } */
+function parseFrontmatter(text: string): { fm: FrontMatter; body: string } {
+  const m = text.match(/^---\s*\n([\s\S]*?)\n---\s*\n/)
+  if (!m) return { fm: {}, body: text }
+  const fm: FrontMatter = {}
+  for (const line of m[1].split('\n')) {
+    const idx = line.indexOf(':')
+    if (idx > 0) {
+      const k = line.slice(0, idx).trim()
+      const v = line.slice(idx + 1).trim()
+      fm[k] = v
+    }
+  }
+  return { fm, body: text.slice(m[0].length) }
 }
 
 interface FetchState {
@@ -76,7 +102,9 @@ export function useNotes() {
   const activeNote: LoadedNote | null = useMemo(() => {
     const meta = noteMetas.find((n) => n.id === activeId)
     if (!meta) return null
-    return { ...meta, content: cache[activeId] ?? '' }
+    const raw = cache[activeId] ?? ''
+    const { fm, body } = parseFrontmatter(raw)
+    return { ...meta, content: body, frontmatter: fm }
   }, [activeId, cache])
 
   useEffect(() => {

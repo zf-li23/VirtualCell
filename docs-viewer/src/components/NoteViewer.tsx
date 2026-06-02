@@ -2,6 +2,7 @@ import type { LoadedNote } from '../hooks/useNotes'
 import { Overview } from './Overview'
 import { Markdown } from './Markdown'
 import { TableOfContents } from './TableOfContents'
+import { FrontmatterCard } from './FrontmatterCard'
 
 interface NoteViewerProps {
   note: LoadedNote | null
@@ -24,7 +25,12 @@ export function NoteViewer({ note, loading, error, onNavigate }: NoteViewerProps
           {!loading && !error && note && (
             <>
               {note.id === 'overview' && onNavigate && <Overview onNavigate={onNavigate} />}
-              {note.id !== 'overview' && <Markdown content={note.content} onNavigate={onNavigate} />}
+              {note.id !== 'overview' && (
+                <>
+                  <FrontmatterCard frontmatter={note.frontmatter} />
+                  <Markdown content={note.content} onNavigate={onNavigate} />
+                </>
+              )}
             </>
           )}
         </article>

@@ -457,6 +457,45 @@
   margin: 0 auto;
 }
 
+/* ===== Frontmatter Card ===== */
+
+.frontmatter-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  background: var(--bg-soft, #f6f8fa);
+  border: 1px solid var(--border, #d0d7de);
+  border-radius: 8px;
+  font-size: 0.9em;
+}
+
+.fm-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fm-label {
+  color: var(--text-muted, #656d76);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.fm-value {
+  color: var(--text, #1f2328);
+}
+
+.fm-link {
+  color: var(--accent, #0969da);
+  text-decoration: none;
+}
+
+.fm-link:hover {
+  text-decoration: underline;
+}
+
 .overview-section {
   margin-bottom: 36px;
 }
